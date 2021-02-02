@@ -6,7 +6,7 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Food Delivery</title>
+      <title>TasteUp - Food at home!</title>
 
       <!--Bootstrap-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -35,7 +35,7 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
             <img src="assets/LogoNoBackground.png" width="80" height="80" class="d-inline-block align-top" />
-            <p class="NavBar-Title">Food Delivery</p>
+            <p class="NavBar-Title">TasteUp</p>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -128,7 +128,7 @@
         </div>
         <div class="headerDescrizioni">
           <h1 class="firstDescr">I piatti che ami a casa tua!</h1>
-          <h2 class="secondDescr">Food Delivery® è il tuo nuovo migliore amico.</h2>
+          <h2 class="secondDescr">TasteUp® è il tuo nuovo migliore amico.</h2>
         </div>
       </div>
 
@@ -177,7 +177,7 @@
           Consegna veloce e pagamento alla consegna
         </h2>
         <p class="delivery-promo-description">
-          Con Food Delivery la preparazione del tuo ordine avviene entro pochi
+          Con TasteUp la preparazione del tuo ordine avviene entro pochi
           minuti dalla ricezione, così da garantirti sempre una consegna veloce. Inoltre
           paghi solo quando il corriere arriva a casa.
         </p>
@@ -190,7 +190,7 @@
             <div class="col-sm-3">
               <a href="/" style="text-decoration: none !important">
                 <img src="assets/Logo.png" height="50" width="50" />
-                <p class="footer-title">Food Delivery</p>
+                <p class="footer-title">TasteUp</p>
               </a>
             </div>
             <div class="col-sm-3">
@@ -234,7 +234,7 @@
         <div class="container-fluid copyright-section">
           <p class="copyright-paragraph">
             © 2021 Copyright -
-            <a class="copyright-link" href="/">fooddelivery.com</a>
+            <a class="copyright-link" href="/">tasteup.com</a>
           </p>
         </div>
       </footer>

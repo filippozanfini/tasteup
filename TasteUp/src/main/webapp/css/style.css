@@ -46,13 +46,13 @@ button {
 /* NavBar */
 
 .NavBar {
-  background-color: #e8505b !important;
+  background-color: #f7d002 !important;
 }
 
 .navbar-brand {
   display: flex;
   flex-direction: row;
-  color: #f3ecc2 !important;
+  color: #222725 !important;
 }
 
 .NavBar-Title {
@@ -63,16 +63,16 @@ button {
 
 .navbar-nav a {
   font-family: "GothamBold";
-  color: white !important;
+  color: #222725 !important;
   margin-right: 25px;
 }
 
 .dropdown-menu {
-  background-color: #b33d45;
+  background-color: gray;
 }
 
 .dropdown-item:hover {
-  background-color: lightcoral;
+  background-color: gray;
 }
 
 .cart-link {
@@ -85,7 +85,7 @@ button {
 }
 
 .nav-link.active {
-  color: #f3ecc2 !important;
+  color: #222725 !important;
 }
 
 .nav-link:hover {
@@ -117,7 +117,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #e8505b;
+  background-color: #f7d002;
   width: 100%;
   padding-top: 150px;
   padding-bottom: 150px;
@@ -140,7 +140,7 @@ button {
   outline: none;
 }
 #buttonsearch {
-  background-color: #f3ecc2;
+  background-color: #222725;
   border: none;
   color: black;
   padding: 12px 30px;
@@ -159,7 +159,7 @@ button {
 }
 
 .firstDescr {
-  color: #f3ecc2;
+  color: #222725;
   font-weight: bold;
   margin-top: 80px;
   font-style: bold;
@@ -194,7 +194,7 @@ button {
 }
 .btn-primary {
   border-radius: 20px;
-  background-color: #e8505b;
+  background-color: #f7d002;
   color: white;
   border: none;
   width: 80px;
@@ -205,19 +205,19 @@ button {
 }
 
 .btn-primary:selected {
-  background-color: #f3ecc2 !important;
+  background-color: #222725 !important;
   border: none;
 }
 .btn-primary:active,
 .btn-primary:focus {
   color: gray !important;
-  background-color: #f3ecc2 !important;
-  border-color: #f3ecc2 !important;
+  background-color: #222725 !important;
+  border-color: #222725 !important;
   outline: none;
   border: none;
 }
 .btn-primary:hover {
-  background-color: #f3ecc2 !important;
+  background-color: #222725 !important;
   color: gray;
 }
 
@@ -251,7 +251,7 @@ footer {
 
 .footer-title {
   font-family: "GothamBold";
-  color: #e8505b;
+  color: #f7d002;
   margin-top: 10px;
 }
 
@@ -274,7 +274,7 @@ footer {
 }
 
 .footer-link-item:hover {
-  color: #e8505b;
+  color: #f7d002;
 }
 
 .copyright-section {
@@ -289,7 +289,7 @@ footer {
 
 .copyright-link {
   text-decoration: none !important;
-  color: #e8505b;
+  color: #f7d002;
   font-family: "GothamBold";
 }
 
@@ -319,7 +319,7 @@ footer {
     width: 20%;
     margin: auto;
     margin-top: 10px;
-   /* padding: 5px;*/
+    /* padding: 5px;*/
     font-size: 85%;
   }
   .firstDescr {
