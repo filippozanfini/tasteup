@@ -225,7 +225,7 @@
                   <a class="footer-link-item" href="#!">Instagram</a>
                 </li>
                 <li>
-                  <a class="footer-link-item" href="#!">Twitter</a>
+                  <a class="footer-link-item" href="#">Twitter</a>
                 </li>
               </ul>
             </div>
