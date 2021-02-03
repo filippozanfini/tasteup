@@ -35,20 +35,13 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
             <img src="assets/LogoNoBackground.png" width="80" height="80" class="d-inline-block align-top" />
-            <p class="NavBar-Title">TasteUp</p>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <form method="GET" action="catalog">
-                  <a class="nav-link" aria-current="page" href="javascript:;"
-                    onclick="parentNode.submit();">Catalogo</a>
-                </form>
-              </li>
+            <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" href="#" id="navbarDropdown"
                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,15 +64,36 @@
                     </form>
                   </li>
                 </ul>
-
+            </ul>
+            <ul id="searchBarNavbar" class="navbar-nav mx-auto">
+              <div class="input-group-nav">
+                <form method="GET" autocomplete="off" action="ricerca">
+                  <input name="valueProduct" autocomplete="off" type="text" class="idbar-nav shadow-lg"
+                    placeholder="Cosa desideri mangiare?" />
+                  <button id="buttonsearch-nav" class="btn btn-secondary shadow-lg" type="submit"><svg
+                      xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 172 172"
+                      style=" fill:#000000;">
+                      <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#ffffff">
+                          <path
+                            d="M74.53333,17.2c-31.59642,0 -57.33333,25.73692 -57.33333,57.33333c0,31.59642 25.73692,57.33333 57.33333,57.33333c13.73998,0 26.35834,-4.87915 36.24766,-12.97839l34.23203,34.23203c1.43802,1.49778 3.5734,2.10113 5.5826,1.57735c2.0092,-0.52378 3.57826,-2.09284 4.10204,-4.10204c0.52378,-2.0092 -0.07957,-4.14458 -1.57735,-5.5826l-34.23203,-34.23203c8.09924,-9.88932 12.97839,-22.50768 12.97839,-36.24766c0,-31.59642 -25.73692,-57.33333 -57.33333,-57.33333zM74.53333,28.66667c25.39937,0 45.86667,20.4673 45.86667,45.86667c0,25.39937 -20.46729,45.86667 -45.86667,45.86667c-25.39937,0 -45.86667,-20.46729 -45.86667,-45.86667c0,-25.39937 20.4673,-45.86667 45.86667,-45.86667z">
+                          </path>
+                        </g>
+                      </g>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </ul>
+            <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <form method="POST" action="cart">
-                  <a class="nav-link cart-link" aria-current="page" href="javascript:;"
-                    onclick="parentNode.submit();"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-                      fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                      <path
-                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                    </svg>
+                  <a class="nav-link cart-link" aria-current="page" href="javascript:;" onclick="parentNode.submit();">
+                    <img src="https://img.icons8.com/fluent-systems-regular/33/000000/shopping-cart.png" />
                     <span id="cart-badge" class="badge rounded-pill bg-light text-dark">0</span>
                   </a>
                 </form>
@@ -116,70 +130,80 @@
       </nav>
 
       <!-- HEADER -->
-      <div class="headerSection">
+      <div id="header" class="headerSection">
+        <img class="header-illustration" src="../../assets/illustrations/ill1.png" height="30%">
+        <div class="headerDescrizioni">
+          <h1 class="firstDescr">È più buono quando te lo portano a casa!</h1>
+          <h2 class="secondDescr">Ordina comodamente dal divano mentre stai guardando l'ultima serie tv.<br>Al resto
+            pensiamo noi.</h2>
+        </div>
         <div class="input-group">
-          <form class="input-group" method="GET" action="ricerca">
-            <input name="valueProduct" type="text" class="idbar" placeholder="Cosa desideri mangiare?" />
-            <button id="buttonsearch" class="btn btn-secondary" type="submit">Cerca<i class="fa fa-search"></i>
+          <form class="input-group" autocomplete="off" method="GET" action="ricerca">
+            <input name="valueProduct" autocomplete="off" type="text" class="idbar shadow-lg p-3 mb-5"
+              placeholder="Cosa desideri mangiare?" />
+            <button id="buttonsearch" class="btn btn-secondary shadow-lg p-3 mb-5" type="submit"><svg
+                xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 172 172"
+                style=" fill:#000000;">
+                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                  style="mix-blend-mode: normal">
+                  <path d="M0,172v-172h172v172z" fill="none"></path>
+                  <g fill="#ffffff">
+                    <path
+                      d="M74.53333,17.2c-31.59642,0 -57.33333,25.73692 -57.33333,57.33333c0,31.59642 25.73692,57.33333 57.33333,57.33333c13.73998,0 26.35834,-4.87915 36.24766,-12.97839l34.23203,34.23203c1.43802,1.49778 3.5734,2.10113 5.5826,1.57735c2.0092,-0.52378 3.57826,-2.09284 4.10204,-4.10204c0.52378,-2.0092 -0.07957,-4.14458 -1.57735,-5.5826l-34.23203,-34.23203c8.09924,-9.88932 12.97839,-22.50768 12.97839,-36.24766c0,-31.59642 -25.73692,-57.33333 -57.33333,-57.33333zM74.53333,28.66667c25.39937,0 45.86667,20.4673 45.86667,45.86667c0,25.39937 -20.46729,45.86667 -45.86667,45.86667c-25.39937,0 -45.86667,-20.46729 -45.86667,-45.86667c0,-25.39937 20.4673,-45.86667 45.86667,-45.86667z">
+                    </path>
+                  </g>
+                </g>
+              </svg>
             </button>
           </form>
-
-
-        </div>
-        <div class="headerDescrizioni">
-          <h1 class="firstDescr">I piatti che ami a casa tua!</h1>
-          <h2 class="secondDescr">TasteUp® è il tuo nuovo migliore amico.</h2>
         </div>
       </div>
 
       <!-- CATEGORY SECTION -->
-      <div class="cardsSection">
-        <div class="cardpanino">
-          <img class="card-img-top" src="/assets/panino_category.png" alt="Card image cap" />
-          <div class="card-body">
-            <h5 id="panini-text" class="card-title">Panini</h5>
-            <form method="GET" action="panini">
-              <a href="javascript:;" onclick="parentNode.submit();" class="btn btn-primary">Sfoglia</a>
-            </form>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="cardpanino" style="background-image: url(../../assets/Panino.jpg)">
+            <div class="card-body">
+              <h5 id="panini-text" class="card-title">Panini</h5>
+              <p class="card-description">Scopri la migliore selezione di Panini, con verdure fresche e carni di qualità
+              </p>
+            </div>
           </div>
         </div>
-
-        <div class="cardpanino">
-          <img class="card-img-top" src="/assets/menu_category.png" alt="Card image cap" />
-          <div class="card-body">
-            <h5 id="menu-text" class="card-title">Menu</h5>
-            <form method="GET" action="menu">
-              <a href="javascript:;" onclick="parentNode.submit();" class="btn btn-primary">Sfoglia</a>
-            </form>
-          </div>
-        </div>
-
-
-        <div class="cardpanino">
-          <img class="card-img-top" src="/assets/drinks_category.png" alt="Card image cap" />
-          <div class="card-body">
-            <h5 id="bibite-text" class="card-title">Bibite</h5>
-            <form method="GET" action="bevande">
-              <a href="javascript:;" onclick="parentNode.submit();" class="btn btn-primary">Sfoglia</a>
-            </form>
+        <div class="col-lg-6">
+          <div class="cardpanino" style="background-image: url(../../assets/Menu.jpg)">
+            <div class="card-body">
+              <h5 id="menu-text" class="card-title">Menu</h5>
+              <p class="card-description">Perché accontentarsi di un solo panino? Aggiungi anche una bevanda e un
+                gustoso snack
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
       <!-- DELIVERY PROMO -->
       <div class="delivery-promo container-fluid">
-        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-truck"
-          viewBox="0 0 16 16">
-          <path
-            d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="80" height="80" viewBox="0 0 172 172"
+          style=" fill:#000000;">
+          <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+            font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+            <path d="M0,172v-172h172v172z" fill="none"></path>
+            <g fill="#ffffff">
+              <path
+                d="M103.60313,36.28125c9.40625,0 18.14063,-7.39062 19.75313,-16.79687c0.80625,-4.8375 -0.26875,-9.40625 -3.225,-12.9c-2.82187,-3.35938 -7.12188,-5.24063 -11.825,-5.24063c-9.40625,0 -18.14062,7.39063 -19.75312,16.79688c-0.80625,4.8375 0.26875,9.40625 3.225,12.9c2.82188,3.35937 6.9875,5.24062 11.825,5.24062zM96.48125,19.48438c0.94062,-5.50937 6.45,-10.07812 11.825,-10.07812c2.28438,0 4.3,0.80625 5.64375,2.41875c1.34375,1.6125 1.88125,3.89687 1.47812,6.31562c-0.94063,5.50938 -6.45,10.07813 -11.825,10.07813c-2.28437,0 -4.3,-0.80625 -5.64375,-2.41875c-1.47812,-1.6125 -1.88125,-3.89688 -1.47812,-6.31563zM6.31563,130.34375h13.4375h0.40312v0v0h147.40938c2.28437,0 4.03125,-1.74687 4.03125,-4.03125c0,-2.28437 -1.74688,-4.03125 -4.03125,-4.03125h-9.27188c1.74688,-20.15625 -6.18125,-45.28437 -19.8875,-61.54375c-10.48125,-12.49688 -23.38125,-19.08125 -37.22187,-19.08125c-23.91875,0 -45.01563,19.08125 -55.3625,30.50312c-14.10937,15.45313 -25.12812,34.80312 -28.89062,50.12188h-10.61562c-2.28437,0 -4.03125,1.74688 -4.03125,4.03125c0,2.28438 1.88125,4.03125 4.03125,4.03125zM65.70937,76.59375c7.65938,-7.12188 15.45313,-12.09375 22.70938,-14.37813c2.15,-0.67187 4.43437,0.40312 5.10625,2.55313c0.67188,2.15 -0.40312,4.43437 -2.55313,5.10625c-6.04687,2.01563 -12.9,6.45 -19.75312,12.76563c-0.80625,0.67188 -1.74688,1.075 -2.6875,1.075c-1.075,0 -2.15,-0.40313 -2.95625,-1.34375c-1.6125,-1.74687 -1.47812,-4.3 0.13438,-5.77812zM46.89688,98.9c1.34375,-2.01562 2.6875,-4.03125 4.16562,-6.04687c1.34375,-1.74687 3.89688,-2.15 5.64375,-0.80625c1.74687,1.34375 2.15,3.89688 0.80625,5.64375c-1.34375,1.88125 -2.6875,3.7625 -3.89687,5.64375c-0.80625,1.20938 -2.01562,1.88125 -3.35937,1.88125c-0.80625,0 -1.47813,-0.26875 -2.15,-0.67187c-1.88125,-1.20938 -2.41875,-3.7625 -1.20938,-5.64375zM122.81875,170.65625c9.40625,0 18.14062,-7.39062 19.75312,-16.79687c0.80625,-4.8375 -0.26875,-9.40625 -3.225,-12.9c-2.82188,-3.35937 -7.12188,-5.24062 -11.825,-5.24062c-9.40625,0 -18.14062,7.39063 -19.75313,16.79688c-0.80625,4.8375 0.26875,9.40625 3.225,12.9c2.82187,3.35938 7.12188,5.24062 11.825,5.24062zM115.69688,153.85938c0.94063,-5.50938 6.45,-10.07812 11.825,-10.07812c2.28438,0 4.3,0.80625 5.64375,2.41875c1.34375,1.6125 1.88125,3.89688 1.47812,6.31563c-0.94063,5.50938 -6.45,10.07813 -11.825,10.07813c-2.28438,0 -4.3,-0.80625 -5.64375,-2.41875c-1.34375,-1.6125 -1.88125,-3.89688 -1.47812,-6.31563zM36.81875,170.65625c9.40625,0 18.14063,-7.39062 19.75312,-16.79687c0.80625,-4.8375 -0.26875,-9.40625 -3.225,-12.9c-2.82188,-3.35937 -7.12187,-5.24062 -11.825,-5.24062c-9.40625,0 -18.14062,7.39063 -19.75312,16.79688c-0.80625,4.8375 0.26875,9.40625 3.225,12.9c2.82188,3.35938 7.12188,5.24062 11.825,5.24062zM29.69688,153.85938c0.94062,-5.50938 6.45,-10.07812 11.825,-10.07812c2.28437,0 4.3,0.80625 5.64375,2.41875c1.34375,1.6125 1.88125,3.89688 1.47813,6.31563c-0.94063,5.50938 -6.45,10.07813 -11.825,10.07813c-2.28437,0 -4.3,-0.80625 -5.64375,-2.41875c-1.34375,-1.6125 -1.88125,-3.89688 -1.47813,-6.31563zM6.71875,36.28125h40.04375c2.28438,0 4.03125,-1.74688 4.03125,-4.03125c0,-2.28438 -1.74687,-4.03125 -4.03125,-4.03125h-40.04375c-2.28437,0 -4.03125,1.74687 -4.03125,4.03125c0,2.28437 1.74688,4.03125 4.03125,4.03125zM15.72188,55.09375c-2.28437,0 -4.03125,1.74687 -4.03125,4.03125c0,2.28438 1.74688,4.03125 4.03125,4.03125h13.4375c2.28437,0 4.03125,-1.74687 4.03125,-4.03125c0,-2.28438 -1.74687,-4.03125 -4.03125,-4.03125z">
+              </path>
+            </g>
+          </g>
         </svg>
         <h2 class="delivery-promo-title">
-          Consegna veloce e pagamento alla consegna
+          Piatto freddo? No, grazie.
         </h2>
         <p class="delivery-promo-description">
-          Con TasteUp la preparazione del tuo ordine avviene entro pochi
-          minuti dalla ricezione, così da garantirti sempre una consegna veloce. Inoltre
-          paghi solo quando il corriere arriva a casa.
+          TasteUp assicura una consegna ultra-veloce per permetterti di gustare i piatti caldi. Sì, prima che inizi il
+          prossimo episodio.
         </p>
       </div>
 
@@ -234,7 +258,7 @@
         <div class="container-fluid copyright-section">
           <p class="copyright-paragraph">
             © 2021 Copyright -
-            <a class="copyright-link" href="/">tasteup.com</a>
+            <a class="copyright-link" href="/">tasteup.it</a>
           </p>
         </div>
       </footer>
