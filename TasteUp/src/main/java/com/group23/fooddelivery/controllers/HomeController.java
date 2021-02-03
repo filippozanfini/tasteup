@@ -41,7 +41,7 @@ public class HomeController {
 		return "cart";
 	}
 
-	@PostMapping("catalog")
+	@PostMapping("catalogo")
 	public String goToCatalog() {
 		return "catalog";
 	}
