@@ -22,7 +22,8 @@
         crossorigin="anonymous"></script>
 
       <!--CSS-->
-      <link rel="stylesheet" href="../css/cart.css" type="text/css" />
+      <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+      <link rel="stylesheet" href="../../css/cart.css" type="text/css" />
 
       <!-- JS -->
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -34,26 +35,24 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
             <img src="assets/LogoNoBackground.png" width="80" height="80" class="d-inline-block align-top" />
-            <p class="NavBar-Title">Food Delivery</p>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <form method="GET" action="catalog">
-                  <a class="nav-link" aria-current="page" href="javascript:;"
-                    onclick="parentNode.submit();">Catalogo</a>
-                </form>
-              </li>
+            <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" href="#" id="navbarDropdown"
                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Sfoglia
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <form method="GET" action="catalogo">
+                      <a class="dropdown-item" href="javascript:;" onclick="parentNode.submit();">Tutti i prodotti</a>
+                    </form>
+                  </li>
                   <li>
                     <form method="GET" action="panini">
                       <a class="dropdown-item" href="javascript:;" onclick="parentNode.submit();">Panini</a>
@@ -70,14 +69,48 @@
                     </form>
                   </li>
                 </ul>
-              </li>
+            </ul>
+            <ul id="searchBarNavbar" class="navbar-nav mx-auto">
+              <div class="input-group-nav">
+                <form method="GET" autocomplete="off" action="ricerca">
+                  <input name="valueProduct" autocomplete="off" type="text" class="idbar-nav"
+                    placeholder="Cosa desideri mangiare?" />
+                  <button id="buttonsearch-nav" class="btn btn-secondary" type="submit"><svg
+                      xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 172 172"
+                      style=" fill:#000000;">
+                      <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#ffffff">
+                          <path
+                            d="M74.53333,17.2c-31.59642,0 -57.33333,25.73692 -57.33333,57.33333c0,31.59642 25.73692,57.33333 57.33333,57.33333c13.73998,0 26.35834,-4.87915 36.24766,-12.97839l34.23203,34.23203c1.43802,1.49778 3.5734,2.10113 5.5826,1.57735c2.0092,-0.52378 3.57826,-2.09284 4.10204,-4.10204c0.52378,-2.0092 -0.07957,-4.14458 -1.57735,-5.5826l-34.23203,-34.23203c8.09924,-9.88932 12.97839,-22.50768 12.97839,-36.24766c0,-31.59642 -25.73692,-57.33333 -57.33333,-57.33333zM74.53333,28.66667c25.39937,0 45.86667,20.4673 45.86667,45.86667c0,25.39937 -20.46729,45.86667 -45.86667,45.86667c-25.39937,0 -45.86667,-20.46729 -45.86667,-45.86667c0,-25.39937 20.4673,-45.86667 45.86667,-45.86667z">
+                          </path>
+                        </g>
+                      </g>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </ul>
+            <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <form method="POST" action="cart">
-                  <a class="nav-link cart-link" aria-current="page" href="javascript:;"
-                    onclick="parentNode.submit();"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-                      fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                      <path
-                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                  <a class="nav-link cart-link" aria-current="page" href="javascript:;" onclick="parentNode.submit();">
+                    <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="33" height="33"
+                      viewBox="0 0 172 172" style=" fill:#000000;">
+                      <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#000000">
+                          <path
+                            d="M12.54167,21.5c-1.93842,-0.02741 -3.74144,0.99102 -4.71865,2.66532c-0.97721,1.6743 -0.97721,3.74507 0,5.41937c0.97721,1.6743 2.78023,2.69273 4.71865,2.66532h9.87516c2.60843,0 4.78277,1.80215 5.27702,4.36719l1.0708,5.59896l11.55485,60.68571c2.0895,10.94896 11.73607,18.93148 22.88574,18.93148h67.08952c11.14967,0 20.8003,-7.97945 22.88574,-18.93148l11.55485,-60.68571c0.3001,-1.57315 -0.11688,-3.19819 -1.13735,-4.4325c-1.02047,-1.23431 -2.53815,-1.94933 -4.13967,-1.95031h-120.97249l-0.23096,-1.22477c-1.44453,-7.5704 -8.1299,-13.10856 -15.83805,-13.10856zM40.53646,46.58333h112.42708l-10.34408,54.3099c-1.13239,5.94697 -6.26721,10.1901 -12.32471,10.1901h-67.08952c-6.05535,0 -11.18678,-4.24338 -12.32471,-10.1901v-0.007zM71.66667,129c-5.93706,0 -10.75,4.81294 -10.75,10.75c0,5.93706 4.81294,10.75 10.75,10.75c5.93706,0 10.75,-4.81294 10.75,-10.75c0,-5.93706 -4.81294,-10.75 -10.75,-10.75zM121.83333,129c-5.93706,0 -10.75,4.81294 -10.75,10.75c0,5.93706 4.81294,10.75 10.75,10.75c5.93706,0 10.75,-4.81294 10.75,-10.75c0,-5.93706 -4.81294,-10.75 -10.75,-10.75z">
+                          </path>
+                        </g>
+                      </g>
                     </svg>
                     <span id="cart-badge" class="badge rounded-pill bg-light text-dark">0</span>
                   </a>
@@ -94,17 +127,25 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle account-link" data-toggle="dropdown" href="#" href="#"
                     id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i><svg
-                        xmlns="http://www.w3.org/2000/svg" width="23" fill="currentColor" class="bi bi-person"
-                        viewBox="0 0 16 16">
-                        <path
-                          d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z">
-                        </path>
+                        xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="33" height="33" viewBox="0 0 172 172"
+                        style=" fill:#000000;">
+                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                          stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                          font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                          style="mix-blend-mode: normal">
+                          <path d="M0,172v-172h172v172z" fill="none"></path>
+                          <g fill="#000000">
+                            <path
+                              d="M86,14.33333c-19.72655,0 -35.83333,16.1068 -35.83333,35.83333c0,19.72653 16.10679,35.83333 35.83333,35.83333c19.72655,0 35.83333,-16.1068 35.83333,-35.83333c0,-19.72653 -16.10679,-35.83333 -35.83333,-35.83333zM86,25.08333c13.91682,0 25.08333,11.16652 25.08333,25.08333c0,13.91681 -11.16651,25.08333 -25.08333,25.08333c-13.91682,0 -25.08333,-11.16652 -25.08333,-25.08333c0,-13.91681 11.16651,-25.08333 25.08333,-25.08333zM44.79167,100.33333c-8.84188,0 -16.125,7.28312 -16.125,16.125v4.2972c0,10.53809 6.68189,19.99054 16.87386,26.49007c10.19197,6.49953 24.13682,10.42106 40.45947,10.42106c16.32265,0 30.2675,-3.92153 40.45947,-10.42106c10.19197,-6.49953 16.87386,-15.95198 16.87386,-26.49007v-4.2972c0,-8.84188 -7.28312,-16.125 -16.125,-16.125zM44.79167,111.08333h82.41667c3.03329,0 5.375,2.34171 5.375,5.375v4.2972c0,5.96674 -3.84326,12.28583 -11.90479,17.42676c-8.06153,5.14093 -20.09853,8.73438 -34.67855,8.73438c-14.58001,0 -26.61702,-3.59345 -34.67855,-8.73437c-8.06153,-5.14093 -11.90479,-11.46002 -11.90479,-17.42676v-4.2972c0,-3.03329 2.34171,-5.375 5.375,-5.375z">
+                            </path>
+                          </g>
+                        </g>
                       </svg></i> Il tuo account</a>
 
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="/accountInfo">Area personale</a></li>
                     <li>
-                      <a id="logout-btn" class="dropdown-item">Esci</a>
+                      <a id="logout-btn" href="" class="dropdown-item">Esci</a>
                     </li>
                   </ul>
                 </li>
@@ -116,22 +157,26 @@
 
       <!-- CART SECTION -->
       <div class="container-fluid cart-header">
-        <h1>Il tuo carrello</h1>
-        <p style="color: gray">
-          Controlla il tuo carrello prima di procedere con l'ordine.
+        <h1 style="text-align: center;">Il tuo carrello</h1>
+        <p style="color: gray; font-size: 28px; text-align: center;">
+          Controlla il carrello prima di procedere con l'ordine.
         </p>
       </div>
 
-      <!--PRODUCT BOX-->
-      <div id="productsBox" class="container-fluid product-boxes">
-      </div>
-      <hr class="product-separator" />
-      <!-- Total price -->
-      <div id="total-price" class="container-fluid total-price">
+      <div id="cart-row" class="row cart-row">
+        <div class="col-lg-8">
+          <!--PRODUCT BOX-->
+          <div id="productsBox" class="container-fluid product-boxes">
+          </div>
 
-      </div>
+        </div>
+        <div class="col-lg-4">
+          <!-- Total price -->
+          <div id="total-price" class="container-fluid total-price">
 
-      <button id="clear-btn">Svuota</button>
+          </div>
+        </div>
+      </div>
 
       <!-- FOOTER -->
       <footer>

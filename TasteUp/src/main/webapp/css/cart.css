@@ -1,119 +1,44 @@
-@font-face {
-  font-family: "GothamBold";
-  src: url("/font/Gotham-Bold.otf");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "GothamMedium";
-  src: url("/font/GothamMedium.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "GothamLight";
-  src: url("/font/Gotham-Light.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
   padding-top: 150px;
 }
 
-p {
-  font-family: "GothamMedium";
+.cart-empty-img {
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
 }
 
-h1 {
-  font-family: "GothamBold";
+.col-lg-4  {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
-h2 {
-  font-family: "GothamBold";
+.catalog-link {
+  font-family: "RobotoBold";
+  text-decoration: none;
+  color: #f7d002;
+  font-size: 16px;
 }
 
-h3 {
-  font-family: "GothamBold";
+.catalog-link:hover {
+  text-decoration: none;
+  color: #222725;
 }
 
-h5 {
-  font-family: "GothamBold";
-}
-
-button {
-  font-family: "GothamBold";
-}
-
-/* NavBar */
-
-.NavBar {
-  background-color: #e8505b !important;
-}
-
-.navbar-brand {
+.cart-row {
   display: flex;
   flex-direction: row;
-  color: #f3ecc2 !important;
+  justify-content: center;
+  margin-top: 70px;
 }
 
-.NavBar-Title {
-  font-family: "GothamBold" !important;
-  margin: auto;
-  margin-left: 10px;
-}
-
-.navbar-nav a {
-  font-family: "GothamBold";
-  color: white !important;
-  margin-right: 25px;
-}
-
-.dropdown-menu {
-  background-color: #b33d45;
-}
-
-.dropdown-item:hover {
-  background-color: lightcoral;
-}
-
-.cart-link {
+.cart-row-empty {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
-
-.badge {
-  margin: auto 10px !important;
-}
-
-.nav-link.active {
-  color: #f3ecc2 !important;
-}
-
-.nav-link:hover {
-  color: lightgray !important;
-}
-
-.loginBtn {
-  background-color: #b33d45;
-  color: white;
-}
-
-.loginBtn:hover {
-  background-color: lightcoral;
-}
-
-.account-link {
-  display: inline-block;
-}
-
-.account-link i {
-  vertical-align: middle;
-}
-
-/* ******* *
 
 /* Product Box */
 .product-boxes {
@@ -121,177 +46,172 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 52px -5px rgba(230, 230, 230, 0.66);
+  -moz-box-shadow: 0px 0px 52px -5px rgba(230, 230, 230, 0.66);
+  box-shadow: 0px 0px 52px -5px rgba(230, 230, 230, 0.66);
+  border-radius: 8px;
+  width: 90%;
 }
 
 .product-box {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 50%;
-  height: 150px;
+  justify-content: space-between;
+  width: 80%;
+  height: 200px;
   border-radius: 12px;
   background-color: white;
-  margin-top: 20px;
-  box-shadow: 0px 0px 13px #e9e9e9;
+}
+
+.product-image-container {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  margin: auto 10px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
 }
 
 .product-image {
-  width: 80px;
-  height: 80px;
+  height: 130px;
+  width: 130px;
   object-fit: contain;
   margin: auto 10px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .product-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: 20px;
 }
 
 .product-title {
-  font-size: 20px;
+  font-size: 25px;
 }
 
-.product-ingredients,
-.product-quantity {
-  font-size: 14px;
+.product-format {
   color: gray;
 }
 
-.product-price {
-  font-size: 20px;
-  margin: auto 10px;
-}
-
-.product-quantity {
-  margin-bottom: 0;
-}
-
-.quantity-option {
+.product-options {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.option-btns {
+.delete-btn {
+  text-decoration: none;
+  color: #f7d002;
+  margin-top: 10px;
+  width: 80px;
+  background-color: transparent;
+  font-family: "RobotoBold";
+  font-size: 16px;
+  padding: 0;
+  border: none;
+  text-align: left;
+}
+
+.delete-btn:hover {
+  text-decoration: none;
+  color: #222725;
+  outline: none;
+  cursor: pointer;
+}
+
+.quantity-container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
+  text-align: center;
 }
 
-.add-btn,
-.minus-btn {
-  background-color: transparent;
-  padding: 0;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-top: 0;
-}
-
-.price-delete {
+.quantity-btns {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.delete-btn {
-  margin: auto 10px;
-  background-color: transparent;
-  color: #e8505b !important;
+.add-quantity,
+.remove-quantity {
+  width: 40px;
+  height: 30px;
+  background-color: #f5f5f5;
+  margin-left: 10px;
 }
 
-.product-separator {
-  margin-top: 70px;
+.add-quantity:hover,
+.remove-quantity:hover {
+  background-color: #ccc;
+}
+
+.container-separator {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
 }
 
 /* Total price */
 .total-price {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  text-align: right;
-  margin-top: 65px;
+  justify-content: center;
+  text-align: center;
   width: 90%;
-  align-items: flex-end;
+  min-height: 400px;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 52px -5px rgba(230, 230, 230, 0.66);
+  -moz-box-shadow: 0px 0px 52px -5px rgba(230, 230, 230, 0.66);
+  box-shadow: 0px 0px 52px -5px rgba(230, 230, 230, 0.66);
+  border-radius: 8px;
+}
+
+.total-price-title {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.lasttotal {
+  margin-top: 10px;
 }
 
 .ordered-products {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   font-size: 15px;
   color: gray;
-  margin-top: 20px;
+  margin: 0 40px;
 }
 
 .ordered-products p {
   margin-top: 3px;
+  font-size: 20px;
 }
 
 .continue-order-btn {
-  background-color: #e8505b;
+  font-family: "RobotoBold";
+  font-size: 18px;
+  background-color: #222725;
   color: white;
-  width: 150px;
-  margin-top: 40px;
+  width: 160px;
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 40px;
 }
 
 .continue-order-btn:hover {
-  background-color: #b33d45;
-}
-
-/* Footer */
-.footer-separator {
-  margin-bottom: 50px;
-}
-
-footer {
-  padding-top: 80px;
-}
-
-.footer-title {
-  font-family: "GothamBold";
-  color: #e8505b;
-  margin-top: 10px;
-}
-
-.footer-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-}
-
-.footer-link-title {
-  font-family: "GothamBold";
-  color: black;
-}
-
-.footer-link-item {
-  text-decoration: none !important;
-  font-family: "GothamLight";
-  color: gray;
-}
-
-.footer-link-item:hover {
-  color: #e8505b;
-}
-
-.copyright-section {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.copyright-paragraph {
-  color: gray;
-  font-size: 13px;
-}
-
-.copyright-link {
-  text-decoration: none !important;
-  color: #e8505b;
-  font-family: "GothamBold";
-}
-
-.copyright-link:hover {
-  color: lightcoral;
+  background-color: #777777;
 }
 
 @media (max-width: 1000px) {
@@ -339,7 +259,6 @@ footer {
     margin-top: 20px;
     text-align: right;
     width: 100%;
-
     margin-right: 80px;
     margin-bottom: 20px;
   }

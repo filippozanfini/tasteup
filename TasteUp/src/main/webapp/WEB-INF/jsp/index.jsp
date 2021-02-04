@@ -192,7 +192,7 @@
           <div class="cardpanino" style="background-image: url(../../assets/Panino.jpg)">
             <div class="card-body">
               <h5 id="panini-text" class="card-title">Panini</h5>
-              <p class="card-description">Scopri la migliore selezione di Panini, con verdure fresche e carni di qualità
+              <p class="card-description">Scopri la migliore selezione di panini, con verdure fresche e carni di qualità
               </p>
             </div>
           </div>
