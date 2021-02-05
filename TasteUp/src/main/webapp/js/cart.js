@@ -383,9 +383,82 @@ function calculateTotal() {
     '</h3>\
   <form method="POST" action="confirm_order">\
   <button class="btn continue-order-btn">Vai alla cassa</button>\
-</form>';
+</form>\
+<p style="color: gray">oppure paga con</p>\
+<!-- PAYPAL -->\
+<div id="paypal-button"></div>';
 
   document.getElementById("total-price").innerHTML = root;
+
+  paypal.Button.render(
+    {
+      // Configure environment
+      env: "sandbox",
+      client: {
+        sandbox:
+          "AVIfSGLlO1QbhTKJbbrnTSXgupHxw4qAP1YqjVlM32oW8ngbfTmOdl0HlYUAQubLGu5uHKBsYtwwV0rx",
+        production:
+          "AWY3uZUdFgeYOxFLlHT8WgA5hqpC1ZWvonMXd2exrvWDCEMrm0uAuSnupycdgdTNf67O7GUXuZOBqIoN",
+      },
+      // Customize button (optional)
+      locale: "it_IT",
+      style: {
+        size: "medium",
+        color: "silver",
+        shape: "pill",
+        label: "paypal",
+        tagline: "false",
+      },
+
+      // Enable Pay Now checkout flow (optional)
+      commit: true,
+
+      // Set up a payment
+      payment: function (data, actions) {
+        return actions.payment.create({
+          transactions: [
+            {
+              amount: {
+                total: totalPrice,
+                currency: "EUR",
+              },
+            },
+          ],
+        });
+      },
+      // Execute the payment
+      onAuthorize: function (data, actions) {
+        return actions.payment.execute().then(function (response) {
+          var name = response.payer.payer_info.shipping_address.recipient_name;
+
+          var address =
+            name +
+            " " +
+            response.payer.payer_info.shipping_address.line1 +
+            " " +
+            response.payer.payer_info.shipping_address.city +
+            " " +
+            response.payer.payer_info.shipping_address.postal_code;
+
+          order.indirizzo = address;
+          console.log(order);
+          $.ajax({
+            url: "saveOrder",
+            method: "POST",
+            data: JSON.stringify(order),
+            contentType: "application/json",
+            success: function () {
+              location.replace("success");
+            },
+            error: function () {
+              alert("Ordine annullato!");
+            },
+          });
+        });
+      },
+    },
+    "#paypal-button"
+  );
 }
 
 function logout() {

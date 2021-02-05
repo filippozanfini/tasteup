@@ -214,6 +214,12 @@ body {
   background-color: #777777;
 }
 
+#paypal-button {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+
 @media (max-width: 1000px) {
   .product-box {
     width: 80%;

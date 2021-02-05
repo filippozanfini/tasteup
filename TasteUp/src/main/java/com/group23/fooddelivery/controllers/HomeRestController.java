@@ -331,12 +331,10 @@ public class HomeRestController {
 	                 JsonElement element = gson.fromJson(indirizzo, JsonElement.class);
 	            	 JsonObject obj = element.getAsJsonObject();
 	            	 
-	            	 Float totale = obj.get("price").getAsFloat();
 	            	 String ind = obj.get("indirizzo").getAsString();
 	            	 
 		            	ordine.setStato(false);
 		            	ordine.setIndirizzo(ind);
-		            	ordine.setTotale(totale);
 		            	
 					OrdineDAO ordinedao = new OrdineDAOJDBC(DBManager.getDataSource());
 					ordinedao.save(ordine);

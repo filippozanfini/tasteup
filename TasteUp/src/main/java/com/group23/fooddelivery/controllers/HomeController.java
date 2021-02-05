@@ -61,4 +61,9 @@ public class HomeController {
     	return "confirmOrder";
 	}
 
+	@GetMapping("success")
+	public String getSuccess() {
+		return "successOrder";
+	}
+
 }

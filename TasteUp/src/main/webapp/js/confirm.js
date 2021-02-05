@@ -187,12 +187,11 @@ function updateCartBadge(value) {
   var cartBadge = document.getElementById("cart-badge");
   cartBadge.innerHTML = value;
 }
+
 function addOrder() {
-  var address = {};
-  address.indirizzo = $("input[type='radio']")
+  order.indirizzo = $("input[type='radio']")
     .filter(":checked")
     .attr("indirizzo");
-  address.price = order.totale;
 
   $.ajax({
     url: "saveOrder",
