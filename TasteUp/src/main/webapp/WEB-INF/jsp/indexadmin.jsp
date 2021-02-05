@@ -22,7 +22,8 @@
         crossorigin="anonymous"></script>
 
       <!--CSS-->
-      <link rel="stylesheet" href="css/indexadmin.css" type="text/css" />
+      <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+      <link rel="stylesheet" href="../../css/indexadmin.css" type="text/css" />
       <!-- JS -->
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       <script src="../../js/indexadmin.js"></script>
@@ -33,54 +34,29 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="">
             <img src="assets/LogoNoBackground.png" width="80" height="80" class="d-inline-block align-top" />
-            <p class="NavBar-Title">Food Delivery</p>
           </a>
-
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav ml-auto">
-
-              <li class="nav-item">
-
-              </li>
-              <c:choose>
-                <c:when test="${usernameLogged==null}">
-                  <form method="POST" action="login">
-                    <button class="btn loginBtn">Accedi</button>
-                  </form>
-                </c:when>
-                <c:otherwise>
-                  <button id="logout-btn" class="btn loginBtn">Logout</button>
-                </c:otherwise>
-              </c:choose>
+              <button id="logout-btn" class="btn loginBtn">Esci</button>
             </ul>
           </div>
         </div>
       </nav>
 
       <!-- HEADER -->
-
-      <!-- CATEGORY SECTION -->
-      <div class="cardsSection">
-
-        <div class="cardpanino">
-          <div class="card-body">
-            <h5 id="panini-text" class="card-title">Aggiungi Prodotti</h5>
-            <button class="btn-primary" data-toggle="modal" data-target=.bd-ADD-modal-lg>
-              <img class="image_modify" src="/assets/add_icon.png">
-            </button>
-          </div>
-        </div>
-
-        <div class="cardpanino">
-          <div class="card-body">
-            <h5 id="menu-text" class="card-title">Rimuovi Prodotti</h5>
-            <button class="btn-primary" data-toggle="modal" data-target=".bd-REMOVE-modal-lg">
-              <img class="image_modify" src="/assets/minus_icon.png">
-            </button>
-
-          </div>
-        </div>
+      <div class="admin-header">
+        <p style="color: gray; text-align: center;">Per aggiungere un nuovo prodotto nel catalogo, clicca il seguente
+          pulsante</p>
+        <button class="btn add-btn" data-toggle="modal" data-target=".bd-ADD-modal-lg">Aggiungi</button>
+        <p style="color: gray; text-align: center;">Per rimuovere un nuovo prodotto dal catalogo, clicca il seguente
+          pulsante</p>
+        <button class="btn remove-btn" data-toggle="modal" data-target=".bd-REMOVE-modal-lg">Rimuovi</button>
       </div>
+
 
       <!-- Large modal ADD -->
       <div class="modal fade bd-ADD-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
