@@ -52,7 +52,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <form method="GET" action="catalogo">
+                    <form method="GET" action="catalog">
                       <a class="dropdown-item" href="javascript:;" onclick="parentNode.submit();">Tutti i prodotti</a>
                     </form>
                   </li>
@@ -188,8 +188,8 @@
           <div class="footer-row">
             <div class="col-sm-3">
               <a href="/" style="text-decoration: none !important">
-                <img src="../assets/Logo.png" height="50" width="50" />
-                <p class="footer-title">Food Delivery</p>
+                <img src="assets/Logo.png" height="50" width="50" />
+                <p class="footer-title">TasteUp</p>
               </a>
             </div>
             <div class="col-sm-3">
@@ -224,7 +224,7 @@
                   <a class="footer-link-item" href="#!">Instagram</a>
                 </li>
                 <li>
-                  <a class="footer-link-item" href="#!">Twitter</a>
+                  <a class="footer-link-item" href="#">Twitter</a>
                 </li>
               </ul>
             </div>
@@ -233,7 +233,7 @@
         <div class="container-fluid copyright-section">
           <p class="copyright-paragraph">
             © 2021 Copyright -
-            <a class="copyright-link" href="/">fooddelivery.com</a>
+            <a class="copyright-link" href="/">tasteup.it</a>
           </p>
         </div>
       </footer>

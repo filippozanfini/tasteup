@@ -19,43 +19,11 @@ import com.group23.fooddelivery.persistence.dao.jdbc.BevandaDAOJDBC;
 import com.group23.fooddelivery.persistence.dao.jdbc.MenuDAOJDBC;
 import com.group23.fooddelivery.persistence.dao.jdbc.PaninoDAOJDBC;
 
-
 @Controller
 public class CatalogController {
 	
 	@GetMapping("/catalog")
-	public String dammiPanini(Model model) {
-		List<Panino> listaPanini = new ArrayList<Panino>();
-		PaninoDAO paninoDao;
-		try {
-			paninoDao = new PaninoDAOJDBC(DBManager.getDataSource());
-			listaPanini = paninoDao.findAll();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		List<Bevanda> listaBevande = new ArrayList<Bevanda>();
-		BevandaDAO bevandaDao;
-		try {
-			bevandaDao = new BevandaDAOJDBC(DBManager.getDataSource());
-			listaBevande = bevandaDao.findAll();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		List<Menu> listaMenu = new ArrayList<Menu>();
-		MenuDAO menuDao;
-		try {
-			menuDao = new MenuDAOJDBC(DBManager.getDataSource());
-			listaMenu = menuDao.findAll();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	
-		model.addAttribute("listaPanini", listaPanini);
-		model.addAttribute("listaMenu", listaMenu);
-		model.addAttribute("listaBevande", listaBevande);
-			
+	public String getCatalog() {
 		return "catalog";
 	}
 	

@@ -49,7 +49,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <form method="GET" action="catalogo">
+                    <form method="GET" action="catalog">
                       <a class="dropdown-item" href="javascript:;" onclick="parentNode.submit();">Tutti i prodotti</a>
                     </form>
                   </li>

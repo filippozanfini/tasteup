@@ -36,6 +36,10 @@ h3 {
   font-family: "RobotoBold";
 }
 
+h4 {
+  font-family: "RobotoBold";
+}
+
 h5 {
   font-family: "RobotoBold";
 }
@@ -86,8 +90,8 @@ button {
   flex-direction: row;
 }
 
-.cart-icon:hover {
-  color: #777777;
+.cart-link:hover > svg g {
+  fill: #777777;
 }
 
 .badge {
