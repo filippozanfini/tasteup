@@ -6,6 +6,7 @@
 
     <head>
       <meta charset="ISO-8859-1">
+      <meta name="google-signin-client_id" content="250528507778-ful4fvi4t3tmqm7qep1rml9tviregb0v.apps.googleusercontent.com">
     </head>
     <meta charset="UTF-8" />
     <title>Food Delivery</title>
@@ -107,8 +108,13 @@
                       </svg></i> Il tuo account</a>
 
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/accountInfo">Area personale</a></li>
-                    <li>
+                    <li>    
+                      <form method="POST" action="profile">
+                        <a class="dropdown-item" aria-current="page" href="javascript:;" onclick="parentNode.submit();">
+                          Area Personale
+                        </a>
+                      </form>
+                    </li>
                       <a id="logout-btn" class="dropdown-item">Esci</a>
                     </li>
                   </ul>
@@ -125,7 +131,7 @@
         <div class="container-menu">
           <ul class="menu" style="line-height:400%">
             <li class="controlList-item is-active">
-              <a href="/accountInfo">Account</a>
+              <a href="/profile">Account</a>
             </li>
             <li class="controlList-item ">
               <a href="/accountOrder">Ordini</a>

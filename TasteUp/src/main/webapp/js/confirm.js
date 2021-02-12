@@ -2,7 +2,7 @@ var order = [];
 
 window.onload = function () {
   document.getElementById("logout-btn").onclick = logout;
-  document.getElementById("aggiungi").onclick = validateForm;
+  document.getElementsByClassName("confirm_button").onclick = validateForm;
 
   getAllAddress();
   getOrderJSON();
@@ -21,14 +21,14 @@ function getOrderJSON() {
       }
     },
     error: function () {
-      document.getElementById("total-price").innerHTML = "";
+      document.getElementById("div_form_in").innerHTML = "";
       document.getElementById("productsBox").innerHTML =
         "<p>Nessun prodotto nel carrello :)</p>";
     },
   });
 }
 function calculateTotal() {
-  var root = '<h5>Totale ordine</h5>\
+  var root = '<h5 id="totale">Totale ordine</h5>\
 	  <div class="ordered-products">';
 
   var totalPrice = order.totale;
@@ -46,7 +46,7 @@ function calculateTotal() {
 
   order.panini.map((panino) => {
     root +=
-      "<p>" +
+      "<p id='quantita'>" +
       panino.quantita +
       "x " +
       panino.nome_panino +
@@ -57,7 +57,7 @@ function calculateTotal() {
 
   order.bevande.map((bevanda) => {
     root +=
-      "<p>" +
+      "<p id='quantita'>" +
       bevanda.quantita +
       "x " +
       bevanda.nome_bevanda +
@@ -65,20 +65,20 @@ function calculateTotal() {
       bevanda.prezzo +
       "</p>";
   });
-  console.log(root);
+ 
   root +=
-    "<p>Consegna - &euro;2.50</p>\
+    "<p id='consegna'>Consegna - &euro;2.50</p>\
   </div> \
 		  <h5>Totale: &euro;" +
     totalPrice.toFixed(2) +
     '</h5>\
 		  <form class="confirm" method="POST" action="success">\
 				  <div class="confirm">\
-								  <button id="confirm_button" class="btn btn-outline-success">Conferma Ordine</button>\
+                  <button class="confirm_button" id="aggiungi"><span>Conferma Ordine</span></button>\
 				  </div>\
 		  </form>';
 
-  document.getElementById("total-price").innerHTML = root;
+  document.getElementById("div_form_in").innerHTML = root;
 
   document.querySelector("#confirm_button").onclick = addOrder;
 }

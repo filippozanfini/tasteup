@@ -6,6 +6,7 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="google-signin-client_id" content="250528507778-ful4fvi4t3tmqm7qep1rml9tviregb0v.apps.googleusercontent.com">
       <title>Carrello - Food Delivery</title>
 
       <!--Bootstrap-->
@@ -146,8 +147,13 @@
                       </svg></i> Il tuo account</a>
 
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/accountInfo">Area personale</a></li>
-                    <li>
+                    <li>    
+                      <form method="POST" action="profile">
+                        <a class="dropdown-item" aria-current="page" href="javascript:;" onclick="parentNode.submit();">
+                          Area Personale
+                        </a>
+                      </form>
+                    </li>
                       <a id="logout-btn" href="" class="dropdown-item">Esci</a>
                     </li>
                   </ul>

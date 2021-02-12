@@ -102,8 +102,13 @@
                       </svg></i> Il tuo account</a>
 
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/accountInfo">Area personale</a></li>
-                    <li>
+                    <li>    
+                      <form method="POST" action="profile">
+                        <a class="dropdown-item" aria-current="page" href="javascript:;" onclick="parentNode.submit();">
+                          Area Personale
+                        </a>
+                      </form>
+                    </li>
                       <a id="logout-btn" class="dropdown-item">Esci</a>
                     </li>
                   </ul>

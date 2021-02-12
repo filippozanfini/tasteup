@@ -6,6 +6,15 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="google-signin-client_id" content="250528507778-ful4fvi4t3tmqm7qep1rml9tviregb0v.apps.googleusercontent.com">
+      
+        
+    </head>
+     <body>
+       
+       <a href="#" onclick="signOut();">Sign out</a>
+     
+      
       <title>TasteUp - Food at home!</title>
 
       <!--Bootstrap-->
@@ -27,6 +36,8 @@
       <!-- JS -->
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       <script src="../../js/index.js"></script>
+      <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    
     </head>
 
     <body>
@@ -96,6 +107,8 @@
             </ul>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
+            
+
                 <form method="POST" action="cart">
                   <a class="nav-link cart-link" aria-current="page" href="javascript:;" onclick="parentNode.submit();">
                     <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="33" height="33"
@@ -118,7 +131,7 @@
               </li>
 
               <c:if test="${usernameLogged == null}">
-                <form method="POST" action="login">
+                <form method="GET" action="login">
                   <button class="btn loginBtn">Accedi</button>
                 </form>
               </c:if>
@@ -143,7 +156,13 @@
                       </svg></i> Il tuo account</a>
 
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/accountInfo">Area personale</a></li>
+                    <li>    
+                      <form method="POST" action="profile">
+                        <a class="dropdown-item" aria-current="page" href="javascript:;" onclick="parentNode.submit();">
+                          Area Personale
+                        </a>
+                      </form>
+                    </li>
                     <li>
                       <a id="logout-btn" href="" class="dropdown-item">Esci</a>
                     </li>

@@ -88,4 +88,20 @@
 		</plugins>
 	</build>
 
+<dependency>
+  <groupId>org.webjars.npm</groupId>
+  <artifactId>sweetalert2</artifactId>
+  <version>10.13.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.webjars.npm/sweetalert2 -->
+<dependency>
+    <groupId>org.webjars.npm</groupId>
+    <artifactId>sweetalert2</artifactId>
+    <version>10.13.2</version>
+</dependency>
+
+
+
+
 </project>

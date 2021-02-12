@@ -25,7 +25,7 @@
 
       <!--CSS-->
       <link rel="stylesheet" href="/css/style.css" type="text/css" />
-      <link rel="stylesheet" href="/css/profile.css" type="text/css" />
+      <link rel="stylesheet" href="/css/log.css" type="text/css" />
       </head>
 
       <body>
@@ -73,17 +73,12 @@
                 </li>
 
                 <c:if test="${usernameLogged == null}">
-                  <form method="POST" action="login">
+                  <form method="GET" action="login">
                     <button class="btn loginBtn">Accedi</button>
                   </form>
                 </c:if>
 
                 <c:if test="${usernameLogged != null}">
-                  <!--<form method="get" action="logout">
-                  <button class="btn loginBtn">Logout</button>
-                </form> -->
-
-
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" href="#" id="navbarDropdown"
                       role="button" data-bs-toggle="dropdown" aria-expanded="false"> ${usernameLogged} </a>
@@ -101,22 +96,29 @@
             </div>
           </div>
         </nav>
-
+     
         <div class="page-content">
-          <div class="page-form">
-            <form class="container" method="post" action="registrazioneAccount">
+          <img id="image_ill" src="/assets/illustrations/illRegistration.png">
+          <div id="div_form" class="page-form">
+            <form class="container" method="POST" action="registrazioneAccount">
+            <div id="header_form">
+              <h3 id="h3_registrati">Registrazione</h3>
+              <img id="image" src="/assets/illustrations/registerIcon.png">
               <div class="form-group">
-                <h3>Registrati su Food Delivery</h3>
-                <input class="form-control" type="email" id="email" name="username"
+                <input id="form" class="form-control" type="email" id="email" name="username"
                   placeholder="Inserisci il tuo indirizzo email" required>
               </div>
               <div class="form-group">
-                <input class="form-control" type="password" id="password" name="password"
+                <input id="form" class="form-control" type="password" id="password" name="password"
                   placeholder="Inserisci la tua password" required>
               </div>
-              <button class="modifica" value="registraAccount">Crea un account</button>
-            </form>
+                <div id="div_button">
+                    <button class="modifica" value="registraAccount"><span>Registrati</span></button>
+                </div>
+              </form> 
+            </div>
           </div>
+         
         </div>
 
         <footer>

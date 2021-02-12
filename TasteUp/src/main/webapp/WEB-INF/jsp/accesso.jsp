@@ -23,14 +23,22 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
                 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
                 crossorigin="anonymous"></script>
+             
+               
 
             <!--CSS-->
             <link rel="stylesheet" href="/css/style.css" type="text/css" />
-            <link rel="stylesheet" href="/css/profile.css" type="text/css" />
+            <link rel="stylesheet" href="/css/log.css" type="text/css" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
 
             <!-- JS -->
             <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
             <script src="../../js/login.js"></script>
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+            
             </head>
 
             <body>
@@ -96,9 +104,7 @@
                                 </li>
 
                                 <c:if test="${usernameLogged == null}">
-
                                     <button id="signup-btn" class="btn loginBtn">Registrati</button>
-
                                 </c:if>
 
                                 <c:if test="${usernameLogged != null}">
@@ -113,8 +119,13 @@
                                                 </svg></i> Il tuo account</a>
 
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="/accountInfo">Area personale</a></li>
-                                            <li>
+                                            <li>    
+                                                <form method="POST" action="profile">
+                                                  <a class="dropdown-item" aria-current="page" href="javascript:;" onclick="parentNode.submit();">
+                                                    Area Personale
+                                                  </a>
+                                                </form>
+                                              </li>
                                                 <a id="logout-btn" class="dropdown-item">Esci</a>
                                             </li>
                                         </ul>
@@ -126,24 +137,31 @@
                 </nav>
 
                 <div class="page-content">
-                    <div class="page-form">
+                    
+                    <img id="image_ill" src="/assets/illustrations/loginIll.png">
+                    <div id="div_form" class="page-form">
+                        <h3 id="h3_registrati">Accedi</h3>
+                      
+                        <img id="image" src="/assets/illustrations/loginIcon.png">
+
                         <div class="form-group">
-                            <h3>Accedi</h3>
-                            <input class="form-control" type="email" id="email"
-                                placeholder="Inserisci il tuo indirizzo email" name="username">
+                            <input id="form" class="form-control" type="email"
+                                placeholder="Inserisci il tuo indirizzo email" name="username_login">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="password" id="password"
-                                placeholder="Inserisci la tua password" name="password">
+                            <input id="form" class="form-control" type="password" 
+                                placeholder="Inserisci la tua password" name="password_login">
                         </div>
 
-                        <button id="login-btn" class="modifica" value="confermaLogin">Accedi</button>
+                        <button id="login-btn" class="modifica" value="confermaLogin"><span>Accedi</span></button>
+                        <p id="p_oppure">Oppure</p>
+                        <div class="g-signin2" data-onsuccess="onSignIn">
+                            <meta name="google-signin-client_id" content="250528507778-ful4fvi4t3tmqm7qep1rml9tviregb0v.apps.googleusercontent.com">
+                        </div>
 
-
+                       
                         <div class="registrati-form">
-                            <p>Prima volta su Food Delivery?
-                            </p>
-                            <button onclick="signup()" class="btn">Crea Account</button>
+                            <button onclick="signup()" class="btn btn-link">Non sei registrato? Crea un Account!</button>
 
                         </div>
                     </div>

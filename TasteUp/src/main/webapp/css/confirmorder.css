@@ -18,14 +18,38 @@
   font-weight: normal;
   font-style: normal;
 }
-.total-price {
+#container{
+  display: flex;
+  flex-direction: row;
+}
+.headerSection {
+  background: linear-gradient(45deg, #EECFBA, #ffc10708);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  text-align: right;
+  justify-content: center;
+  width: 100%;
+}
+#total-price{
+  display: flex;
+  flex-direction: column;
   margin-top: 65px;
-  width: 90%;
-  align-items: flex-end;
+  width: 100%;
+  font-family: "RobotoBold";
+
+}
+#div_form_in {
+  display: flex;
+  flex-direction: column;
+  width: 67%;
+  font-family: "RobotoBold";
+  margin-top: 24%;
+  margin-bottom: 100px;
+  height: 500px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  text-align: center;
+  margin-right: 100px;
 }
 
 .ordered-products {
@@ -37,101 +61,38 @@
 .ordered-products p {
   margin-top: 3px;
 }
-body {
-  padding-top: 150px;
-}
 
 p {
-  font-family: "GothamMedium";
+  font-family: "RobotoBold";
 }
 
 h1 {
-  font-family: "GothamBold";
+  font-family: "RobotoBold";
 }
 
 h2 {
-  font-family: "GothamBold";
+  font-family: "RobotoBold";
 }
 
 h3 {
-  font-family: "GothamBold";
+  font-family: "RobotoBold";
 }
 
 h5 {
-  font-family: "GothamBold";
+  font-family: "RobotoBold";
 }
 
 button {
-  font-family: "GothamBold";
+  font-family: "RobotoBold";
 }
 
-/* NavBar */
-
-.NavBar {
-  background-color: #e8505b !important;
-}
-
-.navbar-brand {
-  display: flex;
-  flex-direction: row;
-  color: #f3ecc2 !important;
-}
-
-.NavBar-Title {
-  font-family: "GothamBold" !important;
-  margin: auto;
-  margin-left: 10px;
-}
-
-.navbar-nav a {
-  font-family: "GothamBold";
-  color: white !important;
-  margin-right: 25px;
-}
-
-.dropdown-menu {
-  background-color: #b33d45;
-}
-
-.dropdown-item:hover {
-  background-color: lightcoral;
-}
-
-.cart-link {
-  display: flex;
-  flex-direction: row;
-}
-
-.badge {
-  margin: auto 10px !important;
-}
-
-.nav-link.active {
-  color: #f3ecc2 !important;
-}
-
-.nav-link:hover {
-  color: lightgray !important;
-}
-
-.loginBtn {
-  background-color: #b33d45;
-  color: white;
-}
-
-.loginBtn:hover {
-  background-color: lightcoral;
-}
-
-/* ******* */
 
 /* header */
 .headerSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  width: 100%;
+  width: 122%;
 }
 .headerSection h1 {
   margin-top: 50px;
@@ -141,7 +102,10 @@ button {
   margin-left: 45px;
   margin-top: 15px;
 }
-
+h5#nominativi_indirizzi {
+    margin-left: auto;
+    margin-right: auto;
+}
 .divIndirizzi {
   display: flex;
   flex-direction: column;
@@ -150,13 +114,14 @@ button {
 .cardInfo {
   display: flex;
   flex-direction: row;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: 55px;
+  margin-right: 40px;
   margin-bottom: 15px;
   text-align: center;
   border-radius: 10px;
   box-shadow: 10px 10px 40px #dedede;
   height: 70px;
+  background-color: white;
 }
 
 #radiobtn {
@@ -166,7 +131,7 @@ button {
 
 .aggiungiIndirizzo {
   color: #626262;
-  font-family: "GothamBold";
+  font-family: 'RobotoMedium';
   text-align: end;
   margin-right: 50px;
 }
@@ -175,65 +140,10 @@ button {
 }
 .confirm {
   position: relative;
-  background: red;
+  margin-top: 3%;
+
 }
 #confirm_button {
-	position: absolute;
-    right: 0px;
-    top: 20px;
-}
-
-/* Footer */
-footer {
-  padding-top: 180px;
-}
-
-.footer-title {
-  font-family: "GothamBold";
-  color: #e8505b;
-  margin-top: 10px;
-}
-
-.footer-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-}
-
-.footer-link-title {
-  font-family: "GothamBold";
-  color: black;
-}
-
-.footer-link-item {
-  text-decoration: none !important;
-  font-family: "GothamLight";
-  color: gray;
-}
-
-.footer-link-item:hover {
-  color: #e8505b;
-}
-
-.copyright-section {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.copyright-paragraph {
-  color: gray;
-  font-size: 13px;
-}
-
-.copyright-link {
-  text-decoration: none !important;
-  color: #e8505b;
-  font-family: "GothamBold";
-}
-
-.copyright-link:hover {
-  color: lightcoral;
 }
 /*responsive*/
 @media (max-width: 600px) {

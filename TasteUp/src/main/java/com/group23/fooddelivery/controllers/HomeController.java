@@ -26,14 +26,14 @@ public class HomeController {
 		return "gestoreConsegne";
 	}
 	
-	@PostMapping("login")
+	@GetMapping("login")
 	public String login() {	
 		return "accesso";
 	}
 
 	@GetMapping("signup")
 	public String signup() {	
-		return "Registrati";
+		return "registrati";
 	}
 
 	@PostMapping("cart")

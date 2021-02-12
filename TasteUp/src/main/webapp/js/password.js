@@ -1,12 +1,14 @@
 window.onload = function () {
-  document.getElementById("cambioPass").onclick = cambiaPassword;
+  
+  document.getElementById("passw-btn").onclick = cambiaPassword;
   document.getElementById("logout-btn").onclick = logout;
 
   getOrderJSON();
 };
 
 function cambiaPassword() {
-  var p = document.getElementById("password").value;
+  var p =  document.getElementsByName("password_chngpsw")[0].value;
+  
 
   $.ajax({
     url: "cambiaPassword",
@@ -15,15 +17,29 @@ function cambiaPassword() {
     success: function (response) {
       if (response == true) {
         console.log("QUI");
-        alert("Cambio password effettuato con successo");
+        Swal.fire({
+          title: 'Ben fatto!',
+          text: 'La tua password è stata modificata con successo',
+          icon: 'success',
+          confirmButtonColor: '#000000',
+      
+       });
       } else {
-        alert("Non è stato possibile modificare la password");
+        Swal.fire({
+          title: 'Errore!',
+          text: 'Non è stato possibile modificare la password.',
+          icon: 'error',
+          confirmButtonColor: '#000000',
+      
+       });
       }
     },
     fail: function (error) {
       console.log(error);
     },
   });
+
+ 
 }
 
 function logout() {
