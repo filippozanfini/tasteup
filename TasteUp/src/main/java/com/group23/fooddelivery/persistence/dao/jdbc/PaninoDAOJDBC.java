@@ -329,8 +329,11 @@ public class PaninoDAOJDBC implements PaninoDAO{
 				
 				while (rs.next()) {
 					ArrayList<Ingrediente> ingredienti = cercaIngredienti(rs.getString("nome_panino"));
-					panini.add(new Panino(rs.getString("nome_panino"),rs.getString("formato"), rs.getFloat("prezzo"), 
-							ingredienti, rs.getString("path_image")));
+					Panino panino = new Panino(rs.getString("nome_panino"),rs.getString("formato"), rs.getFloat("prezzo"), 
+					ingredienti, rs.getString("path_image"));
+					panino.setDescrizione((rs.getString("descrizione")));
+					panini.add(panino);
+							
 				}
 				rs.close();
 			}

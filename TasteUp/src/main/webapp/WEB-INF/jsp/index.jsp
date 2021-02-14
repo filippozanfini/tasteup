@@ -54,26 +54,20 @@
                     </form>
                   </li>
                   <li>
-                    <form method="GET" action="panini">
-                      <a class="dropdown-item" href="javascript:;" onclick="parentNode.submit();">Panini</a>
-                    </form>
+                    <a class="dropdown-item" href="catalog?product=menu">Menu</a>
                   </li>
                   <li>
-                    <form method="GET" action="menu">
-                      <a class="dropdown-item" href="javascript:;" onclick="parentNode.submit();">Menu</a>
-                    </form>
+                    <a class="dropdown-item" href="catalog?product=panini">Panini</a>
                   </li>
                   <li>
-                    <form method="GET" action="bevande">
-                      <a class="dropdown-item" href="javascript:;" onclick="parentNode.submit();">Bevande</a>
-                    </form>
+                    <a class="dropdown-item" href="catalog?product=bevande">Bevande</a>
                   </li>
                 </ul>
             </ul>
             <ul id="searchBarNavbar" class="navbar-nav mx-auto">
               <div class="input-group-nav">
-                <form method="GET" autocomplete="off" action="ricerca">
-                  <input name="valueProduct" autocomplete="off" type="text" class="idbar-nav"
+                <form autocomplete="off" action="catalog">
+                  <input name="product" autocomplete="off" type="text" class="idbar-nav"
                     placeholder="Cosa desideri mangiare?" />
                   <button id="buttonsearch-nav" class="btn btn-secondary" type="submit"><svg
                       xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 172 172"
@@ -164,8 +158,8 @@
             pensiamo noi.</h2>
         </div>
         <div class="input-group">
-          <form class="input-group" autocomplete="off" method="GET" action="ricerca">
-            <input name="valueProduct" autocomplete="off" type="text" class="idbar shadow-lg p-3 mb-5"
+          <form class="input-group" autocomplete="off" action="catalog">
+            <input name="product" autocomplete="off" type="text" class="idbar shadow-lg p-3 mb-5"
               placeholder="Cosa desideri mangiare?" />
             <button id="buttonsearch" class="btn btn-secondary" type="submit"><svg xmlns="http://www.w3.org/2000/svg"
                 x="0px" y="0px" width="35" height="35" viewBox="0 0 172 172" style=" fill:#000000;">
@@ -188,7 +182,7 @@
 
       <!-- CATEGORY SECTION -->
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6" onclick="window.location='catalog?product=panini';">
           <div class="cardpanino" style="background-image: url(../../assets/Panino.jpg)">
             <div class="card-body">
               <h5 id="panini-text" class="card-title">Panini</h5>
@@ -197,7 +191,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" onclick="window.location='catalog?product=menu';">
           <div class="cardpanino" style="background-image: url(../../assets/Menu.jpg)">
             <div class="card-body">
               <h5 id="menu-text" class="card-title">Menu</h5>

@@ -57,26 +57,20 @@
                     </form>
                   </li>
                   <li>
-                    <form method="GET" action="panini">
-                      <a class="dropdown-item" href="javascript:;" onclick="parentNode.submit();">Panini</a>
-                    </form>
+                    <a class="dropdown-item" href="catalog?product=menu">Menu</a>
                   </li>
                   <li>
-                    <form method="GET" action="menu">
-                      <a class="dropdown-item" href="javascript:;" onclick="parentNode.submit();">Menu</a>
-                    </form>
+                    <a class="dropdown-item" href="catalog?product=panini">Panini</a>
                   </li>
                   <li>
-                    <form method="GET" action="bevande">
-                      <a class="dropdown-item" href="javascript:;" onclick="parentNode.submit();">Bevande</a>
-                    </form>
+                    <a class="dropdown-item" href="catalog?product=bevande">Bevande</a>
                   </li>
                 </ul>
             </ul>
             <ul id="searchBarNavbar" class="navbar-nav mx-auto">
               <div class="input-group-nav">
-                <form method="GET" autocomplete="off" action="ricerca">
-                  <input name="valueProduct" autocomplete="off" type="text" class="idbar-nav"
+                <form autocomplete="off" action="catalog">
+                  <input name="product" autocomplete="off" type="text" class="idbar-nav"
                     placeholder="Cosa desideri mangiare?" />
                   <button id="buttonsearch-nav" class="btn btn-secondary" type="submit"><svg
                       xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 172 172"

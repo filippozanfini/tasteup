@@ -22,13 +22,14 @@ import com.group23.fooddelivery.persistence.dao.jdbc.PaninoDAOJDBC;
 
 import org.joda.time.DateTime;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CatalogRestController {
 
     @PostMapping("getAllProducts")
-    public String getAllProductsJSON(HttpSession session) {
+    public String getAllProductsJSON() {
         List<Panino> listaPanini = new ArrayList<Panino>();
 		PaninoDAO paninoDao;
 		try {
@@ -58,6 +59,40 @@ public class CatalogRestController {
 
         return createJSON(listaMenu, listaPanini, listaBevande);
     }
+
+	@PostMapping("getProduct")
+    public String getProduct(@RequestParam String productName) {
+        List<Panino> listaPanini = new ArrayList<Panino>();
+		PaninoDAO paninoDao;
+		try {
+			paninoDao = new PaninoDAOJDBC(DBManager.getDataSource());
+			listaPanini = paninoDao.cerca(productName);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		List<Bevanda> listaBevande = new ArrayList<Bevanda>();
+		BevandaDAO bevandaDao;
+		try {
+			bevandaDao = new BevandaDAOJDBC(DBManager.getDataSource());
+			listaBevande = bevandaDao.cerca(productName);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	
+		List<Menu> listaMenu = new ArrayList<Menu>();
+		try {
+			MenuDAO menuDao = new MenuDAOJDBC(DBManager.getDataSource());
+			listaMenu = menuDao.cerca(productName);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+        return createJSON(listaMenu, listaPanini, listaBevande);
+    }
+
 
     private String createJSON(List<Menu> menu, List<Panino> panini, List<Bevanda> bevande) {
         String json = "{";

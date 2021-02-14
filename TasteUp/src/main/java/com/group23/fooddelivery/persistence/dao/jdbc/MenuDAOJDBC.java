@@ -378,6 +378,7 @@ public class MenuDAOJDBC implements MenuDAO{
 				Bevanda b = cercaBibita(rs.getString("nome_menu"),rs.getString("formato"));
 				Menu m = new Menu(rs.getString("nome_menu"),rs.getString("formato"),p,b,
 					 rs.getFloat("prezzo"),rs.getString("path_image"));
+				m.setDescrizione(rs.getString("descrizione"));
 				
 				menu.add(m);
 			}
