@@ -227,8 +227,8 @@
       </div>
       <div id="productsContainer" class="products-container">
       </div>
-
       </div>
+
       <!-- FOOTER -->
       <footer>
         <hr class="footer-separator" />

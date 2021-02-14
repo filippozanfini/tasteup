@@ -142,17 +142,21 @@ function getAllProductsFromDB(type) {
       products.map((product) => {
         root +=
           '<div class="product-container">\
-        <img class="product-image" src="../../assets/' +
+          <div class="action-container" data-toggle="modal" data-target="#productModal' +
+          product.nome +
+          '">\
+          <img class="product-image" src="../../assets/' +
           product.tipo +
           "/" +
           product.immagine +
           '.png">\
-        <h4 class="product-title">' +
+           <h4 class="product-title">' +
           product.nome +
           '</h4>\
-        <p class="product-description">' +
+          <p class="product-description">' +
           product.descrizione +
           '</p>\
+            </div>\
         <div class="product-options">\
           <h3 class="product-price">&euro;' +
           product.prezzo +
@@ -177,6 +181,92 @@ function getAllProductsFromDB(type) {
                 </g>\
               </g>\
             </svg></button>\
+        </div>\
+      </div>';
+
+        root +=
+          '<!-- PRODUCT MODAL -->\
+      <div class="modal fade" id="productModal' +
+          product.nome +
+          '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"\
+        aria-hidden="true">\
+        <div class="modal-dialog" role="document">\
+          <div class="modal-content">\
+            <div class="modal-header">\
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">\
+                <span aria-hidden="true">&times;</span>\
+              </button>\
+            </div>\
+            <div class="modal-body">\
+              <img class="modal-img" src="../../assets/' +
+          product.tipo +
+          "/" +
+          product.immagine +
+          '.png">\
+              <h1 class="modal-title">' +
+          product.nome +
+          '</h1>\
+              <p class="modal-description">' +
+          product.descrizione +
+          "</p>";
+        if (product.tipo == "menu") {
+          root +=
+            '<hr>\
+            <h3>Cosa contiene?</h3>\
+            <ul class="modal-ingredients-list">\
+              <li>1 Panino ' +
+            product.nome_panino +
+            "</li>\
+              <li>1 Porzione di patatine</li>\
+              <li>1 Bottiglia di " +
+            product.nome_bevanda +
+            " da " +
+            product.formato_bevanda +
+            "</li>\
+            </ul>";
+        } else if (product.tipo == "panini") {
+          root +=
+            '<hr>\
+            <h3>Cosa contiene?</h3>\
+            <ul class="modal-ingredients-list">';
+          product.ingredienti.map((ingrediente) => {
+            root += "<li>" + ingrediente + "</li>";
+          });
+
+          root += "</ul>";
+        }
+
+        root +=
+          '</div>\
+            <div>\
+              <hr>\
+              <div class="product-options">\
+                <h3 class="product-price product-price-modal">&euro; ' +
+          product.prezzo +
+          '</h3>\
+                <button class="btn addToCartBtn" onclick="addToCart(\'' +
+          product.nome +
+          "','" +
+          product.formato +
+          "','" +
+          product.tipo +
+          '\',\'false\')"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"\
+                    width="40" height="40" viewBox="0 0 172 172" style=" fill:#000000;">\
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"\
+                      stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"\
+                      font-family="none" font-weight="none" font-size="none" text-anchor="none"\
+                      style="mix-blend-mode: normal">\
+                      <path d="M0,172v-172h172v172z" fill="none"></path>\
+                      <g fill="#f7d002">\
+                        <path\
+                          d="M11.46667,11.46667c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843h10.7724c1.29517,0 2.37592,0.81106 2.74349,2.06042l24.43385,83.06614c2.14446,7.29116 8.88821,12.34011 16.49453,12.34011h62.93229c7.73092,0 14.55694,-5.22483 16.59532,-12.67604l14.89323,-54.61224c0.47113,-1.72445 0.11102,-3.56997 -0.97382,-4.99081c-1.08485,-1.42084 -2.7703,-2.25442 -4.55795,-2.25424h-111.72161l-7.08828,-24.10911c-0.00373,0 -0.00747,0 -0.0112,0c-1.78818,-6.07784 -7.40968,-10.29089 -13.73984,-10.29089zM68.8,131.86667c-6.33287,0 -11.46667,5.1338 -11.46667,11.46667c0,6.33287 5.1338,11.46667 11.46667,11.46667c6.33287,0 11.46667,-5.1338 11.46667,-11.46667c0,-6.33287 -5.1338,-11.46667 -11.46667,-11.46667zM126.13333,131.86667c-6.33287,0 -11.46667,5.1338 -11.46667,11.46667c0,6.33287 5.1338,11.46667 11.46667,11.46667c6.33287,0 11.46667,-5.1338 11.46667,-11.46667c0,-6.33287 -5.1338,-11.46667 -11.46667,-11.46667z">\
+                        </path>\
+                      </g>\
+                    </g>\
+                  </svg></button>\
+              </div>\
+            </div>\
+          </div>\
         </div>\
       </div>';
       });
@@ -217,6 +307,9 @@ function getProductFromDB(name) {
       products.map((product) => {
         root +=
           '<div class="product-container">\
+          <div class="action-container" data-toggle="modal" data-target="#productModal' +
+          product.nome +
+          '">\
         <img class="product-image" src="../../assets/' +
           product.tipo +
           "/" +
@@ -228,6 +321,7 @@ function getProductFromDB(name) {
         <p class="product-description">' +
           product.descrizione +
           '</p>\
+          </div>\
         <div class="product-options">\
           <h3 class="product-price">&euro;' +
           product.prezzo +
@@ -252,6 +346,91 @@ function getProductFromDB(name) {
                 </g>\
               </g>\
             </svg></button>\
+        </div>\
+      </div>';
+        root +=
+          '<!-- PRODUCT MODAL -->\
+      <div class="modal fade" id="productModal' +
+          product.nome +
+          '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"\
+        aria-hidden="true">\
+        <div class="modal-dialog" role="document">\
+          <div class="modal-content">\
+            <div class="modal-header">\
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">\
+                <span aria-hidden="true">&times;</span>\
+              </button>\
+            </div>\
+            <div class="modal-body">\
+              <img class="modal-img" src="../../assets/' +
+          product.tipo +
+          "/" +
+          product.immagine +
+          '.png">\
+              <h1 class="modal-title">' +
+          product.nome +
+          '</h1>\
+              <p class="modal-description">' +
+          product.descrizione +
+          "</p>";
+        if (product.tipo == "menu") {
+          root +=
+            '<hr>\
+            <h3>Cosa contiene?</h3>\
+            <ul class="modal-ingredients-list">\
+              <li>1 Panino ' +
+            product.nome_panino +
+            "</li>\
+              <li>1 Porzione di patatine</li>\
+              <li>1 Bottiglia di " +
+            product.nome_bevanda +
+            " da " +
+            product.formato_bevanda +
+            "</li>\
+            </ul>";
+        } else if (product.tipo == "panini") {
+          root +=
+            '<hr>\
+            <h3>Cosa contiene?</h3>\
+            <ul class="modal-ingredients-list">';
+          product.ingredienti.map((ingrediente) => {
+            root += "<li>" + ingrediente + "</li>";
+          });
+
+          root += "</ul>";
+        }
+
+        root +=
+          '</div>\
+            <div>\
+              <hr>\
+              <div class="product-options">\
+                <h3 class="product-price product-price-modal">&euro; ' +
+          product.prezzo +
+          '</h3>\
+                <button class="btn addToCartBtn" onclick="addToCart(\'' +
+          product.nome +
+          "','" +
+          product.formato +
+          "','" +
+          product.tipo +
+          '\',\'false\')"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"\
+                    width="40" height="40" viewBox="0 0 172 172" style=" fill:#000000;">\
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"\
+                      stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"\
+                      font-family="none" font-weight="none" font-size="none" text-anchor="none"\
+                      style="mix-blend-mode: normal">\
+                      <path d="M0,172v-172h172v172z" fill="none"></path>\
+                      <g fill="#f7d002">\
+                        <path\
+                          d="M11.46667,11.46667c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843h10.7724c1.29517,0 2.37592,0.81106 2.74349,2.06042l24.43385,83.06614c2.14446,7.29116 8.88821,12.34011 16.49453,12.34011h62.93229c7.73092,0 14.55694,-5.22483 16.59532,-12.67604l14.89323,-54.61224c0.47113,-1.72445 0.11102,-3.56997 -0.97382,-4.99081c-1.08485,-1.42084 -2.7703,-2.25442 -4.55795,-2.25424h-111.72161l-7.08828,-24.10911c-0.00373,0 -0.00747,0 -0.0112,0c-1.78818,-6.07784 -7.40968,-10.29089 -13.73984,-10.29089zM68.8,131.86667c-6.33287,0 -11.46667,5.1338 -11.46667,11.46667c0,6.33287 5.1338,11.46667 11.46667,11.46667c6.33287,0 11.46667,-5.1338 11.46667,-11.46667c0,-6.33287 -5.1338,-11.46667 -11.46667,-11.46667zM126.13333,131.86667c-6.33287,0 -11.46667,5.1338 -11.46667,11.46667c0,6.33287 5.1338,11.46667 11.46667,11.46667c6.33287,0 11.46667,-5.1338 11.46667,-11.46667c0,-6.33287 -5.1338,-11.46667 -11.46667,-11.46667z">\
+                        </path>\
+                      </g>\
+                    </g>\
+                  </svg></button>\
+              </div>\
+            </div>\
+          </div>\
         </div>\
       </div>';
       });
@@ -407,10 +586,6 @@ function addToCart(nome_prodotto, formato_prodotto, tipo_prodotto, modal) {
     success: function () {
       console.log("SUCCESS");
       getOrderJSON();
-      document.getElementById("success-alert").innerHTML =
-        '<div class="alert" role="alert">\
-      Prodotto aggiunto al carrello!\
-    </div>';
     },
     fail: function () {
       console.log("ERROR WITH THE UPDATE");
