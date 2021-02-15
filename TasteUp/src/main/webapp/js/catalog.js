@@ -143,7 +143,7 @@ function getAllProductsFromDB(type) {
         root +=
           '<div class="product-container">\
           <div class="action-container" data-toggle="modal" data-target="#productModal' +
-          product.nome +
+          product.nome.replace(/\s/g, "") +
           '">\
           <img class="product-image" src="../../assets/' +
           product.tipo +
@@ -187,7 +187,7 @@ function getAllProductsFromDB(type) {
         root +=
           '<!-- PRODUCT MODAL -->\
       <div class="modal fade" id="productModal' +
-          product.nome +
+          product.nome.replace(/\s/g, "") +
           '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"\
         aria-hidden="true">\
         <div class="modal-dialog" role="document">\
@@ -309,7 +309,7 @@ function getProductFromDB(name) {
           root +=
             '<div class="product-container">\
             <div class="action-container" data-toggle="modal" data-target="#productModal' +
-            product.nome +
+            product.nome.replace(/\s/g, "") +
             '">\
           <img class="product-image" src="../../assets/' +
             product.tipo +
@@ -352,7 +352,7 @@ function getProductFromDB(name) {
           root +=
             '<!-- PRODUCT MODAL -->\
         <div class="modal fade" id="productModal' +
-            product.nome +
+            product.nome.replace(/\s/g, "") +
             '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"\
           aria-hidden="true">\
           <div class="modal-dialog" role="document">\
@@ -436,7 +436,6 @@ function getProductFromDB(name) {
         </div>';
         });
       } else {
-        console.log("ciaoo");
         root +=
           '<div class="catalog-row-empty">\
           <img class="catalog-empty-img" src="../../assets/illustrations/catalog.png">\
