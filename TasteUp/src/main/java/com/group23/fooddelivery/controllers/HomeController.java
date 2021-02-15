@@ -15,9 +15,13 @@ public class HomeController {
 	public String home() {
 		return "index";
 	}
-
-	@GetMapping("indexadmin")	
-	public String indexAdmin() {
+	@PostMapping("loginhome")	
+	public String loghome() {
+		return "index";
+	}
+	
+	@PostMapping("/indexadmin")	
+	public String admin() {
 		return "indexadmin";
 	}
 

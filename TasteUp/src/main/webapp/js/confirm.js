@@ -2,7 +2,7 @@ var order = [];
 
 window.onload = function () {
   document.getElementById("logout-btn").onclick = logout;
-  document.getElementsByClassName("confirm_button").onclick = validateForm;
+  document.getElementById("aggiungi").onclick = validateForm;
 
   getAllAddress();
   getOrderJSON();
@@ -35,7 +35,7 @@ function calculateTotal() {
 
   order.menu.map((menu) => {
     root +=
-      "<p>" +
+      "<p id='quantita'>" +
       menu.quantita +
       "x " +
       menu.nome_menu +
@@ -68,19 +68,21 @@ function calculateTotal() {
  
   root +=
     "<p id='consegna'>Consegna - &euro;2.50</p>\
-  </div> \
-		  <h5>Totale: &euro;" +
+  </div>"+
+  '<hr class="dashed"> \
+		  <h6 id="totale">Totale: &euro;' +
     totalPrice.toFixed(2) +
-    '</h5>\
-		  <form class="confirm" method="POST" action="success">\
+    '</h6>\
+    <form class="confirm" method="POST" action="success">\
 				  <div class="confirm">\
-                  <button class="confirm_button" id="aggiungi"><span>Conferma Ordine</span></button>\
+                    <button class="confirm_button" id="aggiungi" name="prova"><span>Conferma Ordine</span></button>\
 				  </div>\
-		  </form>';
+        </form>' ;
 
   document.getElementById("div_form_in").innerHTML = root;
+  document.querySelector(".confirm_button").addEventListener('click',addOrder);
 
-  document.querySelector("#confirm_button").onclick = addOrder;
+
 }
 
 function Indirizzo(username, nome_indirizzo, cap) {
@@ -88,12 +90,20 @@ function Indirizzo(username, nome_indirizzo, cap) {
   this.nome_indirizzo = nome_indirizzo;
   this.cap = cap;
 }
-
 function aggiungi_indirizzo() {
+
   var nome_indirizzo =
-    $("#nome").val() + "  " + $("#indirizzo").val() + " " + $("#citta").val();
-  var cap = $("#cap").val();
+             document.getElementsByName("nome")[0].value + " , " + 
+             document.getElementsByName("numero_telefonico")[0].value + " ," +
+             document.getElementsByName("indirizzo")[0].value + " , " + 
+             document.getElementsByName("citta")[0].value + " , " ;
+             
+
+  var cap = document.getElementsByName("cap")[0].value;
   var username = document.getElementById("aggiungi").getAttribute("name");
+
+  console.log(nome_indirizzo);
+  
   var indirizzo = new Indirizzo(username, nome_indirizzo, cap);
 
   $.ajax({
@@ -103,40 +113,56 @@ function aggiungi_indirizzo() {
     contentType: "application/json",
     success: function (response) {
       if (response == true) {
+       
         document.getElementById("divindirizzi").innerHTML = "";
         getAllAddress();
-      } else alert("Attenzione, indirizzo gia' presente!");
+       
+      
+
+      } else
+      Swal.fire({
+        title: 'Errore!',
+        text: 'Indirizzo esistente.',
+        icon: 'error',
+        confirmButtonColor: '#000000',
+      });
     },
     fail: function (error) {
       console.log(error);
     },
   });
+
+  
 }
 
-// controlli sul form
 function validateForm() {
-  var nome = $("#nome").val();
-  var indirizzo = $("#indirizzo").val();
-  var citta = $("#citta").val();
-  var cap = $("#cap").val();
+  var nome = document.getElementsByName("nome")[0].value;
+  var indirizzo = document.getElementsByName("indirizzo")[0].value;
+  var citta = document.getElementsByName("citta")[0].value;
+  var cap = document.getElementsByName("cap")[0].value;
 
   if (
-    nome == "" ||
-    nome == null ||
-    indirizzo == "" ||
-    indirizzo == null ||
-    citta == "" ||
-    citta == null ||
-    cap == "" ||
-    cap == null
-  ) {
-    alert("Riempi tutti i campi!");
-    return false;
-  } else if (cap != 87036 && cap != 87100) {
-    alert(
-      "Mi dispiace, forniamo questo servizio solo per i comuni di Rende e Cosenza"
-    );
-  } else {
+    nome == "" || nome == null ||
+    indirizzo == "" || indirizzo == null ||
+    citta == "" || citta == null ||
+    cap == "" || cap == null) {
+      Swal.fire({
+        title: 'Errore!',
+        text: 'Riempi tutti i campi.',
+        icon: 'error',
+        confirmButtonColor: '#000000',
+    });
+    
+  } 
+  else if (cap != 87036 && cap != 87100) {
+    Swal.fire({
+      title: 'Errore!',
+      text: 'Mi dispiace, il servizio copre solo le zone di Rende e Cosenza.',
+      icon: 'error',
+      confirmButtonColor: '#000000',
+    });
+  }
+   else {
     aggiungi_indirizzo();
   }
 }
@@ -173,6 +199,7 @@ function getAllAddress() {
 }
 
 function logout() {
+  signOut();
   $.ajax({
     url: "logout",
     method: "POST",
@@ -180,34 +207,53 @@ function logout() {
     success: function () {
       location.replace("/");
     },
+  }); 
+}
+function signOut() {
+
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.disconnect();
+  gapi.auth2.getAuthInstance().currentUser.get().reloadAuthResponse();
+
+}
+     
+function onLoad() {
+  gapi.load('auth2', function() {
+  gapi.auth2.init();
   });
 }
+     
 
 function updateCartBadge(value) {
-  var cartBadge = document.getElementById("cart-badge");
-  cartBadge.innerHTML = value;
+var cartBadge = document.getElementById("cart-badge");
+cartBadge.innerHTML = value;
 }
 
-function addOrder() {
-  order.indirizzo = $("input[type='radio']")
-    .filter(":checked")
-    .attr("indirizzo");
 
-  $.ajax({
-    url: "saveOrder",
-    method: "POST",
-    data: JSON.stringify(address),
-    contentType: "application/json",
-    success: function (responseData) {
-      // alert('Ordine confermato!');
+  function addOrder() {
+    var address = {};
+    address.indirizzo = $("input[type='radio']")
+      .filter(":checked")
+      .attr("indirizzo");
+    address.price = order.totale;
+  
+    $.ajax({
+      url: "saveOrder",
+      method: "POST",
+      data: JSON.stringify(address),
+      contentType: "application/json",
+      success: function (responseData) {
+        
     },
     error: function () {
-      alert("Ordine annullato!");
+      Swal.fire({
+        title: 'Attenzione!',
+        text: "Impossibile effettuare l'ordine. Contatta l'assistenza.",
+        icon: 'error',
+        confirmButtonColor: '#000000',
+      });
     },
   });
 }
 
-function updateCartBadge(value) {
-  var cartBadge = document.getElementById("cart-badge");
-  cartBadge.innerHTML = value;
-}
+

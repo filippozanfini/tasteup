@@ -40,7 +40,8 @@ public class HomeRestController {
     
 	 DateTime time = new DateTime();
 	 Date date = Date.valueOf(time.toString("yyyy-MM-dd"));
-
+ 
+ 
     @PostMapping("getCurrentOrder")
     public String getCurrentJSON(HttpSession session) {
         if(session.getAttribute("usernameLogged") != null) {
@@ -330,7 +331,7 @@ public class HomeRestController {
 	            	 Gson gson = new Gson();
 	                 JsonElement element = gson.fromJson(indirizzo, JsonElement.class);
 	            	 JsonObject obj = element.getAsJsonObject();
-	            	 
+	            	 System.out.println("obj "+ obj);
 	            	 String ind = obj.get("indirizzo").getAsString();
 	            	 
 		            	ordine.setStato(false);
