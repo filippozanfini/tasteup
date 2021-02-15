@@ -476,3 +476,8 @@ window.onload = function () {
   getOrderJSON();
   document.getElementById("logout-btn").onclick = logout;
 };
+
+function closeNav() {
+  $(".navbar-collapse").removeClass("show");
+  $("body").removeClass("offcanvas-active");
+}

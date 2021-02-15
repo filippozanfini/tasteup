@@ -55,9 +55,15 @@ function logout() {
 
 window.onload = function () {
   $("#searchBarNavbar").hide();
-  console.log("HERE");
   getOrderJSON();
   document.getElementById("logout-btn").onclick = logout;
+
+  // NAVBAR
+  $("[data-trigger]").on("click", function () {
+    var trigger_id = $(this).attr("data-trigger");
+    $(trigger_id).toggleClass("show");
+    $("body").toggleClass("offcanvas-active");
+  });
 };
 
 $(window).scroll(function () {
@@ -67,3 +73,8 @@ $(window).scroll(function () {
     $("#searchBarNavbar").show();
   }
 });
+
+function closeNav() {
+  $(".navbar-collapse").removeClass("show");
+  $("body").removeClass("offcanvas-active");
+}

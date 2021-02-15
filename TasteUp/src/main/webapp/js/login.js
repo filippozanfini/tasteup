@@ -35,3 +35,8 @@ window.onload = function () {
   document.getElementById("login-btn").onclick = login;
   document.getElementById("signup-btn").onclick = signup;
 };
+
+function closeNav() {
+  $(".navbar-collapse").removeClass("show");
+  $("body").removeClass("offcanvas-active");
+}

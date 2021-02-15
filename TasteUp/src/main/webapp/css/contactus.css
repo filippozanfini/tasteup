@@ -61,3 +61,35 @@ body {
   text-decoration: none;
   color: #222725;
 }
+
+@media (max-width: 850px) {
+  .contact-box {
+    width: 85%;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-box {
+    width: 90%;
+  }
+}
+
+@media (max-width: 470px) {
+  .contact-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .contact-category-title {
+    font-size: 17px;
+  }
+
+  .contact-category-description {
+    font-size: 13px;
+  }
+
+  .mail-link {
+    font-size: 13px;
+  }
+}

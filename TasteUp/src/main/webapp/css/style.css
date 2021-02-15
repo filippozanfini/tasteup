@@ -55,6 +55,10 @@ button {
   height: 80px;
 }
 
+.offcanvas-header {
+  display: none;
+}
+
 .navbar-brand {
   display: flex;
   flex-direction: row;
@@ -120,6 +124,7 @@ button {
 }
 
 .loginBtn:hover {
+  color: white;
   background-color: #777777;
 }
 
@@ -378,7 +383,120 @@ footer {
 .copyright-link:hover {
   color: #5f5f5f;
 }
+
 /*responsive*/
+
+@media (max-width: 1282px) {
+  .idbar-nav {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 1182px) {
+  .idbar-nav {
+    min-width: 400px;
+  }
+}
+
+@media (max-width: 1082px) {
+  .idbar-nav {
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .NavBar {
+    height: 100px;
+  }
+
+  .idbar {
+    width: 70%;
+  }
+
+  #searchBarNavbar {
+    display: none !important;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .offcanvas-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navbar .navbar-collapse {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    width: 70%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: #222725;
+    transition: visibility 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  }
+
+  .navbar-collapse.show {
+    visibility: visible;
+    transform: translateX(-100%);
+  }
+
+  .navbar-nav li {
+    margin-top: 25px;
+    margin-left: 20px;
+  }
+
+  .navbar-nav a {
+    color: white !important;
+  }
+
+  .cart-link svg g {
+    fill: white;
+  }
+
+  .loginBtn {
+    width: 100%;
+    color: #222725;
+    background-color: white;
+    margin-top: 25px;
+  }
+
+  .account-link svg g {
+    fill: white;
+  }
+}
+
+@media (max-width: 695px) {
+  .firstDescr {
+    font-size: 50px;
+  }
+
+  .secondDescr {
+    font-size: 30px;
+  }
+
+  .delivery-promo {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .delivery-promo-title {
+    font-size: 50px;
+  }
+
+  .delivery-promo-description  {
+    font-size: 24px;
+  }
+
+  .card-title {
+    font-size: 50px;
+  }
+}
+
 @media (max-width: 600px) {
   .cardsSection {
     flex-direction: column;
@@ -389,26 +507,27 @@ footer {
     height: 150px;
     margin: auto;
   }
+
   .input-group {
-    flex-direction: column;
-    margin-top: 0;
+    flex-direction: column !important;
   }
+
   .idbar {
-    width: 70%;
+    width: 80%;
     margin: auto;
   }
+
   #buttonsearch {
-    width: 20%;
     margin: auto;
-    margin-top: 10px;
-    /* padding: 5px;*/
     font-size: 85%;
   }
+
   .firstDescr {
     font-size: 30px;
   }
+
   .secondDescr {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .delivery-promo-description {
@@ -422,5 +541,17 @@ footer {
 
   .col-sm-3 {
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .idbar {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-title  {
+    font-size: 40px;
   }
 }

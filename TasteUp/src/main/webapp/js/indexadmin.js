@@ -464,3 +464,8 @@ function logout() {
     },
   });
 }
+
+function closeNav() {
+  $(".navbar-collapse").removeClass("show");
+  $("body").removeClass("offcanvas-active");
+}
