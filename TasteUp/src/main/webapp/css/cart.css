@@ -131,7 +131,6 @@ body {
 .quantity-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   text-align: center;
 }
 
@@ -143,6 +142,7 @@ body {
 
 .add-quantity,
 .remove-quantity {
+  display: flex;
   width: 40px;
   height: 30px;
   background-color: #f5f5f5;
@@ -212,6 +212,7 @@ body {
 
 .continue-order-btn:hover {
   background-color: #777777;
+  color: white;
 }
 
 #paypal-button {
@@ -303,6 +304,10 @@ body {
   .delete-btn {
     margin: 30px auto;
     text-align: center;
+  }
+
+  .quantity-container {
+    justify-content: center;
   }
 }
 

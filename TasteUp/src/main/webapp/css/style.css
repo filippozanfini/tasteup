@@ -136,6 +136,10 @@ button {
   vertical-align: middle;
 }
 
+.account-link:hover > i svg g {
+  fill: #777777;
+}
+
 /* ******* */
 
 /* Header */

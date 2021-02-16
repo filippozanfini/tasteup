@@ -336,7 +336,7 @@ public class MenuDAOJDBC implements MenuDAO{
 				Panino p = cercaPanino(nome_menu, formato);
 				Bevanda b = cercaBibita(nome_menu,formato);
 				
-				menu = new Menu(nome_menu, formato,p,b, rs.getInt("prezzo"), 
+				menu = new Menu(nome_menu, formato,p,b, rs.getFloat("prezzo"), 
 						rs.getString("path_image"));
 			}
 				

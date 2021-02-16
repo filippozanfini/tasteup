@@ -87,6 +87,7 @@ body {
   width: 400px;
   height: 400px;
   margin: 0 auto;
+  object-fit: contain;
 }
 
 .product-title {
@@ -141,7 +142,7 @@ body {
 
 .modal-img {
   margin: 0 auto;
-  width: 100%;
+  width: 80%;
 }
 
 .modal-title {
