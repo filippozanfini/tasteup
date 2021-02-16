@@ -7,7 +7,7 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Food Delivery</title>
+      <title>Contattaci - TasteUp</title>
 
       <!--Bootstrap-->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -188,15 +188,13 @@
       </div>
 
       <!-- FOOTER -->
-
       <footer>
-        <hr class="footer-separator" />
         <div class="container-fluid footer-container">
           <div class="footer-row">
             <div class="col-sm-3">
               <a href="/" style="text-decoration: none !important">
                 <img src="assets/Logo.png" height="50" width="50" />
-                <p class="footer-title">Food Delivery</p>
+                <p class="footer-title">TasteUp</p>
               </a>
             </div>
             <div class="col-sm-3">
@@ -231,7 +229,7 @@
                   <a class="footer-link-item" href="#!">Instagram</a>
                 </li>
                 <li>
-                  <a class="footer-link-item" href="#!">Twitter</a>
+                  <a class="footer-link-item" href="#">Twitter</a>
                 </li>
               </ul>
             </div>
@@ -240,7 +238,7 @@
         <div class="container-fluid copyright-section">
           <p class="copyright-paragraph">
             © 2021 Copyright -
-            <a class="copyright-link" href="/">fooddelivery.com</a>
+            <a class="copyright-link" href="/">tasteup.it</a>
           </p>
         </div>
       </footer>

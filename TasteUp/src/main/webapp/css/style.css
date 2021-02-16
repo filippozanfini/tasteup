@@ -77,6 +77,14 @@ button {
   margin-right: 25px;
 }
 
+.searchBarNavbar.hide {
+  display: none !important;
+}
+
+.searchBarNavbar.show {
+  display: block !important;
+}
+
 .dropdown-menu {
   background-color: #222725;
 }

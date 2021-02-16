@@ -77,7 +77,7 @@
                   </li>
                 </ul>
             </ul>
-            <ul id="searchBarNavbar" class="navbar-nav mx-auto">
+            <ul id="searchBarNavbar" class="navbar-nav mx-auto searchBarNavbar hide">
               <div class="input-group-nav">
                 <form autocomplete="off" action="catalog">
                   <input name="product" autocomplete="off" type="text" class="idbar-nav"
@@ -163,7 +163,7 @@
       </nav>
 
       <!-- HEADER -->
-      <div id=" header" class="headerSection">
+      <div id="header" class="headerSection">
         <img class="header-illustration" src="../../assets/illustrations/ill1.png" height="30%">
         <div class="headerDescrizioni">
           <h1 class="firstDescr">È più buono quando te lo portano a casa!</h1>

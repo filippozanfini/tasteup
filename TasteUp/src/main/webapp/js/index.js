@@ -54,7 +54,7 @@ function logout() {
 }
 
 window.onload = function () {
-  $("#searchBarNavbar").hide();
+  // $("#searchBarNavbar").hide();
   getOrderJSON();
   document.getElementById("logout-btn").onclick = logout;
 
@@ -68,9 +68,11 @@ window.onload = function () {
 
 $(window).scroll(function () {
   if ($("#header").isOnScreen() == true) {
-    $("#searchBarNavbar").hide();
+    $("#searchBarNavbar").removeClass("show");
+    $("#searchBarNavbar").addClass("hide");
   } else {
-    $("#searchBarNavbar").show();
+    $("#searchBarNavbar").removeClass("hide");
+    $("#searchBarNavbar").addClass("show");
   }
 });
 
