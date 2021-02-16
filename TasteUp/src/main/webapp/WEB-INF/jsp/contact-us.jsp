@@ -189,6 +189,7 @@
 
       <!-- FOOTER -->
       <footer>
+        <hr class="footer-separator" />
         <div class="container-fluid footer-container">
           <div class="footer-row">
             <div class="col-sm-3">
