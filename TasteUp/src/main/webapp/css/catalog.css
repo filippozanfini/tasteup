@@ -112,6 +112,15 @@ body {
   margin: auto 0;
 }
 
+.input-item {
+  width: 60px;
+  height: 40px;
+  border-radius: 20px;
+  border: solid 3px #ccc;
+  text-align: center;
+  outline: none;
+}
+
 .addToCartBtn {
   background-color: transparent;
 }

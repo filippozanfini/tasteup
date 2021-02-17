@@ -315,13 +315,18 @@ function getAllProductsFromDB(type) {
                 <h3 class="product-price product-price-modal">&euro;' +
           product.prezzo +
           '</h3>\
+          <div class="add-to-cart">\
+          <input class="input-item" type="number" min="1" id="quantita-count-' +
+          product.nome.replace(/\s/g, "") +
+          product.formato +
+          '" value="1">\
                 <button class="btn addToCartBtn" onclick="addToCart(\'' +
           product.nome +
           "','" +
           product.formato +
           "','" +
           product.tipo +
-          '\',\'false\')"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"\
+          '\',\'true\')"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"\
                     width="40" height="40" viewBox="0 0 172 172" style=" fill:#000000;">\
                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"\
                       stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"\
@@ -335,6 +340,7 @@ function getAllProductsFromDB(type) {
                       </g>\
                     </g>\
                   </svg></button>\
+                  </div>\
               </div>\
             </div>\
           </div>\
@@ -423,7 +429,7 @@ function getProductFromDB(name) {
 
           root +=
             '<!-- PRODUCT MODAL -->\
-        <div class="modal fade" id="productModal' +
+        <div class="productModal modal fade" id="productModal' +
             product.nome.replace(/\s/g, "") +
             '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"\
           aria-hidden="true">\
@@ -552,13 +558,18 @@ function getProductFromDB(name) {
                   <h3 class="product-price product-price-modal">&euro;' +
             product.prezzo +
             '</h3>\
+            <div class="add-to-cart">\
+            <input class="input-item" type="number" min="1" id="quantita-count-' +
+            product.nome.replace(/\s/g, "") +
+            product.formato +
+            '" value="1">\
                   <button class="btn addToCartBtn" onclick="addToCart(\'' +
             product.nome +
             "','" +
             product.formato +
             "','" +
             product.tipo +
-            '\',\'false\')"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"\
+            '\',\'true\')"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"\
                       width="40" height="40" viewBox="0 0 172 172" style=" fill:#000000;">\
                       <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"\
                         stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"\
@@ -572,6 +583,7 @@ function getProductFromDB(name) {
                         </g>\
                       </g>\
                     </svg></button>\
+                    </div>\
                 </div>\
               </div>\
             </div>\
@@ -620,6 +632,12 @@ function getOrderJSON() {
 
 function addToCart(nome_prodotto, formato_prodotto, tipo_prodotto, modal) {
   var quantita = "1";
+  console.log(nome_prodotto);
+
+  if (modal == "true") {
+    var newName = nome_prodotto.replace(/\s/g, "");
+    quantita = $("#quantita-count-" + newName + formato_prodotto).val();
+  }
 
   prodottoTrovato = false;
 
