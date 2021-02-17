@@ -48,6 +48,12 @@ button {
   font-family: "GothamBold";
 }
 
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
 /* NavBar */
 
 .NavBar {

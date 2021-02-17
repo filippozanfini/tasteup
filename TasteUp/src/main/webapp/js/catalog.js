@@ -213,35 +213,106 @@ function getAllProductsFromDB(type) {
           root +=
             '<hr>\
             <h3>Cosa contiene?</h3>\
-            <ul class="modal-ingredients-list">\
-              <li>1 Panino ' +
-            product.nome_panino +
-            "</li>\
-              <li>1 Porzione di patatine</li>\
-              <li>1 Bottiglia di " +
-            product.nome_bevanda +
-            " da " +
-            product.formato_bevanda +
-            "</li>\
-            </ul>";
+            <div id="carouselExampleCaptions' +
+            product.nome.replace(/\s/g, "") +
+            '" class="carousel slide" data-ride="carousel">\
+  <ol class="carousel-indicators">\
+    <li data-target="#carouselExampleCaptions' +
+            product.nome.replace(/\s/g, "") +
+            '" data-slide-to="0" class="active"></li>\
+    <li data-target="#carouselExampleCaptions' +
+            product.nome.replace(/\s/g, "") +
+            '" data-slide-to="1"></li>\
+    <li data-target="#carouselExampleCaptions' +
+            product.nome.replace(/\s/g, "") +
+            '" data-slide-to="2"></li>\
+  </ol>\
+  <div class="carousel-inner">\
+    <div class="carousel-item active">\
+      <img src="../../assets/panini/' +
+            product.immagine_panino +
+            '.png" class="d-block w-100" alt="...">\
+    </div>\
+    <div class="carousel-item">\
+    <img src="../../assets/menu/patatine.png" class="d-block w-100" alt="...">\
+    </div>\
+    <div class="carousel-item">\
+    <img src="../../assets/bevande/' +
+            product.immagine_bevanda +
+            '.png" class="d-block w-100" alt="...">\
+    </div>\
+  </div>\
+  <a class="carousel-control-prev" href="#carouselExampleCaptions' +
+            product.nome.replace(/\s/g, "") +
+            '" role="button" data-slide="prev">\
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>\
+    <span class="sr-only">Previous</span>\
+  </a>\
+  <a class="carousel-control-next" href="#carouselExampleCaptions' +
+            product.nome.replace(/\s/g, "") +
+            '" role="button" data-slide="next">\
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>\
+    <span class="sr-only">Next</span>\
+  </a>\
+</div>';
         } else if (product.tipo == "panini") {
           root +=
             '<hr>\
             <h3>Cosa contiene?</h3>\
-            <ul class="modal-ingredients-list">';
+            <div id="carouselExampleCaptions' +
+            product.nome.replace(/\s/g, "") +
+            '" class="carousel slide" data-ride="carousel">\
+            <ol class="carousel-indicators">';
+
           product.ingredienti.map((ingrediente) => {
-            root += "<li>" + ingrediente + "</li>";
+            root +=
+              '<li data-target="#carouselExampleCaptions' +
+              product.nome.replace(/\s/g, "") +
+              '" data-slide-to="0" class="active"></li>';
+          });
+          root +=
+            '</ol>\
+  <div class="carousel-inner">\
+    <div class="carousel-item active">\
+      <img src="../../assets/ingredienti/' +
+            product.ingredienti[0] +
+            '.png" class="d-block w-100" alt="...">\
+    </div>';
+
+          var count = 0;
+          product.ingredienti.map((ingrediente) => {
+            if (count != 0) {
+              root +=
+                '<div class="carousel-item">\
+            <img src="../../assets/ingredienti/' +
+                ingrediente +
+                '.png" class="d-block w-100" alt="...">\
+            </div>';
+            }
+            count++;
           });
 
-          root += "</ul>";
+          root +=
+            '</div>\
+            <a class="carousel-control-prev" href="#carouselExampleCaptions' +
+            product.nome.replace(/\s/g, "") +
+            '" role="button" data-slide="prev">\
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>\
+    <span class="sr-only">Previous</span>\
+  </a>\
+  <a class="carousel-control-next" href="#carouselExampleCaptions' +
+            product.nome.replace(/\s/g, "") +
+            '" role="button" data-slide="next">\
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>\
+    <span class="sr-only">Next</span>\
+  </a>\
+  </div>';
         }
 
         root +=
-          '</div>\
-            <div>\
-              <hr>\
+          '<hr>\
               <div class="product-options">\
-                <h3 class="product-price product-price-modal">&euro; ' +
+                <h3 class="product-price product-price-modal">&euro;' +
           product.prezzo +
           '</h3>\
                 <button class="btn addToCartBtn" onclick="addToCart(\'' +
@@ -385,7 +456,7 @@ function getProductFromDB(name) {
                 <li>1 Porzione di patatine</li>\
                 <li>1 Bottiglia di " +
               product.nome_bevanda +
-              " da " +
+              " - " +
               product.formato_bevanda +
               "</li>\
               </ul>";
@@ -406,7 +477,7 @@ function getProductFromDB(name) {
               <div>\
                 <hr>\
                 <div class="product-options">\
-                  <h3 class="product-price product-price-modal">&euro; ' +
+                  <h3 class="product-price product-price-modal">&euro;' +
             product.prezzo +
             '</h3>\
                   <button class="btn addToCartBtn" onclick="addToCart(\'' +

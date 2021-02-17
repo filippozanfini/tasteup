@@ -70,8 +70,19 @@ public class MenuDAOJDBC implements MenuDAO{
 			ResultSet rs = st.executeQuery();
 			
 			if(rs.next()) {
-				b = new Bevanda(rs.getString("nome_bevanda"), rs.getString("formato_bevanda"),
-						0, null);
+				String queryForBevanda = "Select nome_bevanda, path_image from bevanda " +
+				"where nome_bevanda=?";
+				PreparedStatement st2 = conn.prepareStatement(queryForBevanda);
+				st2.setString(1, rs.getString("nome_bevanda"));
+				ResultSet rs2 = st2.executeQuery();
+
+				if(rs2.next()) {
+					b = new Bevanda(rs.getString("nome_bevanda"), rs.getString("formato_bevanda"),
+					0, rs2.getString("path_image"));
+				}
+
+				rs2.close();
+
 			}
 			rs.close();
 
@@ -96,8 +107,19 @@ public class MenuDAOJDBC implements MenuDAO{
 			ResultSet rs = st.executeQuery();
 			
 			if(rs.next()) {
-				p = new Panino(rs.getString("nome_panino"), rs.getString("formato_panino"),
-						0, null, null);
+				String queryForPanino = "Select nome_panino, path_image from panino " +
+				"where nome_panino=?";
+				PreparedStatement st2 = conn.prepareStatement(queryForPanino);
+				st2.setString(1, rs.getString("nome_panino"));
+				ResultSet rs2 = st2.executeQuery();
+
+				if(rs2.next()) {
+					p = new Panino(rs.getString("nome_panino"), rs.getString("formato_panino"),
+						0, null, rs2.getString("path_image"));
+				}
+
+				rs2.close();
+			
 			}
 			rs.close();
 

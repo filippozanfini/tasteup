@@ -108,8 +108,10 @@ public class CatalogRestController {
 				json+="\"formato\": \"" + entry.getFormato() + "\",";
 				json+="\"nome_panino\": \"" + entry.getPanino().getNome() + "\",";
 				json+="\"formato_panino\": \"" + entry.getPanino().getFormato() + "\",";
+				json+="\"immagine_panino\": \"" + entry.getPanino().getPathImage() + "\",";
 				json+="\"nome_bevanda\": \"" + entry.getBevanda().getNome() + "\",";
 				json+="\"formato_bevanda\": \"" + entry.getBevanda().getFormato() + "\",";
+				json+="\"immagine_bevanda\": \"" + entry.getBevanda().getPath_image() + "\",";
                 json+="\"immagine\": \"" + entry.getPath_image() + "\",";
                 json+="\"descrizione\": \"" + entry.getDescrizione() + "\",";
                 json+="\"tipo\": \"menu\",";
