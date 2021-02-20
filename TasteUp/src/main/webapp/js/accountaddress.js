@@ -241,3 +241,8 @@ function updateCartBadge(value) {
   var cartBadge = document.getElementById("cart-badge");
   cartBadge.innerHTML = value;
 }
+
+function closeNav() {
+  $(".navbar-collapse").removeClass("show");
+  $("body").removeClass("offcanvas-active");
+}

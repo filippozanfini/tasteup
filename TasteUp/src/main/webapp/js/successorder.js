@@ -1,5 +1,5 @@
 window.onload = function () {
-  console.log("ci sono")
+  console.log("ci sono");
   setId();
   document.getElementById("logout-btn").onclick = logout;
 
@@ -20,16 +20,13 @@ function setId() {
       $(".id_ordine").append("<h1> Id ordine: # " + id + "</h1>");
     },
     fail: function (error) {
-      console.log("erroreeeeeeee")
+      console.log("erroreeeeeeee");
       console.log("error");
     },
   });
 }
 
-
-
 function logout() {
-
   signOut();
   $.ajax({
     url: "logout",
@@ -42,19 +39,16 @@ function logout() {
 }
 
 function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.disconnect();
+  gapi.auth2.getAuthInstance().currentUser.get().reloadAuthResponse();
+}
 
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.disconnect();
-    gapi.auth2.getAuthInstance().currentUser.get().reloadAuthResponse();
-    
-  }
-     
-  function onLoad() {
-    gapi.load('auth2', function() {
-      gapi.auth2.init();
-    });
-  }
-     
+function onLoad() {
+  gapi.load("auth2", function () {
+    gapi.auth2.init();
+  });
+}
 
 function getOrderJSON() {
   $.ajax({
