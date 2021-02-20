@@ -25,6 +25,7 @@
 
       <!-- JS -->
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
       <script src="../../js/catalog.js"></script>
     </head>
 
@@ -151,18 +152,18 @@
                       </svg></i> Il tuo account</a>
 
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li>    
+                    <li>
                       <form method="POST" action="profile">
                         <a class="dropdown-item" aria-current="page" href="javascript:;" onclick="parentNode.submit();">
                           Area Personale
                         </a>
                       </form>
                     </li>
-                      <a id="logout-btn" href="" class="dropdown-item">Esci</a>
-                    </li>
-                  </ul>
+                    <a id="logout-btn" href="" class="dropdown-item">Esci</a>
                 </li>
-              </c:if>
+            </ul>
+            </li>
+            </c:if>
             </ul>
           </div>
         </div>
