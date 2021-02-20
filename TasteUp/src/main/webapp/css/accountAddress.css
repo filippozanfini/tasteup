@@ -1,0 +1,237 @@
+.delete-btn,focus{
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
+  width: 86px;
+  font-family: "RobotoBold";
+  font-size: 16px;
+  padding: 3px;
+  border: none;
+  outline: none  !important;
+  background: #000000a8;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  border: 0px solid;
+}
+  
+.delete-btn:hover {
+  text-decoration: none;
+  color: #ffe205;
+  outline: none;
+  cursor: pointer;
+}
+
+.divIndirizzi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.cardInfo {
+  padding-top: 1%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 10px 10px 40px #dedede;
+  height: 100%;
+  background-color: white;
+  min-width: 300px;
+  
+}
+
+#blocco{
+  display: flex;
+}
+
+h5#nominativi_indirizzi {
+  margin-left: 6px;
+  color: grey;
+}
+
+#h1_dati {
+  margin-left: 5%;
+  margin-bottom: 3%;
+}
+#aggiungiIndirizzo{
+  margin-right: auto;
+}
+
+.headerSectionAddress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f8f9fa;
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+#no_indirizzo{
+  margin: auto;
+}
+#aggiungi:focus {
+	background: gray;
+	outline: 0;
+}
+
+#aggiungi {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 20px;
+  font-family: 'RobotoBold';
+  text-align: center;
+  display: block;
+  width: 40%;
+  height: 40px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+#aggiungi span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+  
+#aggiungi span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#aggiungi:focus, input:focus{
+  outline: none;
+}
+#aggiungi:hover span {
+  padding-right: 25px;
+}
+
+#aggiungi:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#chiudi {
+  background-color: #f7d002;
+  border: none;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 20px;
+  font-family: 'RobotoBold';
+  text-align: center;
+  display: block;
+  width: 40%;
+  height: 40px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+  
+#chiudi span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#chiudi:focus, input:focus{
+  outline: none;
+}
+
+#chiudi span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#chiudi:hover span {
+  padding-right: 25px;
+  outline: none;
+}
+
+#chiudi:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#dati {
+  margin-top: 2% !important;
+  margin-left: 10%;
+}
+#form {
+  border-radius: 5px;
+  height: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+#text_form {
+  font-family: "RobotoMedium";
+  padding-left: auto;
+  margin-bottom: 1px !important;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5px;
+  font-size: 19px;
+}
+
+.swal2-modal .swal2-styled {
+  font-family: 'RobotoBold'  !important;
+  border-radius: 30px !important;
+}
+a.aggiungiIndirizzo {
+  margin-left: auto;
+  margin-right: 15%;
+  color: gray;
+  font-family: 'RobotoBold';
+  padding-bottom: 15%;
+}
+
+@media (max-width: 700px) {
+  .cardInfo {
+    margin-left: 10% !important;
+    margin-right: 10%  !important;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .cardInfo {
+    width: 60%;
+    margin-left: 5% !important;
+    margin-right: 5%  !important;
+  }
+  .divIndirizzi{
+    font-size: medium  !important;
+  }
+ 
+  .divIndirizzi{
+    margin-left: 0px;
+  }
+  #h1_dati {
+    margin-left: 5%;
+    margin-bottom: 3%;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cardInfo {
+    width: 60%;
+    margin-left: 0px !important;
+    margin-right: 0px  !important;
+  }
+}

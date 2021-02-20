@@ -43,6 +43,8 @@ function updateCartBadge(value) {
 }
 
 function logout() {
+
+  signOut();
   $.ajax({
     url: "logout",
     method: "POST",
@@ -51,8 +53,25 @@ function logout() {
       location.replace("/");
     },
   });
-}
+  
+   
 
+}
+  function signOut() {
+
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.disconnect();
+    gapi.auth2.getAuthInstance().currentUser.get().reloadAuthResponse();
+    
+   
+  }
+     
+  function onLoad() {
+    gapi.load('auth2', function() {
+      gapi.auth2.init();
+    });
+  }
+     
 window.onload = function () {
   // $("#searchBarNavbar").hide();
   getOrderJSON();

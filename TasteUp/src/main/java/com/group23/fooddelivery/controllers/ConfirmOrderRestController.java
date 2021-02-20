@@ -32,14 +32,13 @@ public class ConfirmOrderRestController {
 	        String usern = session.getAttribute("usernameLogged").toString();
 	        String address = jsonObj.get("nome_indirizzo").getAsString();
 	        Integer cap = jsonObj.get("cap").getAsInt();
-	        
+	    
 		 	Indirizzo ind = null;
 		 	ind = new Indirizzo(usern,address,cap);
 		 	DBSource s = DBManager.getDataSource();
 			IndirizzoDAO indirizzi = new IndirizzoDAOJDBC(s);
 			return  indirizzi.save(usern, ind);
 				
-			
 	    }
 	 // restituisce tutti gli indirizzi
 	 

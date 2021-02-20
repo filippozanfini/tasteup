@@ -78,7 +78,7 @@ public class Ordine {
 			    Integer value = entry.getValue();
 			    totale+=key.getPrezzo()*value;
 		 }
-				
+				System.out.println("totale " +totale);
 		return totale;
 	}
 
@@ -266,110 +266,114 @@ public class Ordine {
 		this.stato = stato;
 	}
 	
-	// public String getJSONStringOrder() {
-	// 	String json = "{";
-	// 	json += "\"id\": " + id_ordine + ",";
-	// 	json += "\"username\": \"" + username + "\",";
-	// 	json+="\"fase\": \"" + getStato()+ "\",";
-	// 	json += "\"indirizzo\": \"" + indirizzo + "\",";
-	// 	json += "\"totale\": " + calcolaTotale(menu, bevande, panini)+ ",";
-	// 	json += "\"quantitaProdotti\": " + calcolaQuantitaProdotti()+ ",";
-	// 	json += "\"menu\":[";
+	public String getJSONStringOrder() {
+		String json = "{";
+		json += "\"id\": " + id_ordine + ",";
+		json += "\"username\": \"" + username + "\",";
+		json += "\"data\": \"" + getData_ordine() + "\",";
+		json+="\"fase\": \"" + getStato()+ "\",";
+		json += "\"indirizzo\": \"" + indirizzo + "\",";
+		json += "\"totale\": " + calcolaTotale(menu, bevande, panini)+ ",";
+		json += "\"quantitaProdotti\": " + calcolaQuantitaProdotti()+ ",";
+		json += "\"menu\":[";
 
-	// 	if(menu.size() == 0) {
-	// 		json+="],";
-	// 	} else {
-	// 		int menuCounter = 0;
+		if(menu.size() == 0) {
+			json+="],";
+		} else {
+			int menuCounter = 0;
 
-	// 		for(Map.Entry<Menu,Integer> entry : menu.entrySet()) {
-	// 			json+="{\"nome_menu\": \"" + entry.getKey().getNome() + "\",";
-	// 			json+="\"formato_menu\": \"" + entry.getKey().getFormato() + "\",";
-	// 			json+="\"nome_panino\": \"" + entry.getKey().getPanino().getNome() + "\",";
-	// 			json+="\"formato_panino\": \"" + entry.getKey().getPanino().getFormato() + "\",";
-	// 			json+="\"nome_bevanda\": \"" + entry.getKey().getBevanda().getNome() + "\",";
-	// 			json+="\"formato_bevanda\": \"" + entry.getKey().getBevanda().getFormato() + "\",";
-	// 			json+="\"prezzo\": " + entry.getKey().getPrezzo() + ",";
-	// 			json+="\"quantita\": " + entry.getValue() + "}";
+			for(Map.Entry<Menu,Integer> entry : menu.entrySet()) {
+				json+="{\"nome_menu\": \"" + entry.getKey().getNome() + "\",";
+				json+="\"formato_menu\": \"" + entry.getKey().getFormato() + "\",";
+				json+="\"nome_panino\": \"" + entry.getKey().getPanino().getNome() + "\",";
+				json+="\"formato_panino\": \"" + entry.getKey().getPanino().getFormato() + "\",";
+				json+="\"nome_bevanda\": \"" + entry.getKey().getBevanda().getNome() + "\",";
+				json+="\"formato_bevanda\": \"" + entry.getKey().getBevanda().getFormato() + "\",";
+				json+="\"prezzo\": " + entry.getKey().getPrezzo() + ",";
+				json+="\"immagine\": " + entry.getKey().getPath_image() + ",";
+				json+="\"quantita\": " + entry.getValue() + "}";
 
-	// 			if(menuCounter+1 == menu.size()) {
-	// 				json+="],";
-	// 			} else {
-	// 				json+=",";
-	// 			}
+				if(menuCounter+1 == menu.size()) {
+					json+="],";
+				} else {
+					json+=",";
+				}
 
-	// 			menuCounter++;
-	// 		}
-	// 	}
+				menuCounter++;
+			}
+		}
 
-	// 	json += "\"panini\":[";
+		json += "\"panini\":[";
 
-	// 	if(panini.size() == 0) {
-	// 		json+="],";
-	// 	} else {
-	// 		int paniniCounter = 0;
+		if(panini.size() == 0) {
+			json+="],";
+		} else {
+			int paniniCounter = 0;
 
-	// 		for(Map.Entry<Panino,Integer> entry : panini.entrySet()) {
-	// 			json+="{\"nome_panino\": \"" + entry.getKey().getNome() + "\",";
-	// 			json+="\"formato_panino\": \"" + entry.getKey().getFormato() + "\",";
-	// 			json+="\"ingredienti\":[";
-	// 			int ingredientsCounter = 0;
+			for(Map.Entry<Panino,Integer> entry : panini.entrySet()) {
+				json+="{\"nome_panino\": \"" + entry.getKey().getNome() + "\",";
+				json+="\"formato_panino\": \"" + entry.getKey().getFormato() + "\",";
+				json+="\"immagine\": " + entry.getKey().getPathImage() + ",";
+				json+="\"ingredienti\":[";
+				int ingredientsCounter = 0;
 				
-	// 			if(entry.getKey().getIngredienti().size() == 0) {
-	// 				json+="],";
-	// 			} else {
-	// 				for(Ingrediente ingrediente : entry.getKey().getIngredienti()) {
-	// 					json+="\"" + ingrediente.getNome_ingrediente() + "\"";
+				if(entry.getKey().getIngredienti().size() == 0) {
+					json+="],";
+				} else {
+					for(Ingrediente ingrediente : entry.getKey().getIngredienti()) {
+						json+="\"" + ingrediente.getNome_ingrediente() + "\"";
 		
-	// 					if(ingredientsCounter+1 == entry.getKey().getIngredienti().size()) {
-	// 						json+="],";
-	// 					} else {
-	// 						json+=",";
-	// 					}
+						if(ingredientsCounter+1 == entry.getKey().getIngredienti().size()) {
+							json+="],";
+						} else {
+							json+=",";
+						}
 		
-	// 					ingredientsCounter++;
-	// 				}
-	// 			}
+						ingredientsCounter++;
+					}
+				}
 	
-	// 			json+="\"prezzo\": " + entry.getKey().getPrezzo() + ",";
-	// 			json+="\"quantita\": " + entry.getValue() + "}";
+				json+="\"prezzo\": " + entry.getKey().getPrezzo() + ",";
+				json+="\"quantita\": " + entry.getValue() + "}";
 	
-	// 			if(paniniCounter+1 == panini.size()) {
-	// 				json+="],";
-	// 			} else {
-	// 				json+=",";
-	// 			}
+				if(paniniCounter+1 == panini.size()) {
+					json+="],";
+				} else {
+					json+=",";
+				}
 	
-	// 			paniniCounter++;
-	// 		}
-	// 	}
+				paniniCounter++;
+			}
+		}
 
-	// 	json += "\"bevande\":[";
+		json += "\"bevande\":[";
 
-	// 	if(bevande.size()==0) {
-	// 		json+="]";
-	// 	} else {
-	// 		int bevandaCounter = 0;
+		if(bevande.size()==0) {
+			json+="]";
+		} else {
+			int bevandaCounter = 0;
 
-	// 		for(Map.Entry<Bevanda,Integer> entry : bevande.entrySet()) {
-	// 			json+="{\"nome_bevanda\": \"" + entry.getKey().getNome() + "\",";
-	// 			json+="\"formato_bevanda\": \"" + entry.getKey().getFormato() + "\",";
-	// 			json+="\"prezzo\": " + entry.getKey().getPrezzo() + ",";
-	// 			json+="\"quantita\": " + entry.getValue() + "}";
+			for(Map.Entry<Bevanda,Integer> entry : bevande.entrySet()) {
+				json+="{\"nome_bevanda\": \"" + entry.getKey().getNome() + "\",";
+				json+="\"immagine\": " + entry.getKey().getPath_image() + ",";
+				json+="\"formato_bevanda\": \"" + entry.getKey().getFormato() + "\",";
+				json+="\"prezzo\": " + entry.getKey().getPrezzo() + ",";
+				json+="\"quantita\": " + entry.getValue() + "}";
 	
-	// 			if(bevandaCounter+1 == bevande.size()) {
-	// 				json+="]";
-	// 			} else {
-	// 				json+=",";
-	// 			}
+				if(bevandaCounter+1 == bevande.size()) {
+					json+="]";
+				} else {
+					json+=",";
+				}
 	
-	// 			bevandaCounter++;
-	// 		}
-	// 	}
+				bevandaCounter++;
+			}
+		}
 
-	// 	json += "}";
+		json += "}";
 
-	// 	return json;
-	// }
+		return json;
+	}
 
 
 

@@ -433,17 +433,18 @@ function calculateTotal() {
 
           var address =
             name +
-            " " +
+            ", " +
+            "Nessun contatto telefonico," +
             response.payer.payer_info.shipping_address.line1 +
-            " " +
+            ", " +
             response.payer.payer_info.shipping_address.city +
-            " " +
+            " , " +
             response.payer.payer_info.shipping_address.postal_code;
 
           order.indirizzo = address;
-          console.log(order);
+
           $.ajax({
-            url: "saveOrder",
+            url: "saveOrderWithPaypal",
             method: "POST",
             data: JSON.stringify(order),
             contentType: "application/json",
@@ -462,6 +463,7 @@ function calculateTotal() {
 }
 
 function logout() {
+  signOut();
   $.ajax({
     url: "logout",
     method: "POST",
@@ -469,6 +471,17 @@ function logout() {
     success: function () {
       location.replace("/");
     },
+  });
+}
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.disconnect();
+  gapi.auth2.getAuthInstance().currentUser.get().reloadAuthResponse();
+}
+
+function onLoad() {
+  gapi.load("auth2", function () {
+    gapi.auth2.init();
   });
 }
 

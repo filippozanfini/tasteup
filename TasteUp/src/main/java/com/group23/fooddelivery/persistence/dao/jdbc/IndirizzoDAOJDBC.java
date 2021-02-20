@@ -54,7 +54,7 @@ public class IndirizzoDAOJDBC implements IndirizzoDAO{
 	public boolean save(String username,Indirizzo indirizzo) {
 		if(conn == null)
 			return false;	
-		
+	
 		if(checkIndirizzo(username,indirizzo))   // indirizzo già registrato
 			return false;
 
@@ -110,19 +110,20 @@ public class IndirizzoDAOJDBC implements IndirizzoDAO{
 	}
 
 	@Override
-	public boolean remove(String username, Indirizzo indirizzo) {
+	public boolean remove(String username, String nome_indirizzo, Integer cap) {
 		
 		if(conn == null)
 			return false;
 		
-		String query = "DELETE FROM indirizzo WHERE username=? AND indirizzo=?";
+		String query = "DELETE FROM indirizzo WHERE username=? AND indirizzo=? AND cap=?";
 	
 		try {
 			PreparedStatement stmt = null;
 			
 			stmt = conn.prepareStatement(query);
 			stmt.setString(1, username);
-			stmt.setString(2, indirizzo.getIndirizzo());
+			stmt.setString(2, nome_indirizzo);
+			stmt.setInt(3, cap);
 			
 			stmt.executeUpdate();
 			stmt.close();

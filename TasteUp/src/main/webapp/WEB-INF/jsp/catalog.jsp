@@ -126,7 +126,7 @@
               </li>
 
               <c:if test="${usernameLogged == null}">
-                <form method="POST" action="login">
+                <form method="GET" action="login">
                   <button class="btn loginBtn">Accedi</button>
                 </form>
               </c:if>
@@ -151,8 +151,13 @@
                       </svg></i> Il tuo account</a>
 
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/accountInfo">Area personale</a></li>
-                    <li>
+                    <li>    
+                      <form method="POST" action="profile">
+                        <a class="dropdown-item" aria-current="page" href="javascript:;" onclick="parentNode.submit();">
+                          Area Personale
+                        </a>
+                      </form>
+                    </li>
                       <a id="logout-btn" href="" class="dropdown-item">Esci</a>
                     </li>
                   </ul>

@@ -1,9 +1,20 @@
-function login() {
-  var username = $("#email").val();
-  var password = $("#password").val();
 
+function signup() {
+  document.location.replace("signup");
+}
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  var username = profile.getEmail();
+  var password = profile.getId();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+  
   $.ajax({
-    url: "loginAccount",
+    url: "registrazioneAccount",
     method: "POST",
     data: { username: username, password: password },
     success: function (responseData) {
@@ -16,23 +27,23 @@ function login() {
           window.location.replace("/");
         }
       } else {
-        alert("Credenziali errate");
+        Swal.fire({
+          title: 'Error',
+          text: '',
+          icon: 'error',
+          confirmButtonColor: '#000000',
+      
+       });
       }
     },
 
     fail: function (error) {
-      alert("Errore. Riprova");
+      swal("Errore. Riprova");
       console.log(error);
     },
   });
 }
-
-function signup() {
-  document.location.replace("signup");
-}
-
 window.onload = function () {
-  document.getElementById("login-btn").onclick = login;
   document.getElementById("signup-btn").onclick = signup;
 };
 

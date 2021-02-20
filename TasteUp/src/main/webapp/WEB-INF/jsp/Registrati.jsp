@@ -20,7 +20,7 @@
 
       <!--CSS-->
       <link rel="stylesheet" href="/css/style.css" type="text/css" />
-      <link rel="stylesheet" href="/css/profile.css" type="text/css" />
+      <link rel="stylesheet" href="/css/log.css" type="text/css" />
     </head>
 
     <body>
@@ -48,37 +48,16 @@
                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Categoria
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Panini</a></li>
-                  <li><a class="dropdown-item" href="#">Menu</a></li>
-                  <li><a class="dropdown-item" href="#">Bibite</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <form method="POST" action="cart">
-                  <a class="nav-link cart-link" aria-current="page" href="javascript:;"
-                    onclick="parentNode.submit();"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-                      fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                      <path
-                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                    </svg>
-                    <span id="cart-badge" class="badge rounded-pill bg-light text-dark">0</span>
-                  </a>
                 </form>
               </li>
 
               <c:if test="${usernameLogged == null}">
-                <form method="POST" action="login">
+                <form method="GET" action="login">
                   <button class="btn loginBtn">Accedi</button>
                 </form>
               </c:if>
 
               <c:if test="${usernameLogged != null}">
-                <!--<form method="get" action="logout">
-                  <button class="btn loginBtn">Logout</button>
-                </form> -->
-
-
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" href="#" id="navbarDropdown"
                     role="button" data-bs-toggle="dropdown" aria-expanded="false"> ${usernameLogged} </a>
@@ -95,6 +74,31 @@
             </ul>
           </div>
         </div>
+      </nav>
+
+      <div class="page-content">
+        <img id="image_ill" src="/assets/illustrations/illRegistration.png">
+        <div id="div_form" class="page-form">
+          <form class="container" method="POST" action="registrazioneAccount">
+            <div id="header_form">
+              <h3 id="h3_registrati">Registrazione</h3>
+              <img id="image" src="/assets/illustrations/registerIcon.png">
+              <div class="form-group">
+                <input id="form" class="form-control" type="email" id="email" name="username"
+                  placeholder="Inserisci il tuo indirizzo email" required>
+              </div>
+              <div class="form-group">
+                <input id="form" class="form-control" type="password" id="password" name="password"
+                  placeholder="Inserisci la tua password" required>
+              </div>
+              <div id="div_button">
+                <button class="modifica" value="registraAccount"><span>Registrati</span></button>
+              </div>
+          </form>
+        </div>
+      </div>
+
+      </div>
       </nav>
 
       <div class="page-content">

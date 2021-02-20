@@ -10,6 +10,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
 import com.group23.fooddelivery.model.user.Indirizzo;
 import com.group23.fooddelivery.persistence.DBManager;
 import com.group23.fooddelivery.persistence.DBSource;
@@ -18,11 +20,23 @@ import com.group23.fooddelivery.persistence.dao.jdbc.IndirizzoDAOJDBC;
 @Controller
 public class AccountController {
 
-	@GetMapping("/accountInfo")	
+	@PostMapping("profile")	
 	public String accountInfo() {
-		return "AccountInfo";
+		return "profile";
 	}
-	
+	@PostMapping("cambioPassw")	
+	public String cambioPass() {
+		return "cambioPassw";
+	}
+	@PostMapping("ordiniEffettuati")	
+	public String ordiniEffettuati() {
+		return "AccountOrder";
+	}
+	@PostMapping("indirizzi")	
+	public String getIndirizzi() {
+		return "accountAddress";
+	}
+
 	@GetMapping("/accountAddres")	
 	public String accountAddres(Model model,HttpSession session) {
 		DBSource Dbs = DBManager.getDataSource();

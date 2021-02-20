@@ -17,27 +17,38 @@ import com.group23.fooddelivery.persistence.DBManager;
 import com.group23.fooddelivery.persistence.DBSource;
 import com.group23.fooddelivery.persistence.dao.jdbc.UtenteDAOJDBC;
 
-@RestController
+@Controller
 public class LoginController {
 	
 	String username = null;
-	
+
+
 	@PostMapping("loginAccount")
-	public boolean login(HttpSession session, @RequestParam String username, @RequestParam String password) {
-		boolean accesso = false;
+	public String login(HttpSession session, @RequestParam String username_login, @RequestParam String password_login) {
+	   System.out.println(username_login + " "+ password_login);
 		DBSource Dbs = DBManager.getDataSource();
 		try {
 			UtenteDAOJDBC utente = new UtenteDAOJDBC(Dbs);
-			if(utente.login(username, password)) {
+			if(utente.login(username_login, password_login)) {
+			
+				username = username_login;
 				session.setAttribute("usernameLogged",username);
-				accesso = true;
-				this.username = username;
-			}
+				if(username.equalsIgnoreCase("admin@admin"))
+					return "indexadmin";
+				else if(username.equalsIgnoreCase("gestore@gestore"))
+					return "gestoreConsegne";
+				else
+					return "index";
+			}else
+				return "loginError";
+
 		} catch (SQLException e) {
 			e.printStackTrace();
+			return "loginError";
 		}
 		
-
-		return accesso;
 	}
+
+		
+	
 }
