@@ -22,6 +22,8 @@
       <!--CSS-->
       <link rel="stylesheet" href="css/style.css" type="text/css" />
       <link rel="stylesheet" href="css/catalog.css" type="text/css" />
+      <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
 
       <!-- JS -->
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

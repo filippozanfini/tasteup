@@ -194,13 +194,14 @@ function getAllAddress() {
                   <h5 id="nominativi_indirizzi">' +
               numero +
               "</h5></td>\
-                </div></div>" +
-              "<button onclick=\"rimuovi_indirizzo('" +
+                </div></div>\
+              <button onclick=\"rimuovi_indirizzo('" +
               value.indirizzo +
-              "' , '" +
+              "', '" +
               value.cap +
-              '\')" class="delete-btn">Rimuovi</button>' +
-              "</div>"
+              "')\"" +
+              'class="delete-btn">Rimuovi</button>\
+              </div>'
           );
         });
       }
