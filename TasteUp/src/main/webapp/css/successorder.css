@@ -21,6 +21,8 @@
   margin-left: 40%;
 }
 .text_success {
+  margin-left: 10px;
+  margin-right: 10px;
   margin-top: 30px;
   text-align: center;
   font-family: 'RobotoMedium';

@@ -193,7 +193,7 @@
         </div>
         <div class=cardInfo>
           <td><input id="radiobtn" type="radio" class="check" checked></td>
-          <h5 id="nominativi_indirizzi">Contrassegno</h5>
+          <h5 id="contr">Contrassegno</h5>
         </div>
 
       </div>

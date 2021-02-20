@@ -11,7 +11,6 @@ import com.group23.fooddelivery.model.product.Bevanda;
 import com.group23.fooddelivery.model.product.Ingrediente;
 import com.group23.fooddelivery.model.product.Menu;
 import com.group23.fooddelivery.model.product.Panino;
-import com.group23.fooddelivery.model.sales.Ordine;
 import com.group23.fooddelivery.persistence.DBManager;
 import com.group23.fooddelivery.persistence.dao.BevandaDAO;
 import com.group23.fooddelivery.persistence.dao.MenuDAO;
@@ -19,8 +18,6 @@ import com.group23.fooddelivery.persistence.dao.PaninoDAO;
 import com.group23.fooddelivery.persistence.dao.jdbc.BevandaDAOJDBC;
 import com.group23.fooddelivery.persistence.dao.jdbc.MenuDAOJDBC;
 import com.group23.fooddelivery.persistence.dao.jdbc.PaninoDAOJDBC;
-
-import org.joda.time.DateTime;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 

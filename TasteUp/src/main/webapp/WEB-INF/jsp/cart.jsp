@@ -122,7 +122,7 @@
               </li>
 
               <c:if test="${usernameLogged == null}">
-                <form method="POST" action="login">
+                <form method="GET" action="login">
                   <button class="btn loginBtn">Accedi</button>
                 </form>
               </c:if>

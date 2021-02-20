@@ -177,25 +177,47 @@ function getAllAddress() {
     success: function (responseData) {
       addresses = JSON.parse(responseData);
 
-      $.each(addresses.indirizzi, function (key, value) {
-        var ind = JSON.stringify(value.indirizzo + " " + value.cap);
-        $("#divindirizzi").append(
-          '<div class="cardInfo">\
-			<td><input id="radiobtn" type="radio" name="Contact0_AmericanExpress" class="check" checked="checked" indirizzo=' +
-            ind +
-            '> </td> \
-			<h5 id="nominativi_indirizzi">' +
+       $.each(addresses.indirizzi, function (key, value) {
+          var pos1 = getPosition(value.indirizzo,',',0,1);
+            var nominativo = value.indirizzo.substring(0,pos1);
+            var pos2 =  getPosition(value.indirizzo,',',pos1,2);
+            var numero = value.indirizzo.substring(pos1+1,pos2);
+            var pos3 = getPosition(value.indirizzo,',',pos2,3);
+            var indir = value.indirizzo.substring(pos2+1,pos3);
+            var pos4 = getPosition(value.indirizzo,',',pos3,4);
+            var citta =  value.indirizzo.substring(pos3+1,pos4-1);
+            var pos5 = getPosition(value.indirizzo,',',pos4,5);
+            var cap =  value.cap;
+
+          $("#divindirizzi").append('<div id="dati">\
+           <div id="rad"><input id="radiobtn" type="radio" name="Contact0_AmericanExpress" class="check" checked="checked" indirizzo=' +
             value.indirizzo +
-            " " +
-            value.cap +
-            "</h5></div>"
-        );
-      });
+            '></input></div> \
+                <div id ="blocco">\
+                  <h5 id="nominativi">Nominativo: </h5>\
+                  <h5 id="nominativi_indirizzi">'+ nominativo +"</h5></td>\
+                </div>"+
+                '<div id ="blocco">\
+                  <h5 id="nominativi">Indirizzo di consegna: </h5>\
+                  <h5 id="nominativi_indirizzi">'+ indir +"</h5></td>\
+                </div>"+
+                '<div id ="blocco">\
+                  <h5 id="nominativi">Citt&agrave: </h5>\
+                  <h5 id="nominativi_indirizzi">'+ citta+ ", "+cap+"</h5></td>\
+                </div>"+
+                '<div id ="blocco">\
+                  <h5 id="nominativi">Contatto telefonico: </h5>\
+                  <h5 id="nominativi_indirizzi">'+ numero +"</h5></td>\
+                </div>");
+        });
     },
     fail: function (error) {
       console.log(error);
     },
   });
+}
+function getPosition(string, subString,prec,succ) {
+  return string.split(subString, succ).join(subString).length;
 }
 
 function logout() {

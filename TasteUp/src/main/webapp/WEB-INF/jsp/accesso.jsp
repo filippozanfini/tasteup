@@ -137,13 +137,14 @@
                 </nav>
 
                 <div class="page-content">
-                    
+                  
                     <img id="image_ill" src="/assets/illustrations/loginIll.png">
+
                     <div id="div_form" class="page-form">
                         <h3 id="h3_registrati">Accedi</h3>
                       
                         <img id="image" src="/assets/illustrations/loginIcon.png">
-
+                         <form id="myform" method='POST' action="loginAccount"> 
                         <div class="form-group">
                             <input id="form" class="form-control" type="email"
                                 placeholder="Inserisci il tuo indirizzo email" name="username_login">
@@ -152,8 +153,12 @@
                             <input id="form" class="form-control" type="password" 
                                 placeholder="Inserisci la tua password" name="password_login">
                         </div>
-
-                        <button id="login-btn" class="modifica" value="confermaLogin"><span>Accedi</span></button>
+                            
+                                <button id="login-btn" class="modifica" value="confermaLogin"><span>Accedi</span></button>
+                             
+                            </form>
+                            
+                           
                         <p id="p_oppure">Oppure</p>
                         <div class="g-signin2" data-onsuccess="onSignIn">
                             <meta name="google-signin-client_id" content="250528507778-ful4fvi4t3tmqm7qep1rml9tviregb0v.apps.googleusercontent.com">
@@ -169,6 +174,8 @@
                 </div>
 
                 <footer>
+                    <h5 id="nome_pagina" user ="${usernameLogged}"name="accesso.jsp"></h5>
+
                     <div class="container-fluid footer-container">
                         <div class="footer-row">
                             <div class="col-sm-3">

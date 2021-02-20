@@ -64,7 +64,7 @@ public class OrdineDAOJDBC implements OrdineDAO{
 			stmt.executeUpdate();
 			
 			stmt.close();
-			// trovo l'id dell'ordine appena aggiunto
+			
 			String query2 = "SELECT id_ordine FROM ordine where username=? order by id_ordine desc limit 1;";
 			PreparedStatement stmt2 = conn.prepareStatement(query2);
 			
@@ -404,6 +404,7 @@ public class OrdineDAOJDBC implements OrdineDAO{
 		}
 		
 	
+			
 	return false;
 	
 		
@@ -508,17 +509,17 @@ public class OrdineDAOJDBC implements OrdineDAO{
 				Integer id_ordine= rs.getInt("id_ordine");
 				String username = rs.getString("username");
 				Date data_ordine = rs.getDate("data_ordine");
-				Ordine o = new Ordine(username,data_ordine,
-						cercaMenu(id_ordine,username),cercaBevande(id_ordine,username),cercaPanini(id_ordine,username));
-						o.setId_ordine(id_ordine);
-				o.setIndirizzo(rs.getString("indirizzo_consegna"));
+						
+					
+					Ordine ordine = new Ordine(username,
+							data_ordine,cercaMenu(id_ordine,username),
+							cercaBevande(id_ordine,username), cercaPanini(id_ordine,username));
+						ordine.setId_ordine(id_ordine);
+						ordine.setIndirizzo(rs.getString("indirizzo_consegna"));
+						ordine.setStato(rs.getBoolean("stato"));
+					ordini.add(ordine);
 				
-				
-				
-				ordini.add(o);
 			}
-				
-			rs.close();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -29,12 +29,11 @@ public class GestoreConsegneController {
 				
 		ordini = ordinidao.getOrdiniDaConsegnare(); 
 		String json =  "{\"ordini\": [";
-		
 		int count = 0;
 		for(Ordine o : ordini) {
 			
-			System.out.println(o.getJSONString());
-				 json+=o.getJSONString();
+			System.out.println(o.getJSONStringOrder());
+				 json+=o.getJSONStringOrder();
 				 if(count+1 != ordini.size())
 					 json+=",";
 				 count++;
@@ -48,7 +47,7 @@ public class GestoreConsegneController {
 			System.out.println(json);
 		}
 		  System.out.println(json);
-		 return json;
+		 return json;	
 		
 	 }	
 	 

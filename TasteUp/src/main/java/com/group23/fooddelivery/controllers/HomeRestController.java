@@ -26,8 +26,10 @@ import com.group23.fooddelivery.persistence.dao.jdbc.BevandaDAOJDBC;
 import com.group23.fooddelivery.persistence.dao.jdbc.MenuDAOJDBC;
 import com.group23.fooddelivery.persistence.dao.jdbc.OrdineDAOJDBC;
 import com.group23.fooddelivery.persistence.dao.jdbc.PaninoDAOJDBC;
+import com.group23.fooddelivery.persistence.dao.jdbc.UtenteDAOJDBC;
 
 import org.joda.time.DateTime;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,7 +42,8 @@ public class HomeRestController {
     
 	 DateTime time = new DateTime();
 	 Date date = Date.valueOf(time.toString("yyyy-MM-dd"));
- 
+
+
  
     @PostMapping("getCurrentOrder")
     public String getCurrentJSON(HttpSession session) {
@@ -333,10 +336,11 @@ public class HomeRestController {
 	            	 JsonObject obj = element.getAsJsonObject();
 	            	 System.out.println("obj "+ obj);
 	            	 String ind = obj.get("indirizzo").getAsString();
-	            	 
-		            	ordine.setStato(false);
-		            	ordine.setIndirizzo(ind);
-		            	
+	            	 String totale = obj.get("price").getAsString();
+                     
+                    ordine.setStato(false);
+                    ordine.setIndirizzo(ind);
+                  
 					OrdineDAO ordinedao = new OrdineDAOJDBC(DBManager.getDataSource());
 					ordinedao.save(ordine);
 					ordine = null;

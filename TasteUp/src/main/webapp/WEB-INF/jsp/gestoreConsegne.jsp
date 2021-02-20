@@ -22,53 +22,33 @@
         crossorigin="anonymous"></script>
 
       <!--CSS-->
-      <link rel="stylesheet" href="css/gestoreconsegne.css" type="text/css" />
+      <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+      <link rel="stylesheet" href="../../css/accountorder.css" type="text/css" />
       <!-- JS -->
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       <script src="../../js/gestoreconsegne.js"></script>
-
-
     </head>
-
     <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top NavBar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="">
-            <img src="assets/LogoNoBackground.png" width="80" height="80" class="d-inline-block align-top" />
-            <p class="NavBar-Title">Food Delivery</p>
-          </a>
-
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav ml-auto">
-
-              <li class="nav-item">
-
-              </li>
-              <c:choose>
-                <c:when test="${usernameLogged==null}">
-                  <form method="POST" action="login">
-                    <button class="btn loginBtn">Accedi</button>
-                  </form>
-                </c:when>
-                <c:otherwise>
-                  <button id="logout-btn" class="btn loginBtn">Logout</button>
-                </c:otherwise>
-              </c:choose>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top NavBar">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="assets/LogoNoBackground.png" width="80" height="80" class="d-inline-block align-top" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <ul class="navbar-nav ml-auto">
+                <button id="logout-btn" class="btn loginBtn">Esci</button>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
-
+        </nav>
       <!-- HEADER -->
       <div class="headerSection">
         <div id="divOrdini">
-
         </div>
-        <div id="divButton">
-          <button id="confirm_button" type="button" class="btn btn-success">Registra consegna</button>
-
-        </div>
-
       </div>
 
     </body>

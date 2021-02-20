@@ -60,7 +60,7 @@ public class Ordine {
 
 	private float calcolaTotale(Map<Menu,Integer> menu, Map<Bevanda,Integer> bevande, Map<Panino,Integer> panini) {
 
-		float totale = 2.5f;
+		float totale = 0;
 		
 		 
 		 for ( Map.Entry<Menu, Integer> entry : menu.entrySet()) {
@@ -78,7 +78,7 @@ public class Ordine {
 			    Integer value = entry.getValue();
 			    totale+=key.getPrezzo()*value;
 		 }
-				
+				System.out.println("totale " +totale);
 		return totale;
 	}
 
@@ -268,6 +268,7 @@ public class Ordine {
 		String json = "{";
 		json += "\"id\": " + id_ordine + ",";
 		json += "\"username\": \"" + username + "\",";
+		json += "\"data\": \"" + getData_ordine() + "\",";
 		json+="\"fase\": \"" + getStato()+ "\",";
 		json += "\"indirizzo\": \"" + indirizzo + "\",";
 		json += "\"totale\": " + calcolaTotale(menu, bevande, panini)+ ",";
@@ -287,6 +288,7 @@ public class Ordine {
 				json+="\"nome_bevanda\": \"" + entry.getKey().getBevanda().getNome() + "\",";
 				json+="\"formato_bevanda\": \"" + entry.getKey().getBevanda().getFormato() + "\",";
 				json+="\"prezzo\": " + entry.getKey().getPrezzo() + ",";
+				json+="\"immagine\": " + entry.getKey().getPath_image() + ",";
 				json+="\"quantita\": " + entry.getValue() + "}";
 
 				if(menuCounter+1 == menu.size()) {
@@ -309,6 +311,7 @@ public class Ordine {
 			for(Map.Entry<Panino,Integer> entry : panini.entrySet()) {
 				json+="{\"nome_panino\": \"" + entry.getKey().getNome() + "\",";
 				json+="\"formato_panino\": \"" + entry.getKey().getFormato() + "\",";
+				json+="\"immagine\": " + entry.getKey().getPathImage() + ",";
 				json+="\"ingredienti\":[";
 				int ingredientsCounter = 0;
 				
@@ -350,6 +353,7 @@ public class Ordine {
 
 			for(Map.Entry<Bevanda,Integer> entry : bevande.entrySet()) {
 				json+="{\"nome_bevanda\": \"" + entry.getKey().getNome() + "\",";
+				json+="\"immagine\": " + entry.getKey().getPath_image() + ",";
 				json+="\"formato_bevanda\": \"" + entry.getKey().getFormato() + "\",";
 				json+="\"prezzo\": " + entry.getKey().getPrezzo() + ",";
 				json+="\"quantita\": " + entry.getValue() + "}";

@@ -1,5 +1,5 @@
 var order = [];
-
+var addresses=[];
 window.onload = function () {
   document.getElementById("logout-btn").onclick = logout;
   document.getElementById("aggiungi").onclick = validateForm;
@@ -82,12 +82,23 @@ function aggiungi_indirizzo() {
   
 }
 function rimuovi_indirizzo(indirizzo,cap) {
+  Swal.fire({
+    title: 'Attenzione!',
+    text: "Vuoi rimuovere questo indirizzo?",
+    icon: 'error',
+    showCancelButton: true,
+    confirmButtonColor: '#000000',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Ben fatto!',
+        'Indirizzo rimosso con successo.',
+        'success'
+      )
+  
 
   var username = document.getElementById("aggiungi").getAttribute("name");
   
-  console.log(username);
-  console.log(indirizzo);
-  console.log(cap);
 
   $.ajax({
     url: "rimuoviIndirizzo",
@@ -109,7 +120,10 @@ function rimuovi_indirizzo(indirizzo,cap) {
     },
   });
 
-  
+  }
+  else{}
+    
+}); 
 }
 
 // controlli sul form
@@ -146,33 +160,55 @@ function validateForm() {
 }
 
 function getAllAddress() {
-  var addresses = [];
-
+ 
   $.ajax({
     url: "getIndirizziJSON",
     method: "POST",
     data: {},
     success: function (responseData) {
 
-      addresses = JSON.parse(responseData);
-     
-      if(addresses == null)
+    addresses = JSON.parse(responseData);
+    if(addresses == null)
        document.getElementById("divindirizzi").innerHTML = "<h5 id='no_indirizzo'> Nessun indirizzo presente. </h5>";
-      else{
+    else{
+            
+
         $.each(addresses.indirizzi, function (key, value) {
-          $("#divindirizzi").append(
-            '<div class="cardInfo">\
-        <td>\           <h5 id="nominativi_indirizzi">' +
-              value.indirizzo +
-              " " +
-              value.cap +'</h5> </td>'+
-              '<button onclick="rimuovi_indirizzo(\'' +
-              value.indirizzo +
-              "' , '" +
-              value.cap +
-              '\')" class="delete-btn">Rimuovi</button>'+
-              "</div>" 
-          );
+          var pos1 = getPosition(value.indirizzo,',',0,1);
+            var nominativo = value.indirizzo.substring(0,pos1);
+            var pos2 =  getPosition(value.indirizzo,',',pos1,2);
+            var numero = value.indirizzo.substring(pos1+1,pos2);
+            var pos3 = getPosition(value.indirizzo,',',pos2,3);
+            var indir = value.indirizzo.substring(pos2+1,pos3);
+            var pos4 = getPosition(value.indirizzo,',',pos3,4);
+            var citta =  value.indirizzo.substring(pos3+1,pos4-1);
+            var pos5 = getPosition(value.indirizzo,',',pos4,5);
+            var cap =  value.indirizzo.substring(pos4+1,pos5);
+
+          $("#divindirizzi").append('<div class="cardInfo">\
+            <div id="dati">\
+                <div id ="blocco">\
+                  <h5 id="nominativi">Nominativo: </h5>\
+                  <h5 id="nominativi_indirizzi">'+ nominativo +"</h5></td>\
+                </div>"+
+                '<div id ="blocco">\
+                  <h5 id="nominativi">Indirizzo di consegna: </h5>\
+                  <h5 id="nominativi_indirizzi">'+ indir +"</h5></td>\
+                </div>"+
+                '<div id ="blocco">\
+                  <h5 id="nominativi">Citt&agrave: </h5>\
+                  <h5 id="nominativi_indirizzi">'+ citta+ ","+cap+"</h5></td>\
+                </div>"+
+                '<div id ="blocco">\
+                  <h5 id="nominativi">Contatto telefonico: </h5>\
+                  <h5 id="nominativi_indirizzi">'+ numero +"</h5></td>\
+                </div></div>"+
+                '<button onclick="rimuovi_indirizzo(\'' +
+                value.indirizzo +
+                "' , '" +
+                value.cap +
+                '\')" class="delete-btn">Rimuovi</button>'+
+                "</div>" );
         });
 
         
@@ -183,6 +219,9 @@ function getAllAddress() {
       console.log(error);
     },
   });
+}
+function getPosition(string, subString,prec,succ) {
+  return string.split(subString, succ).join(subString).length;
 }
 
 function logout() {
@@ -197,7 +236,6 @@ function logout() {
     }); 
 }
 function signOut() {
-
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.disconnect();
     gapi.auth2.getAuthInstance().currentUser.get().reloadAuthResponse();
@@ -210,7 +248,6 @@ function onLoad() {
     });
 }
        
-
 function updateCartBadge(value) {
   var cartBadge = document.getElementById("cart-badge");
   cartBadge.innerHTML = value;

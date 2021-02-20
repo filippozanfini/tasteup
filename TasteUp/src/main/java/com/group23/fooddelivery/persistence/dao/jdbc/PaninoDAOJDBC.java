@@ -70,7 +70,7 @@ public class PaninoDAOJDBC implements PaninoDAO{
 			ResultSet rs = st.executeQuery();
 			
 			if (rs.next()){
-				panino = new Panino(nome_panino, formato, rs.getInt("prezzo"), ingredienti, 
+				panino = new Panino(nome_panino, formato, rs.getFloat("prezzo"), ingredienti, 
 						rs.getString("path_image"));
 			}
 				

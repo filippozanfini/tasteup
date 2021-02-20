@@ -1,40 +1,3 @@
-function login() {
-  var username =  document.getElementsByName("username_login")[0].value;
-  var password =  document.getElementsByName("password_login")[0].value;
-
-  $.ajax({
-    url: "loginAccount",
-    method: "POST",
-    data: { username: username, password: password },
-    success: function (responseData) {
-      if (responseData) {
-        if (username == "gestore@gestore") {
-          window.location.replace("gestoreConsegne");
-        } else if (username == "admin@admin") {
-          window.location.replace("indexadmin");
-        } else {
-          window.location.replace("/");
-        }
-      } else {
-      
-        Swal.fire({
-          title: 'Errore!',
-          text: 'Credenziali Errate.',
-          className: "prova",
-          icon: 'error',
-          confirmButtonColor: '#000000',
-      
-       });
-      
-      }
-    },
-
-    fail: function (error) {
-     
-      console.log(error);
-    },
-  });
-}
 
 function signup() {
   document.location.replace("signup");
@@ -64,7 +27,13 @@ function onSignIn(googleUser) {
           window.location.replace("/");
         }
       } else {
-        sweetAlert("Oops...", "Credenziali Errate!", "error");
+        Swal.fire({
+          title: 'Error',
+          text: '',
+          icon: 'error',
+          confirmButtonColor: '#000000',
+      
+       });
       }
     },
 
@@ -75,6 +44,5 @@ function onSignIn(googleUser) {
   });
 }
 window.onload = function () {
-  document.getElementById("login-btn").onclick = login;
   document.getElementById("signup-btn").onclick = signup;
 };

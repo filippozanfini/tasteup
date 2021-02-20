@@ -1,16 +1,21 @@
 package com.group23.fooddelivery.controllers;
 
+import java.sql.SQLException;
+
 import javax.servlet.http.HttpSession;
+
+import com.group23.fooddelivery.persistence.DBManager;
+import com.group23.fooddelivery.persistence.DBSource;
+import com.group23.fooddelivery.persistence.dao.jdbc.UtenteDAOJDBC;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
 
 @Controller
 public class HomeController {
-    
+
 	@GetMapping("/")	
 	public String home() {
 		return "index";
@@ -19,15 +24,16 @@ public class HomeController {
 	public String loghome() {
 		return "index";
 	}
-	
-	@PostMapping("/indexadmin")	
+
+	@PostMapping("indexadmin")	
 	public String admin() {
 		return "indexadmin";
 	}
 
-	@GetMapping("gestoreConsegne")	
+	
+	@PostMapping("gestoreConsegne")	
 	public String indexConsegne() {
-		return "gestoreConsegne";
+		return "index";
 	}
 	
 	@GetMapping("login")

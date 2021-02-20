@@ -46,7 +46,30 @@ public class OrderController {
 			  System.out.println(json);
 			 return json;	
 	}
+	@PostMapping("getOrdine")
+	public String sendSpecificOrder(HttpSession session,Integer id) throws SQLException {
 		
+		Gson gson = new Gson();
+		String user = (String) session.getAttribute("usernameLogged");
+		OrdineDAO ordinidao = new OrdineDAOJDBC(DBManager.getDataSource());
+		Ordine ordine = null;
+		ordine = ordinidao.findByPrimaryKey(id,user);
+		if(ordine!=null) {
+			String json =  "{\"ordine\": [";
+			json+=ordine.getJSONStringOrder();
+
+			json+="]}";
+			System.out.println(json);
+		
+			JsonObject jsonOb = new JsonParser().parse(json).getAsJsonObject();
+			json = gson.toJson(jsonOb);
+			System.out.println(json);
+			return json;	
+			
+		}
+		  return "";
+		 
+}
 	@PostMapping("annullaOrdine")	
 	public void annulla(Integer productId,HttpSession session) {
 		System.out.println("sono qui");

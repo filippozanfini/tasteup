@@ -19,7 +19,6 @@
   font-style: normal;
 }
 
-
 input[type='radio'] {
   -webkit-appearance:none;
   width:20px;
@@ -46,7 +45,34 @@ input[type='radio']:before {
   margin: 3px;
   border-radius: 20px;
 }
+div#rad {
+  margin-bottom: -30px;
+}
+h5#nominativi {
+  margin-top: 5px;
+  margin-left: 12%;
+}
 
+h5#nominativi_indirizzi {
+  margin-left: 6px;
+  color: grey;
+}
+
+#blocco{
+  display: flex;
+}
+
+#contr {
+  margin-top: 24px;
+}
+
+div#dati {
+  background: white;
+  margin-right: 10%;
+  padding-bottom: 4%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 40px #dedede;
+}
 #container{
   display: flex;
   flex-direction: row;
@@ -157,7 +183,7 @@ h5#nominativi_indirizzi {
   margin-top: auto;
   margin-bottom: auto;
   font-size: 125%;
-  margin-left: 20px;
+  margin-left: 13px;
   text-align: left;
 
 }
@@ -166,13 +192,13 @@ h5#nominativi_indirizzi {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: 6%;
 }
 .cardInfo {
   display: flex;
   flex-direction: row;
-  margin-left: 55px;
-  margin-right: 40px;
-  margin-bottom: 15px;
+  margin-right: 9%;
+  margin-left: 11%;
   text-align: center;
   border-radius: 10px;
   box-shadow: 10px 10px 40px #dedede;
@@ -200,8 +226,7 @@ h5#nominativi_indirizzi {
   margin-bottom: 3%;
 
 }
-#confirm_button {
-}
+
 /*responsive*/
 @media (max-width: 600px) {
   .cardsSection {
@@ -364,6 +389,7 @@ a.aggiungiIndirizzo {
   color: gray;
   font-family: 'RobotoBold';
   padding-bottom: 3%;
+  margin-top: 1%;
 }
 hr.dashed {
   border-top: 1px solid #bbb;
@@ -399,6 +425,34 @@ hr.dashed {
   }
 
 }
+
+
+@media (max-width: 500px) {
+.divIndirizzi{
+  margin-left: 1%;
+}
+.cardInfo{
+  margin-left: 1%;
+}
+  h5#nominativi {
+    font-size: 100%;
+    text-align: left;
+    margin-right: 0px !important;
+    width: 81%;
+    
+  }
+  h5#nominativi_indirizzi {
+    margin-left: 6px;
+    color: grey;
+    font-size: 100%;
+    text-align: center;
+    width: 100%;
+  }
+  .headerSection h1 {
+    margin-left: 10%;
+    font-size: revert;
+}
+}
 @media (max-width: 1000px) {
 
   #container{
@@ -430,6 +484,7 @@ h5#totale {
     margin-top: 0px;
     width: 82%;
     max-width: 90%;
+    
 }
 
 
