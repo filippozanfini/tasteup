@@ -223,7 +223,6 @@ function getOrdine(id) {
     method: "POST",
     data: { id: id },
     success: function (responseData) {
-      console.log("ordine " + responseData);
       ordine = JSON.parse(responseData);
 
       var m = "#addressbody" + id;
@@ -327,7 +326,6 @@ function rimuovi_consegna(id) {
         method: "POST",
         data: { productId: id },
         success: function (response) {
-          console.log(response);
           getAllOrder();
         },
         fail: function (error) {

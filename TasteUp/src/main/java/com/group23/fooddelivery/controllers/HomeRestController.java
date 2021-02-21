@@ -26,10 +26,8 @@ import com.group23.fooddelivery.persistence.dao.jdbc.BevandaDAOJDBC;
 import com.group23.fooddelivery.persistence.dao.jdbc.MenuDAOJDBC;
 import com.group23.fooddelivery.persistence.dao.jdbc.OrdineDAOJDBC;
 import com.group23.fooddelivery.persistence.dao.jdbc.PaninoDAOJDBC;
-import com.group23.fooddelivery.persistence.dao.jdbc.UtenteDAOJDBC;
 
 import org.joda.time.DateTime;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,7 +41,7 @@ public class HomeRestController {
 	 DateTime time = new DateTime();
 	 Date date = Date.valueOf(time.toString("yyyy-MM-dd"));
 
-
+     // ORDINE
  
     @PostMapping("getCurrentOrder")
     public String getCurrentJSON(HttpSession session) {
@@ -51,8 +49,6 @@ public class HomeRestController {
             if(ordine == null) {
                 ordine = new Ordine(session.getAttribute("usernameLogged").toString(), date, new HashMap<Menu, Integer>(), new HashMap<Bevanda, Integer>(), new HashMap<Panino, Integer>());
             }
-            System.out.println("JSON:");
-            System.out.println(ordine.getJSONString());
             Gson gson = new Gson();
             JsonObject jsonObject = new JsonParser().parse(ordine.getJSONString()).getAsJsonObject();
             String json = gson.toJson(jsonObject);
@@ -88,14 +84,10 @@ public class HomeRestController {
                 for(JsonElement el : menuJson) {
                     JsonObject obj = el.getAsJsonObject();
                     MenuDAO menuDAO = new MenuDAOJDBC(source);
-                    System.out.println(obj.get("nome_menu").getAsString());
                     Menu menu = menuDAO.findByPrimaryKey(obj.get("nome_menu").getAsString(), obj.get("formato_menu").getAsString());
                     if(menu != null) {
                         Integer quantita = obj.get("quantita").getAsInt();
                         menuList.put(menu, quantita);
-                        System.out.println(menu.getNome());
-                    } else {
-                        System.out.println("NULL");
                     }
                 }
             } catch(SQLException e) {
@@ -327,6 +319,8 @@ public class HomeRestController {
         }
     }
 
+    // CASSA
+
     @PostMapping("saveOrder")
 	    public void saveOrder(@RequestBody String indirizzo, HttpSession session ) {
 		 	      
@@ -334,7 +328,6 @@ public class HomeRestController {
 	            	 Gson gson = new Gson();
 	                 JsonElement element = gson.fromJson(indirizzo, JsonElement.class);
 	            	 JsonObject obj = element.getAsJsonObject();
-	            	 System.out.println("obj "+ obj);
 	            	 String ind = obj.get("indirizzo").getAsString();
 	            	 Float totale = obj.get("totale").getAsFloat();
                      
@@ -362,7 +355,6 @@ public class HomeRestController {
 	            	 Gson gson = new Gson();
 	                 JsonElement element = gson.fromJson(indirizzo, JsonElement.class);
 	            	 JsonObject obj = element.getAsJsonObject();
-	            	 System.out.println("obj "+ obj);
 	            	 String ind = obj.get("indirizzo").getAsString();
                      Float totale = obj.get("totale").getAsFloat();
                      
@@ -379,8 +371,5 @@ public class HomeRestController {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-	            
-
-	
 	    }
 }

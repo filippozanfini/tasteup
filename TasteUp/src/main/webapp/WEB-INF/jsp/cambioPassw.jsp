@@ -8,6 +8,7 @@
             <meta charset="ISO-8859-1">
             <meta name="google-signin-client_id"
                 content="250528507778-ful4fvi4t3tmqm7qep1rml9tviregb0v.apps.googleusercontent.com">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>Cambia la password - TasteUp</title>
 
             <!--Bootstrap-->
@@ -74,25 +75,25 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <form method="GET" action="catalog">
+                                        <form method="GET" action="prodotti">
                                             <a class="dropdown-item" href="javascript:;"
                                                 onclick="parentNode.submit();">Tutti i prodotti</a>
                                         </form>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="catalog?product=menu">Menu</a>
+                                        <a class="dropdown-item" href="prodotti?product=menu">Menu</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="catalog?product=panini">Panini</a>
+                                        <a class="dropdown-item" href="prodotti?product=panini">Panini</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="catalog?product=bevande">Bevande</a>
+                                        <a class="dropdown-item" href="prodotti?product=bevande">Bevande</a>
                                     </li>
                                 </ul>
                         </ul>
-                        <ul id="searchBarNavbar" class="navbar-nav mx-auto searchBarNavbar show">
+                        <ul id="searchBarNavbar" class="navbar-nav mx-auto searchBarNavbar hide">
                             <div class="input-group-nav">
-                                <form autocomplete="off" action="catalog">
+                                <form autocomplete="off" action="prodotti">
                                     <input name="product" autocomplete="off" type="text" class="idbar-nav"
                                         placeholder="Cosa desideri mangiare?" />
                                     <button id="buttonsearch-nav" class="btn btn-secondary" type="submit"><svg
@@ -119,7 +120,7 @@
                             <li class="nav-item">
 
 
-                                <form method="POST" action="cart">
+                                <form method="POST" action="carrello">
                                     <a class="nav-link cart-link" aria-current="page" href="javascript:;"
                                         onclick="parentNode.submit();">
                                         <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -170,7 +171,7 @@
 
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li>
-                                            <form method="POST" action="profile">
+                                            <form method="POST" action="areapersonale">
                                                 <a class="dropdown-item" aria-current="page" href="javascript:;"
                                                     onclick="parentNode.submit();">
                                                     Area Personale
@@ -212,9 +213,6 @@
                 </div>
             </div>
 
-            </div>
-
-
             <!-- FOOTER -->
             <footer>
                 <hr class="footer-separator" />
@@ -231,7 +229,7 @@
 
                             <ul class="list-unstyled mb-0">
                                 <li>
-                                    <a class="footer-link-item" href="/contact-us">Contattaci</a>
+                                    <a class="footer-link-item" href="/contattaci">Contattaci</a>
                                 </li>
                             </ul>
                         </div>

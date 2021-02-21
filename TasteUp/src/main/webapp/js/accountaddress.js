@@ -7,6 +7,7 @@ window.onload = function () {
   getAllAddress();
   getOrderJSON();
 };
+
 function getOrderJSON() {
   $.ajax({
     url: "getCurrentOrder",
@@ -45,8 +46,6 @@ function aggiungi_indirizzo() {
 
   var cap = document.getElementsByName("cap")[0].value;
   var username = document.getElementById("aggiungi").getAttribute("name");
-
-  console.log(nome_indirizzo);
 
   var indirizzo = new Indirizzo(username, nome_indirizzo, cap);
 

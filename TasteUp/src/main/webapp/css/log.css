@@ -1,244 +1,223 @@
 @font-face {
-	font-family: "RobotoBold";
-	src: url("/font/Roboto-Bold.ttf");
-	font-weight: bold;
-	font-style: normal;
+  font-family: "RobotoBold";
+  src: url("/font/Roboto-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
 }
-#h3_registrati{
-	margin-bottom: 10px;
-	margin-top: 5px;
-
+#h3_registrati {
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
 .swal2-modal .swal2-styled {
-  
-    font-family: 'RobotoBold'  !important;
-    border-radius: 30px !important;
+  font-family: "RobotoBold" !important;
+  border-radius: 30px !important;
 }
 
 .page-content {
-    padding-top: 50px;
-  
+  padding-top: 50px;
 }
-.g-signin2{
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: -8px;
-
+.g-signin2 {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -8px;
 }
 .btn-link {
-    font-family: 'RobotoMedium';
-    color: gray;
-    font-size: 15px;
-    padding-top: 30px;
+  font-family: "RobotoMedium";
+  color: gray;
+  font-size: 15px;
+  padding-top: 30px;
 }
-.page-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
-	display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-	padding-right: 8%;
-    background-color:white;
+.page-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-right: 8%;
+  background-color: white;
 }
-#div_button{
-	margin-top: 30px;
+#div_button {
+  margin-top: 30px;
 }
-#image{
-	width: 100px;
-    height: 100px;
-    margin-bottom: 30px;
-	margin-left: auto;
-    margin-right: auto;
+#image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
-#image_ill{
-    margin: auto;
-	max-width: 580px;
+#image_ill {
+  margin: auto;
+  max-width: 580px;
 }
-#image_ill2{
-    margin: auto;
-    max-width: 50%;
+#image_ill2 {
+  margin: auto;
+  max-width: 50%;
 }
 
-
-#form{
-	border-radius: 25px;
-	width: 80%;
-	margin: auto;
+#form {
+  border-radius: 25px;
+  width: 80%;
+  margin: auto;
 }
-#h3_registrati{
-    text-align: center;
-	margin-top: auto;
+#h3_registrati {
+  text-align: center;
+  margin-top: auto;
 }
-#p_oppure{
-	text-align: center;
-	margin-top: 5px;
+#p_oppure {
+  text-align: center;
+  margin-top: 5px;
 }
-#div_form{
-	margin-top: 100px;
-    margin-bottom: 100px;
-    height: 500px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-    text-align: center;
-
+#div_form {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  height: 500px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  text-align: center;
 }
 .modifica:focus {
-	background: gray;
-	outline: 0;
+  background: gray;
+  outline: 0;
+}
+
+.modifica {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 20px;
+  font-family: "RobotoBold";
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 40%;
+  height: 40px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.modifica span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.modifica span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.modifica:hover span {
+  padding-right: 25px;
+}
+
+.modifica:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.rimuovi {
+  border: none;
+  background-color: #e8505b !important;
+  color: #f3ecc2 !important;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.content-page {
+  display: flex;
+  width: 100%;
+  height: 650px;
+}
+
+.menu {
+  list-style-type: none;
+  float: left;
+}
+
+.container-menu {
+  margin-top: 300px;
+  margin-right: 30px;
+}
+
+.principale {
+  margin-top: 15%;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resoconto-indirizzi {
+  list-style-type: none;
+}
+
+.page-form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 650px;
+  margin: auto;
+}
+
+.conteiner-form {
+  margin: 100px;
+  height: 500px;
+}
+
+a {
+  color: black;
+}
+
+@media (max-width: 500px) {
+  .content-page {
+    flex-direction: column;
+  }
+  .menu li {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  .menu {
+    align-items: center;
   }
 
   .modifica {
-    background-color: black;
-    border: none;
-    color: white;
-    padding: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 20px;
-    font-family: 'RobotoBold';
+    font-size: 13px;
+    width: 100px;
+  }
+  #h3_registrati {
+    font-size: 20px;
     text-align: center;
-    display: block;
-    margin: 0 auto;
-    width: 40%;
-    height: 40px;
-	transition: all 0.5s;
-    cursor: pointer;
-}
-
-  
-  .modifica span {
-	cursor: pointer;
-	display: inline-block;
-	position: relative;
-	transition: 0.5s;
   }
-  
-  .modifica span:after {
-	content: '\00bb';
-	position: absolute;
-	opacity: 0;
-	top: 0;
-	right: -20px;
-	transition: 0.5s;
+  #div_form {
+    max-width: 300px;
   }
-  
-  .modifica:hover span {
-	padding-right: 25px;
+}
+@media (max-width: 900px) {
+  #image_ill {
+    display: none;
   }
-  
-  .modifica:hover span:after {
-	opacity: 1;
-	right: 0;
+}
+@media (max-width: 700px) {
+  #image_ill2 {
+    display: none;
   }
-
-
-.rimuovi{
-	border: none;
- 	background-color: #e8505b !important;
- 	color: #f3ecc2 !important;
-  	padding: 15px 32px;
-  	text-align: center;
-  	font-size: 10px;
- 	margin: 4px 2px;
-  	cursor: pointer;
-}
-
-.content-page{
-  	
-	display: flex;
-  	width: 100%;
-  	height: 650px;
-}
-
-.menu{
-	list-style-type:none;
-	float : left;
-}
-
-.container-menu{
-	margin-top : 300px;
-	margin-right : 30px;
-	
-}
-
-.principale{
-	margin-top : 15%;
-	margin-left : 10%;
-	display : flex;
-	flex-direction : column;
-	justify-content : center;	
-}
-
-.resoconto-indirizzi{
-	list-style-type: none;
-}
-
-.page-form{
-	max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 650px;
-    margin: auto;
-}
-
-.conteiner-form{
-	margin : 100px;
-	height : 500px;
-	
-}
-
-a{
-	color:black;
-}
-
-
-
-@media(max-width : 500px){
-
-	.content-page{
-		flex-direction : column;
-	}
-	.menu li{
-		display : inline ;
-		margin-right : 20px;	
-	}
-
-	.menu{
-		align-items : center;
-	}
-
-	.modifica{
-		font-size: 13px;
-		width: 100px;
-
-	}
-	#h3_registrati{
-		font-size: 20px;
-		text-align: center;
-	}
-	#div_form{
-		max-width: 300px;
-	}
-}
-@media(max-width : 900px){
-
-	#image_ill{
-		display: none;
-	}
-
-	
-}
-@media(max-width : 700px){
-
-	#image_ill2{
-		display: none;
-	}
-
-	
 }

@@ -1,5 +1,4 @@
 window.onload = function () {
-  console.log("ci sono");
   setId();
   document.getElementById("logout-btn").onclick = logout;
 
@@ -7,21 +6,16 @@ window.onload = function () {
 };
 function setId() {
   var id = undefined;
-  console.log("ciao");
   $.ajax({
     url: "getId",
     method: "POST",
     data: {},
     success: function (responseData) {
-      console.log(responseData);
-      console.log("ciao ci sono");
       id = responseData;
-      console.log(id);
       $(".id_ordine").append("<h1> Id ordine: # " + id + "</h1>");
     },
     fail: function (error) {
-      console.log("erroreeeeeeee");
-      console.log("error");
+      console.log(error);
     },
   });
 }
@@ -58,12 +52,11 @@ function getOrderJSON() {
     success: function (responseData) {
       if (responseData != "notlogged") {
         order = JSON.parse(responseData);
-        console.log(order);
         updateCartBadge(order.quantitaProdotti.toString());
       }
     },
-    fail: function () {
-      console.log("ERROR JSON");
+    fail: function (error) {
+      console.log(error);
     },
   });
 }

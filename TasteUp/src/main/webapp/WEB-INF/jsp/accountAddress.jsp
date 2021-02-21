@@ -75,25 +75,25 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <form method="GET" action="catalog">
+                                        <form method="GET" action="prodotti">
                                             <a class="dropdown-item" href="javascript:;"
                                                 onclick="parentNode.submit();">Tutti i prodotti</a>
                                         </form>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="catalog?product=menu">Menu</a>
+                                        <a class="dropdown-item" href="prodotti?product=menu">Menu</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="catalog?product=panini">Panini</a>
+                                        <a class="dropdown-item" href="prodotti?product=panini">Panini</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="catalog?product=bevande">Bevande</a>
+                                        <a class="dropdown-item" href="prodotti?product=bevande">Bevande</a>
                                     </li>
                                 </ul>
                         </ul>
-                        <ul id="searchBarNavbar" class="navbar-nav mx-auto searchBarNavbar show">
+                        <ul id="searchBarNavbar" class="navbar-nav mx-auto searchBarNavbar hide">
                             <div class="input-group-nav">
-                                <form autocomplete="off" action="catalog">
+                                <form autocomplete="off" action="prodotti">
                                     <input name="product" autocomplete="off" type="text" class="idbar-nav"
                                         placeholder="Cosa desideri mangiare?" />
                                     <button id="buttonsearch-nav" class="btn btn-secondary" type="submit"><svg
@@ -120,7 +120,7 @@
                             <li class="nav-item">
 
 
-                                <form method="POST" action="cart">
+                                <form method="POST" action="carrello">
                                     <a class="nav-link cart-link" aria-current="page" href="javascript:;"
                                         onclick="parentNode.submit();">
                                         <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -171,7 +171,7 @@
 
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li>
-                                            <form method="POST" action="profile">
+                                            <form method="POST" action="areapersonale">
                                                 <a class="dropdown-item" aria-current="page" href="javascript:;"
                                                     onclick="parentNode.submit();">
                                                     Area Personale
@@ -255,66 +255,66 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
 
 
-                <!-- FOOTER -->
-                <footer>
-                    <hr class="footer-separator" />
-                    <div class="container-fluid footer-container">
-                        <div class="footer-row">
-                            <div class="col-sm-3">
-                                <a href="/" style="text-decoration: none !important">
-                                    <img src="assets/Logo.png" height="50" width="50" />
-                                    <p class="footer-title">TasteUp</p>
-                                </a>
-                            </div>
-                            <div class="col-sm-3">
-                                <h5 class="footer-link-title">Aiuto</h5>
+            <!-- FOOTER -->
+            <footer>
+                <hr class="footer-separator" />
+                <div class="container-fluid footer-container">
+                    <div class="footer-row">
+                        <div class="col-sm-3">
+                            <a href="/" style="text-decoration: none !important">
+                                <img src="assets/Logo.png" height="50" width="50" />
+                                <p class="footer-title">TasteUp</p>
+                            </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5 class="footer-link-title">Aiuto</h5>
 
-                                <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a class="footer-link-item" href="/contact-us">Contattaci</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-3">
-                                <h5 class="footer-link-title">Note Legali</h5>
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a class="footer-link-item" href="/contattaci">Contattaci</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5 class="footer-link-title">Note Legali</h5>
 
-                                <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a class="footer-link-item" href="#!">Termini e Condizioni</a>
-                                    </li>
-                                    <li>
-                                        <a class="footer-link-item" href="#!">Politica sulla Privacy</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-3">
-                                <h5 class="footer-link-title">Seguici</h5>
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a class="footer-link-item" href="#!">Termini e Condizioni</a>
+                                </li>
+                                <li>
+                                    <a class="footer-link-item" href="#!">Politica sulla Privacy</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5 class="footer-link-title">Seguici</h5>
 
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a class="footer-link-item" href="#!">Facebook</a>
-                                    </li>
-                                    <li>
-                                        <a class="footer-link-item" href="#!">Instagram</a>
-                                    </li>
-                                    <li>
-                                        <a class="footer-link-item" href="#">Twitter</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a class="footer-link-item" href="#!">Facebook</a>
+                                </li>
+                                <li>
+                                    <a class="footer-link-item" href="#!">Instagram</a>
+                                </li>
+                                <li>
+                                    <a class="footer-link-item" href="#">Twitter</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="container-fluid copyright-section">
-                        <p class="copyright-paragraph">
-                            © 2021 Copyright -
-                            <a class="copyright-link" href="/">tasteup.it</a>
-                        </p>
-                    </div>
-                </footer>
-
+                </div>
+                <div class="container-fluid copyright-section">
+                    <p class="copyright-paragraph">
+                        © 2021 Copyright -
+                        <a class="copyright-link" href="/">tasteup.it</a>
+                    </p>
+                </div>
+            </footer>
 
         </body>
 

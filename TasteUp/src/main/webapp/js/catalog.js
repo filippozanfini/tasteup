@@ -135,8 +135,6 @@ function getAllProductsFromDB(type) {
         });
       }
 
-      console.log(products);
-
       var productsContainer = document.getElementById("productsContainer");
       var root = "";
 
@@ -362,8 +360,6 @@ function getProductFromDB(name) {
     success: function (responseData) {
       products = [];
       tmpProducts = JSON.parse(responseData);
-
-      console.log(tmpProducts);
 
       tmpProducts.menu.map((menu) => {
         products.push(menu);
@@ -622,7 +618,6 @@ function getOrderJSON() {
       if (responseData != "notlogged") {
         logged = true;
         order = JSON.parse(responseData);
-        console.log(order);
         updateCartBadge(order.quantitaProdotti.toString());
       } else {
         logged = false;
@@ -761,7 +756,6 @@ function addToCart(nome_prodotto, formato_prodotto, tipo_prodotto, modal) {
       method: "POST",
       data: { json: JSON.stringify(order) },
       success: function () {
-        console.log("SUCCESS");
         getOrderJSON();
       },
       fail: function () {

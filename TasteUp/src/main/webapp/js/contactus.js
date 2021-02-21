@@ -37,7 +37,6 @@ function getOrderJSON() {
     success: function (responseData) {
       if (responseData != "notlogged") {
         order = JSON.parse(responseData);
-        console.log(order);
         updateCartBadge(order.quantitaProdotti.toString());
       }
     },

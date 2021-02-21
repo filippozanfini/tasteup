@@ -198,12 +198,6 @@ function validateForm_aggiunti() {
     var prezzo = $("#prezzo_panino").val();
     var immagine = $("#nome_immagine_panino").val();
 
-    console.log(nome);
-    console.log(formato);
-    console.log(prezzo);
-    console.log(immagine);
-    console.log(almeno_un_ingrediente);
-
     if (
       nome == "" ||
       nome == null ||

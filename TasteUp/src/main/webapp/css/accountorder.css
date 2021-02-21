@@ -1,4 +1,3 @@
-
 p#noOrders {
   text-align: center;
 }
@@ -7,40 +6,40 @@ p#noOrders {
   margin-right: 2%;
 }
 .swal2-modal .swal2-styled {
-  font-family: 'RobotoBold'  !important;
+  font-family: "RobotoBold" !important;
   border-radius: 30px !important;
 }
 /* usato soltanto in gestoreConsegne*/
 .headerSection {
   background: white;
-}/**/
+} /**/
 
 #aggiungi:focus {
-	background: gray;
-	outline: 0;
-  }
+  background: gray;
+  outline: 0;
+}
 img#img_popup {
   width: 100px;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 #aggiungi {
-    background-color: black;
-    border: none;
-    color: white;
-    padding: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 20px;
-    font-family: 'RobotoBold';
-    text-align: center;
-    display: block;
-    width: 127px;
-    height: 40px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-right: 20px;
-    margin-bottom: 20%;
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 20px;
+  font-family: "RobotoBold";
+  text-align: center;
+  display: block;
+  width: 127px;
+  height: 40px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 20%;
 }
 
 #aggiungi span {
@@ -49,16 +48,17 @@ img#img_popup {
   position: relative;
   transition: 0.5s;
 }
-  
+
 #aggiungi span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
   right: -20px;
   transition: 0.5s;
 }
-#aggiungi:focus, input:focus{
+#aggiungi:focus,
+input:focus {
   outline: none;
 }
 #aggiungi:hover span {
@@ -68,48 +68,49 @@ img#img_popup {
 #aggiungi:hover span:after {
   opacity: 1;
   right: 0;
-}#aggiungi:focus {
-	background: gray;
-	outline: 0;
-  }
+}
+#aggiungi:focus {
+  background: gray;
+  outline: 0;
+}
 
 #chiudi {
-    background-color: #d47777;   
-    border: none;
-    color: white;
-    padding: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 20px;
-    font-family: 'RobotoBold';
-    text-align: center;
-    display: block;
-    width: 127px;
-    height: 40px;
-    transition: all 0.5s;
-    cursor: pointer;
-    
+  background-color: #d47777;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 20px;
+  font-family: "RobotoBold";
+  text-align: center;
+  display: block;
+  width: 127px;
+  height: 40px;
+  transition: all 0.5s;
+  cursor: pointer;
 }
 .card-body:hover {
-    background-color: white;
+  background-color: white;
 }
-  
+
 #chiudi span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
-  
+
 #chiudi span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
   right: -20px;
   transition: 0.5s;
 }
-#chiudi:focus, input:focus{
+#chiudi:focus,
+input:focus {
   outline: none;
 }
 #chiudi:hover span {
@@ -134,50 +135,46 @@ img#img_popup {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
   margin-bottom: 2% !important;
   width: 82%;
   margin: auto;
 }
-.card-header{
+.card-header {
   display: flex;
 }
 .card-header:first-child {
-    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
-    background-color: #0000003b;
-    color: black;
-    font-family: 'RobotoMedium';
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  background-color: #0000003b;
+  color: black;
+  font-family: "RobotoMedium";
 }
 
-#divOrdini{
-    margin-top: 100px;
+#divOrdini {
+  margin-top: 100px;
 }
 
-h2#description{
-    margin-left: 13px;
-    margin-bottom: 47px;
-  
+h2#description {
+  margin-left: 13px;
+  margin-bottom: 47px;
 }
 
-#buttons{
- 
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-
+#buttons {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
 }
 .card-body {
-    display: flex;
-    flex-direction: row ;
-    
+  display: flex;
+  flex-direction: row;
 }
 
-p#data{
+p#data {
   margin-left: auto;
 }
 
-div.circleGreen{
+div.circleGreen {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -187,11 +184,10 @@ div.circleGreen{
   margin-bottom: 23px;
   margin-left: 1%;
   background: green;
-  opacity: 0.60;
-
+  opacity: 0.6;
 }
 
-div.circleRed{
+div.circleRed {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -201,8 +197,7 @@ div.circleRed{
   margin-bottom: 23px;
   margin-left: 1%;
   background: rgb(255, 8, 8);
-  opacity: 0.60;
-
+  opacity: 0.6;
 }
 
 div#div_img {
@@ -213,7 +208,7 @@ div#div_img {
 }
 
 div#div_prodotto {
-  margin:auto;
+  margin: auto;
 }
 
 h5#nominativi_indirizzi {
@@ -223,7 +218,7 @@ h5#nominativi_indirizzi {
 
 h5#nom {
   color: grey;
-  font-family: 'RobotoMedium';
+  font-family: "RobotoMedium";
   font-size: 16px;
   margin: auto;
   margin-bottom: 5px;
@@ -240,20 +235,19 @@ h5#nominativi {
 }
 
 .modal {
-  display: none; 
-  position: fixed; 
+  display: none;
+  position: fixed;
   z-index: 1;
   padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
-  }
-  
-  
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .modal-content {
   background-color: #fefefe;
   margin: auto;
@@ -262,7 +256,7 @@ h5#nominativi {
   width: 100%;
   border-radius: 18px;
 }
-  
+
 .close {
   color: #aaaaaa;
   float: right;
@@ -270,7 +264,7 @@ h5#nominativi {
   font-weight: bold;
 }
 
-.cl{
+.cl {
   color: red;
 }
 .modal-body {
@@ -286,7 +280,7 @@ h5#nominativi {
   text-decoration: none;
   font-size: 17px;
   border-radius: 20px;
-  font-family: 'RobotoBold';
+  font-family: "RobotoBold";
   display: block;
   width: 127px;
   height: 40px;
@@ -296,16 +290,17 @@ h5#nominativi {
   margin-bottom: 0;
 }
 
-#div_popup{
+#div_popup {
   display: flex;
   box-shadow: 0 0px 0px 0 rgb(0 0 0 / 0%), 0 0px 5px 0 #98878057;
   margin-bottom: 3%;
   padding: inherit;
 }
 .modal-backdrop {
-    position: unset  !important;
+  position: unset !important;
 }
-.close:hover,.close:focus {
+.close:hover,
+.close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -315,7 +310,7 @@ h5#nominativi {
     display: flex;
     flex-direction: column;
   }
-  .card{
+  .card {
     height: 300px;
   }
   #buttons {
@@ -332,7 +327,7 @@ h5#nominativi {
 }
 
 @media (max-width: 400px) {
-  #div_popup{
+  #div_popup {
     height: 120px;
     width: 111%;
     padding: 0;
@@ -340,11 +335,11 @@ h5#nominativi {
 
   img#img_popup {
     width: 67px;
-    margin-left: 0!important;
+    margin-left: 0 !important;
   }
 
-  .card-header{
-    font-size: small  !important;
+  .card-header {
+    font-size: small !important;
   }
 
   h5#nominativi {
@@ -369,7 +364,7 @@ h5#nominativi {
     flex-direction: column;
   }
 
-  .card{
+  .card {
     height: 20%;
   }
 
@@ -386,7 +381,7 @@ h5#nominativi {
     margin: auto;
   }
 
-  #aggiungi{
+  #aggiungi {
     margin-bottom: 2%;
   }
 
@@ -399,5 +394,4 @@ h5#nominativi {
     padding: 2px;
     padding-right: 31px;
   }
-
 }

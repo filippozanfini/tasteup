@@ -1,5 +1,5 @@
 /* header */
-#img_scc{
+#img_scc {
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -25,7 +25,7 @@
   margin-right: 10px;
   margin-top: 30px;
   text-align: center;
-  font-family: 'RobotoMedium';
+  font-family: "RobotoMedium";
 }
 .button_support {
   padding: 0;
@@ -40,13 +40,12 @@
   border-radius: 10px;
 }
 #fine_button {
-    height: 50px;
-    width: 100px;
-    margin-top: 39px;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-family: 'RobotoBold';
-
+  height: 50px;
+  width: 100px;
+  margin-top: 39px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: "RobotoBold";
 }
 .image_support {
   width: 53px;
@@ -71,7 +70,7 @@
   color: #e8505bc4;
   text-align: center;
   margin-top: 20px;
-  font-family: 'RobotoMedium';
+  font-family: "RobotoMedium";
 }
 
 @font-face {

@@ -1,4 +1,3 @@
-
 function signup() {
   document.location.replace("signup");
 }
@@ -7,12 +6,7 @@ function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   var username = profile.getEmail();
   var password = profile.getId();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
 
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-
-  
   $.ajax({
     url: "registrazioneAccount",
     method: "POST",
@@ -28,12 +22,11 @@ function onSignIn(googleUser) {
         }
       } else {
         Swal.fire({
-          title: 'Error',
-          text: '',
-          icon: 'error',
-          confirmButtonColor: '#000000',
-      
-       });
+          title: "Error",
+          text: "",
+          icon: "error",
+          confirmButtonColor: "#000000",
+        });
       }
     },
 

@@ -73,7 +73,6 @@ function getOrderJSON() {
     success: function (responseData) {
       if (responseData != "notlogged") {
         order = JSON.parse(responseData);
-        console.log(order);
 
         var productsBox = document.getElementById("productsBox");
         var root = "";
@@ -85,7 +84,7 @@ function getOrderJSON() {
           document.getElementById("cart-row").className = "cart-row-empty";
           document.getElementById("cart-row").innerHTML =
             '<img class="cart-empty-img" src="../../assets/illustrations/cart.png">\
-          <p>Il carrello è vuoto. Visualizza il <a class="catalog-link" href="/catalog">catalogo</a> per aggiungere prodotti.</p>';
+          <p>Il carrello è vuoto. Visualizza il <a class="catalog-link" href="/prodotti">catalogo</a> per aggiungere prodotti.</p>';
         } else {
           document.getElementById("cart-row").className = "cart-row";
           order.menu.map((menu) => {
@@ -316,7 +315,7 @@ function getOrderJSON() {
         document.getElementById("cart-row").className = "cart-row-empty";
         document.getElementById("cart-row").innerHTML =
           '<img class="cart-empty-img" src="../../assets/illustrations/cart.png">\
-        <p>Il carrello è vuoto. Visualizza il <a class="catalog-link" href="/catalog">catalogo</a> per aggiungere prodotti.</p>';
+        <p>Il carrello è vuoto. Visualizza il <a class="catalog-link" href="/prodotti">catalogo</a> per aggiungere prodotti.</p>';
       }
     },
     error: function () {
@@ -324,7 +323,7 @@ function getOrderJSON() {
       document.getElementById(
         "cart-row"
       ) = '<img class="cart-empty-img" src="../../assets/illustrations/cart.png">\
-      <p>Il carrello è vuoto. Visualizza il <a class="catalog-link" href="/catalog">catalogo</a> per aggiungere prodotti.</p>';
+      <p>Il carrello è vuoto. Visualizza il <a class="catalog-link" href="/prodotti">catalogo</a> per aggiungere prodotti.</p>';
     },
   });
 }
@@ -381,7 +380,7 @@ function calculateTotal() {
   <h3 class="lasttotal">Totale: €' +
     totalPrice.toFixed(2) +
     '</h3>\
-  <form method="POST" action="confirm_order">\
+  <form method="POST" action="cassa">\
   <button class="btn continue-order-btn">Vai alla cassa</button>\
 </form>\
 <p style="color: gray">oppure paga con</p>\
@@ -449,7 +448,7 @@ function calculateTotal() {
             data: JSON.stringify(order),
             contentType: "application/json",
             success: function () {
-              location.replace("success");
+              location.replace("ordineConfermato");
             },
             error: function () {
               alert("Ordine annullato!");

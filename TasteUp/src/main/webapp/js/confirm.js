@@ -74,7 +74,7 @@ function calculateTotal() {
 		  <h6 id="totale">Totale: &euro;' +
     totalPrice.toFixed(2) +
     '</h6>\
-    <form class="confirm" method="POST" action="success">\
+    <form class="confirm" method="POST" action="ordineConfermato">\
 				  <div class="confirm">\
                     <button class="confirm_button" id="aggiungi" name="prova"><span>Conferma Ordine</span></button>\
 				  </div>\
@@ -102,8 +102,6 @@ function aggiungi_indirizzo() {
 
   var cap = document.getElementsByName("cap")[0].value;
   var username = document.getElementById("aggiungi").getAttribute("name");
-
-  console.log(nome_indirizzo);
 
   var indirizzo = new Indirizzo(username, nome_indirizzo, cap);
 

@@ -1,4 +1,5 @@
-.delete-btn,focus{
+.delete-btn,
+focus {
   text-decoration: none;
   color: white;
   margin-top: 10px;
@@ -7,7 +8,7 @@
   font-size: 16px;
   padding: 3px;
   border: none;
-  outline: none  !important;
+  outline: none !important;
   background: #000000a8;
   border-radius: 10px;
   margin-left: auto;
@@ -15,7 +16,7 @@
   margin-bottom: 1%;
   border: 0px solid;
 }
-  
+
 .delete-btn:hover {
   text-decoration: none;
   color: #ffe205;
@@ -27,7 +28,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
 }
 .cardInfo {
   padding-top: 1%;
@@ -42,10 +42,9 @@
   height: 100%;
   background-color: white;
   min-width: 300px;
-  
 }
 
-#blocco{
+#blocco {
   display: flex;
 }
 
@@ -58,7 +57,7 @@ h5#nominativi_indirizzi {
   margin-left: 5%;
   margin-bottom: 3%;
 }
-#aggiungiIndirizzo{
+#aggiungiIndirizzo {
   margin-right: auto;
 }
 
@@ -72,12 +71,12 @@ h5#nominativi_indirizzi {
   padding-bottom: 150px;
 }
 
-#no_indirizzo{
+#no_indirizzo {
   margin: auto;
 }
 #aggiungi:focus {
-	background: gray;
-	outline: 0;
+  background: gray;
+  outline: 0;
 }
 
 #aggiungi {
@@ -88,7 +87,7 @@ h5#nominativi_indirizzi {
   text-decoration: none;
   font-size: 16px;
   border-radius: 20px;
-  font-family: 'RobotoBold';
+  font-family: "RobotoBold";
   text-align: center;
   display: block;
   width: 40%;
@@ -103,16 +102,17 @@ h5#nominativi_indirizzi {
   position: relative;
   transition: 0.5s;
 }
-  
+
 #aggiungi span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
   right: -20px;
   transition: 0.5s;
 }
-#aggiungi:focus, input:focus{
+#aggiungi:focus,
+input:focus {
   outline: none;
 }
 #aggiungi:hover span {
@@ -131,7 +131,7 @@ h5#nominativi_indirizzi {
   text-decoration: none;
   font-size: 16px;
   border-radius: 20px;
-  font-family: 'RobotoBold';
+  font-family: "RobotoBold";
   text-align: center;
   display: block;
   width: 40%;
@@ -139,19 +139,20 @@ h5#nominativi_indirizzi {
   transition: all 0.5s;
   cursor: pointer;
 }
-  
+
 #chiudi span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
-#chiudi:focus, input:focus{
+#chiudi:focus,
+input:focus {
   outline: none;
 }
 
 #chiudi span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -189,36 +190,35 @@ h5#nominativi_indirizzi {
 }
 
 .swal2-modal .swal2-styled {
-  font-family: 'RobotoBold'  !important;
+  font-family: "RobotoBold" !important;
   border-radius: 30px !important;
 }
 a.aggiungiIndirizzo {
   margin-left: auto;
   margin-right: 15%;
   color: gray;
-  font-family: 'RobotoBold';
+  font-family: "RobotoBold";
   padding-bottom: 15%;
 }
 
 @media (max-width: 700px) {
   .cardInfo {
     margin-left: 10% !important;
-    margin-right: 10%  !important;
+    margin-right: 10% !important;
   }
-
 }
 
 @media (max-width: 500px) {
   .cardInfo {
     width: 60%;
     margin-left: 5% !important;
-    margin-right: 5%  !important;
+    margin-right: 5% !important;
   }
-  .divIndirizzi{
-    font-size: medium  !important;
+  .divIndirizzi {
+    font-size: medium !important;
   }
- 
-  .divIndirizzi{
+
+  .divIndirizzi {
     margin-left: 0px;
   }
   #h1_dati {
@@ -232,6 +232,6 @@ a.aggiungiIndirizzo {
   .cardInfo {
     width: 60%;
     margin-left: 0px !important;
-    margin-right: 0px  !important;
+    margin-right: 0px !important;
   }
 }

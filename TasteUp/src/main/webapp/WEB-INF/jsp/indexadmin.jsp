@@ -83,7 +83,7 @@
           </div>
         </div>
       </div>
-      <!-- /.modal -->
+
       <!-- Large modal REMOVE-->
       <div class="modal fade bd-REMOVE-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">
@@ -111,7 +111,6 @@
           </div>
         </div>
       </div>
-      <!-- /.modal -->
 
     </body>
 

@@ -23,7 +23,6 @@ function cambiaPassword() {
         data: { password: p },
         success: function (response) {
           if (response == true) {
-            console.log("QUI");
             Swal.fire({
               title: "Ben fatto!",
               text: "La tua password è stata modificata con successo",
@@ -66,7 +65,6 @@ function getOrderJSON() {
     success: function (responseData) {
       if (responseData != "notlogged") {
         order = JSON.parse(responseData);
-        console.log(order);
         updateCartBadge(order.quantitaProdotti.toString());
       }
     },

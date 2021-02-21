@@ -78,25 +78,25 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <form method="GET" action="catalog">
+                                        <form method="GET" action="prodotti">
                                             <a class="dropdown-item" href="javascript:;"
                                                 onclick="parentNode.submit();">Tutti i prodotti</a>
                                         </form>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="catalog?product=menu">Menu</a>
+                                        <a class="dropdown-item" href="prodotti?product=menu">Menu</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="catalog?product=panini">Panini</a>
+                                        <a class="dropdown-item" href="prodotti?product=panini">Panini</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="catalog?product=bevande">Bevande</a>
+                                        <a class="dropdown-item" href="prodotti?product=bevande">Bevande</a>
                                     </li>
                                 </ul>
                         </ul>
-                        <ul id="searchBarNavbar" class="navbar-nav mx-auto searchBarNavbar show">
+                        <ul id="searchBarNavbar" class="navbar-nav mx-auto searchBarNavbar hide">
                             <div class="input-group-nav">
-                                <form autocomplete="off" action="catalog">
+                                <form autocomplete="off" action="prodotti">
                                     <input name="product" autocomplete="off" type="text" class="idbar-nav"
                                         placeholder="Cosa desideri mangiare?" />
                                     <button id="buttonsearch-nav" class="btn btn-secondary" type="submit"><svg
@@ -123,7 +123,7 @@
                             <li class="nav-item">
 
 
-                                <form method="POST" action="cart">
+                                <form method="POST" action="carrello">
                                     <a class="nav-link cart-link" aria-current="page" href="javascript:;"
                                         onclick="parentNode.submit();">
                                         <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -174,7 +174,7 @@
 
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li>
-                                            <form method="POST" action="profile">
+                                            <form method="POST" action="areapersonale">
                                                 <a class="dropdown-item" aria-current="page" href="javascript:;"
                                                     onclick="parentNode.submit();">
                                                     Area Personale
@@ -195,13 +195,13 @@
             <div class="page-content">
                 <div class="grid-container">
 
-                    <form method="POST" action="cambioPassw">
+                    <form method="POST" action="password">
                         <button class="grid-item">
                             <img id="first_icon" src="assets/illustrations/passw_icon.png">
                             <p id="description_btn">Password</p>
                         </button>
                     </form>
-                    <form method="POST" action="ordiniEffettuati">
+                    <form method="POST" action="ordini">
                         <button class="grid-item" type="submit">
                             <img id="first_icon" src="assets/illustrations/orderIcon.png">
                             <p id="description_btn">Ordini</p>
@@ -233,7 +233,7 @@
 
                             <ul class="list-unstyled mb-0">
                                 <li>
-                                    <a class="footer-link-item" href="/contact-us">Contattaci</a>
+                                    <a class="footer-link-item" href="/contattaci">Contattaci</a>
                                 </li>
                             </ul>
                         </div>

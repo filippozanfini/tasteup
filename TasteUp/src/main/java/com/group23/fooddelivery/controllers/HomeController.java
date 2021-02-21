@@ -1,13 +1,5 @@
 package com.group23.fooddelivery.controllers;
 
-import java.sql.SQLException;
-
-import javax.servlet.http.HttpSession;
-
-import com.group23.fooddelivery.persistence.DBManager;
-import com.group23.fooddelivery.persistence.DBSource;
-import com.group23.fooddelivery.persistence.dao.jdbc.UtenteDAOJDBC;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,9 +12,10 @@ public class HomeController {
 	public String home() {
 		return "index";
 	}
-	@PostMapping("loginhome")	
-	public String loghome() {
-		return "index";
+
+	@GetMapping("prodotti")
+	public String getCatalogo() {
+		return "catalog";
 	}
 
 	@PostMapping("indexadmin")	
@@ -30,7 +23,6 @@ public class HomeController {
 		return "indexadmin";
 	}
 
-	
 	@PostMapping("gestoreConsegne")	
 	public String indexConsegne() {
 		return "index";
@@ -46,32 +38,37 @@ public class HomeController {
 		return "Registrati";
 	}
 
-	@PostMapping("cart")
+	@GetMapping("carrello")
+	public String getCart() {
+		return "cart";
+	}
+	
+	@PostMapping("carrello")
 	public String goToCart() {
 		return "cart";
 	}
 
-	@PostMapping("catalogo")
+	@PostMapping("prodotti")
 	public String goToCatalog() {
 		return "catalog";
 	}
 
-	@PostMapping("contact-us")
+	@PostMapping("contattaci")
 	public String goToContactUs() {
 		return "contact-us";
 	}
 
-	@GetMapping("contact-us")
+	@GetMapping("contattaci")
 	public String getContactUs() {
 		return "contact-us";
 	}
 
-	@PostMapping("confirm_order")
+	@PostMapping("cassa")
     public String confirmOrder() {
     	return "confirmOrder";
 	}
 
-	@GetMapping("success")
+	@GetMapping("ordineConfermato")
 	public String getSuccess() {
 		return "successOrder";
 	}

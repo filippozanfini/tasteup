@@ -40,7 +40,6 @@ function carica() {
     data: {},
     success: function (responseData) {
       ordini = JSON.parse(responseData);
-      console.log(ordini);
       var ind = document.getElementById("divOrdini");
       if (ordini.ordini.length == 0) {
         ind.innerHTML +=

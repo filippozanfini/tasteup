@@ -30,8 +30,6 @@ public class GestoreProdottiController {
 public boolean addProductToDB(@RequestParam String json) {
     boolean aggiunto = false;
 
-    System.out.println(json);
-
     DBSource source = DBManager.getDataSource();
     Gson gson = new Gson();
     JsonElement element = gson.fromJson(json, JsonElement.class);
@@ -98,11 +96,9 @@ public boolean addProductToDB(@RequestParam String json) {
             PaninoDAO paninoDAO = new PaninoDAOJDBC(source);
             panino = paninoDAO.findByPrimaryKey(nome_panino, formato_panino);
 
-            System.out.println(panino.getNome());
             BevandaDAO bevandaDAO = new BevandaDAOJDBC(source);
             bevanda = bevandaDAO.findByPrimaryKey(nome_bevanda, formato_bevanda);
 
-            System.out.println(bevanda.getNome());
             Menu menu = new Menu(nome, formato, panino, bevanda, prezzo, immagine);
             menu.setDescrizione(descrizione);
             MenuDAO menuDAO = new MenuDAOJDBC(source);
@@ -123,7 +119,6 @@ public boolean addProductToDB(@RequestParam String json) {
 @PostMapping("removeProductFromDB")
 public boolean removeProductFromDb(@RequestParam String json) {
     boolean rimosso = false;
-    System.out.println(json);
 
     DBSource source = DBManager.getDataSource();
     Gson gson = new Gson();

@@ -1,44 +1,23 @@
-@font-face {
-  font-family: "GothamBold";
-  src: url("/font/Gotham-Bold.otf");
-  font-weight: bold;
-  font-style: normal;
+input[type="radio"] {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #987777;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: 0 0 5px 0px #faf0e5 inset;
 }
 
-@font-face {
-  font-family: "GothamMedium";
-  src: url("/font/GothamMedium.ttf");
-  font-weight: normal;
-  font-style: normal;
+input[type="radio"]:hover {
+  box-shadow: 0 0 5px 0px orange inset;
 }
 
-@font-face {
-  font-family: "GothamLight";
-  src: url("/font/Gotham-Light.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-input[type='radio'] {
-  -webkit-appearance:none;
-  width:20px;
-  height:20px;
-  border:1px solid #987777;
-  border-radius:50%;
-  outline:none;
-  box-shadow:0 0 5px 0px #faf0e5 inset;
-}
-
-input[type='radio']:hover {
-  box-shadow:0 0 5px 0px orange inset;
-}
-
-input[type='radio']:checked:before {
+input[type="radio"]:checked:before {
   background: #ffc107;
 }
 
-input[type='radio']:before {
-  content: '';
+input[type="radio"]:before {
+  content: "";
   display: block;
   width: 12px;
   height: 12px;
@@ -58,7 +37,7 @@ h5#nominativi_indirizzi {
   color: grey;
 }
 
-#blocco{
+#blocco {
   display: flex;
 }
 
@@ -68,29 +47,29 @@ h5#nominativi_indirizzi {
 
 div#dati {
   background: white;
+  margin-top: 20px;
   margin-right: 10%;
   padding-bottom: 4%;
   border-radius: 10px;
   box-shadow: 10px 10px 40px #dedede;
 }
-#container{
+#container {
   display: flex;
   flex-direction: row;
 }
 .headerSection {
-  background: linear-gradient(45deg, #EECFBA, #ffc10708);
+  background: linear-gradient(45deg, #eecfba, #ffc10708);
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
 }
-#total-price{
+#total-price {
   display: flex;
   flex-direction: column;
   margin-top: 65px;
   width: 100%;
   font-family: "RobotoBold";
-
 }
 #div_form_in {
   display: flex;
@@ -107,10 +86,10 @@ div#dati {
   margin-left: auto;
   max-width: 400px;
 }
-#quantita{
+#quantita {
   font-size: 20px;
   margin-bottom: 20px;
-  font-family: 'RobotoMedium';
+  font-family: "RobotoMedium";
 }
 h5#totale {
   margin-bottom: 50px;
@@ -128,14 +107,11 @@ h6#totale {
   color: gray;
   margin-top: 20px;
   font-size: 20px;
-
- 
 }
 
 .ordered-products p {
   margin-top: 3px;
-  font-family: 'RobotoMedium';
-
+  font-family: "RobotoMedium";
 }
 
 p {
@@ -162,7 +138,6 @@ button {
   font-family: "RobotoBold";
 }
 
-
 /* header */
 .headerSection {
   display: flex;
@@ -171,7 +146,6 @@ button {
   width: 122%;
 }
 .headerSection h1 {
-  
   margin-left: 45px;
 }
 .headerSection h5 {
@@ -185,7 +159,6 @@ h5#nominativi_indirizzi {
   font-size: 125%;
   margin-left: 13px;
   text-align: left;
-
 }
 
 .divIndirizzi {
@@ -213,7 +186,7 @@ h5#nominativi_indirizzi {
 
 .aggiungiIndirizzo {
   color: #626262;
-  font-family: 'RobotoMedium';
+  font-family: "RobotoMedium";
   text-align: end;
   margin-right: 50px;
 }
@@ -224,7 +197,6 @@ h5#nominativi_indirizzi {
   position: relative;
   margin-top: 3%;
   margin-bottom: 3%;
-
 }
 
 /*responsive*/
@@ -280,7 +252,7 @@ h5#nominativi_indirizzi {
   text-decoration: none;
   font-size: 17px;
   border-radius: 20px;
-  font-family: 'RobotoBold';
+  font-family: "RobotoBold";
   text-align: center;
   display: block;
   width: 49%;
@@ -291,26 +263,27 @@ h5#nominativi_indirizzi {
   margin-left: auto;
 }
 #aggiungi:focus {
-	background: gray;
-	outline: 0;
-  }
-  
+  background: gray;
+  outline: 0;
+}
+
 #aggiungi span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
-  
+
 #aggiungi span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
   right: -20px;
   transition: 0.5s;
 }
-#aggiungi:focus, input:focus{
+#aggiungi:focus,
+input:focus {
   outline: none;
 }
 #aggiungi:hover span {
@@ -329,28 +302,29 @@ h5#nominativi_indirizzi {
   text-decoration: none;
   font-size: 16px;
   border-radius: 20px;
-  font-family: 'RobotoBold';
+  font-family: "RobotoBold";
   text-align: center;
   display: block;
-  
+
   width: 40%;
   height: 40px;
   transition: all 0.5s;
   cursor: pointer;
 }
-  
+
 #chiudi span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
-#chiudi:focus, input:focus{
+#chiudi:focus,
+input:focus {
   outline: none;
 }
 
 #chiudi span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -387,20 +361,19 @@ a.aggiungiIndirizzo {
   margin-left: auto;
   margin-right: 2%;
   color: gray;
-  font-family: 'RobotoBold';
+  font-family: "RobotoBold";
   padding-bottom: 3%;
   margin-top: 1%;
 }
 hr.dashed {
   border-top: 1px solid #bbb;
   width: 90%;
- 
 }
 /*mobile*/
 @media (max-width: 600px) {
   .footer-row {
-    flex-direction: column  !important;
-    align-items: center  !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 }
 @media (max-width: 500px) {
@@ -416,30 +389,27 @@ hr.dashed {
     font-size: 106%;
     margin-left: 19px;
   }
-  #container{
+  #container {
     display: flex;
     flex-direction: column;
   }
   h5#totale {
     font-size: 39px !important;
   }
-
 }
-
 
 @media (max-width: 500px) {
-.divIndirizzi{
-  margin-left: 1%;
-}
-.cardInfo{
-  margin-left: 1%;
-}
+  .divIndirizzi {
+    margin-left: 1%;
+  }
+  .cardInfo {
+    margin-left: 1%;
+  }
   h5#nominativi {
     font-size: 100%;
     text-align: left;
     margin-right: 0px !important;
     width: 81%;
-    
   }
   h5#nominativi_indirizzi {
     margin-left: 6px;
@@ -451,11 +421,10 @@ hr.dashed {
   .headerSection h1 {
     margin-left: 10%;
     font-size: revert;
-}
+  }
 }
 @media (max-width: 1000px) {
-
-  #container{
+  #container {
     display: flex;
     flex-direction: column;
   }
@@ -468,24 +437,19 @@ hr.dashed {
     margin-top: 20px;
   }
   .headerSection {
-    background: linear-gradient(
-45deg
-, #EECFBA, #ffc10708);
+    background: linear-gradient(45deg, #eecfba, #ffc10708);
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-}
-h5#totale {
-  font-size: 59px;
-  margin-top: 34px;
-}
-#div_form_in {
+  }
+  h5#totale {
+    font-size: 59px;
+    margin-top: 34px;
+  }
+  #div_form_in {
     margin-top: 0px;
     width: 82%;
     max-width: 90%;
-    
-}
-
-
+  }
 }
