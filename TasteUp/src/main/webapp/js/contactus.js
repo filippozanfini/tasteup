@@ -13,6 +13,7 @@ function hideAlert() {
 }
 
 function logout() {
+  signOut();
   $.ajax({
     url: "logout",
     method: "POST",
@@ -23,9 +24,21 @@ function logout() {
   });
 }
 
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.disconnect();
+  gapi.auth2.getAuthInstance().currentUser.get().reloadAuthResponse();
+}
+
+function onLoad() {
+  gapi.load("auth2", function () {
+    gapi.auth2.init();
+  });
+}
+
 window.onload = function () {
-  document.getElementById("send-btn").onclick = sendEmail;
   document.getElementById("logout-btn").onclick = logout;
+  document.getElementById("send-btn").onclick = sendEmail;
   getOrderJSON();
 };
 

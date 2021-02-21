@@ -263,6 +263,8 @@ function addOrder() {
     .attr("indirizzo");
   address.totale = order.totale;
 
+ 
+
   $.ajax({
     url: "saveOrder",
     method: "POST",

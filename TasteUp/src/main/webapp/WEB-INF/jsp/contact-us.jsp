@@ -5,7 +5,9 @@
     <html lang="en">
 
     <head>
-      <meta charset="UTF-8" />
+      <meta charset="UTF-8"/>
+      <meta name="google-signin-client_id"
+      content="250528507778-ful4fvi4t3tmqm7qep1rml9tviregb0v.apps.googleusercontent.com">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Contattaci - TasteUp</title>
 
@@ -18,6 +20,11 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
+      <!--Google-->
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+      <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+  
 
       <!--CSS-->
       <link rel="stylesheet" href="../../css/contactus.css" type="text/css" />

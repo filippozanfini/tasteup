@@ -12,15 +12,10 @@ function onSignIn(googleUser) {
     method: "POST",
     data: { username: username, password: password },
     success: function (responseData) {
-      if (responseData) {
-        if (username == "gestore@gestore") {
-          window.location.replace("gestoreConsegne");
-        } else if (username == "admin@admin") {
-          window.location.replace("indexadmin");
-        } else {
+      if (responseData) 
           window.location.replace("/");
-        }
-      } else {
+        
+      else {
         Swal.fire({
           title: "Error",
           text: "",

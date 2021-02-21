@@ -21,6 +21,11 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
                 crossorigin="anonymous"></script>
+                
+            <!--Google-->
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+            <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 
             <!--CSS-->
             <link rel="stylesheet" href="/css/style.css" type="text/css" />
@@ -33,9 +38,7 @@
             <script src="../../js/login.js"></script>
             <script src="../../js/index.js"></script>
             <script src="../../js/password.js"></script>
-            <script src="https://apis.google.com/js/platform.js" async defer></script>
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-            <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+           
         </head>
 
         <body>

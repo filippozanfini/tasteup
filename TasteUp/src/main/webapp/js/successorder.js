@@ -1,8 +1,8 @@
 window.onload = function () {
   setId();
   document.getElementById("logout-btn").onclick = logout;
-
   getOrderJSON();
+  
 };
 function setId() {
   var id = undefined;

@@ -22,9 +22,7 @@ function conferma(id) {
     method: "POST",
     data: { productId: check },
     success: function (response) {
-      if (response != null) {
         carica();
-      }
     },
     fail: function (error) {
       console.log(error);
@@ -42,7 +40,7 @@ function carica() {
       ordini = JSON.parse(responseData);
       var ind = document.getElementById("divOrdini");
       if (ordini.ordini.length == 0) {
-        ind.innerHTML +=
+        ind.innerHTML =
           '<p id="noOrders">Non ci sono ordini da consegnare!</p>';
       } else {
         ind.innerHTML = "";
