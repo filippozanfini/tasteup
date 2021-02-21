@@ -139,9 +139,7 @@
                             </li>
 
                             <c:if test="${usernameLogged == null}">
-                                <form method="GET" action="login">
-                                    <button class="btn loginBtn">Accedi</button>
-                                </form>
+                                <button id="signup-btn" class="btn loginBtn">Registrati</button>
                             </c:if>
 
                             <c:if test="${usernameLogged != null}">

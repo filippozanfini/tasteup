@@ -78,7 +78,7 @@ public class Ordine {
 			    Integer value = entry.getValue();
 			    totale+=key.getPrezzo()*value;
 		 }
-				System.out.println("totale " +totale);
+		 
 		return totale;
 	}
 
