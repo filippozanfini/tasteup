@@ -81,7 +81,7 @@ function getAllOrder() {
                 '<div id ="blocco">\
                          <h5 id="nominativi">Totale: </h5>\
                          <h5 id="nominativi_indirizzi">' +
-                value.totale +
+                value.totale.toFixed(2) +
                 "&euro;</h5></td>\
                        </div>\
                     </div>" +
@@ -158,7 +158,7 @@ function getAllOrder() {
                 '<div id ="blocco">\
                            <h5 id="nominativi">Totale: </h5>\
                            <h5 id="nominativi_indirizzi">' +
-                value.totale +
+                value.totale.toFixed(2) +
                 "&euro;</h5></td>\
                          </div>\
                       </div>" +
@@ -230,7 +230,7 @@ function getOrdine(id) {
 
       $.each(ordine.ordine, function (key, value) {
         document.getElementById("tot" + id).innerHTML =
-          "<h5 id='tot'> Totale:" + value.totale + "&euro; </h5>";
+          "<h5 id='tot'> Totale:" + value.totale.toFixed(2) + "&euro; </h5>";
         $.each(value.panini, function (key, val) {
           if (value.id == id)
             $(m).append(
