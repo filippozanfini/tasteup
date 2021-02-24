@@ -86,7 +86,7 @@
                   </li>
                 </ul>
             </ul>
-            <ul id="searchBarNavbar" class="navbar-nav mx-auto searchBarNavbar hide">
+            <ul id="searchBarNavbar" class="navbar-nav mx-auto searchBarNavbar show">
               <div class="input-group-nav">
                 <form autocomplete="off" action="prodotti">
                   <input name="product" autocomplete="off" type="text" class="idbar-nav"

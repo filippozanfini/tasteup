@@ -7,7 +7,7 @@
       <meta charset="UTF-8" />
       <meta charset="ISO-8859-1">
       <meta name="google-signin-client_id"
-      content="250528507778-ful4fvi4t3tmqm7qep1rml9tviregb0v.apps.googleusercontent.com">
+        content="250528507778-ful4fvi4t3tmqm7qep1rml9tviregb0v.apps.googleusercontent.com">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Carrello - TasteUp</title>
 
@@ -88,7 +88,7 @@
                   </li>
                 </ul>
             </ul>
-            <ul id="searchBarNavbar" class="navbar-nav mx-auto searchBarNavbar hide">
+            <ul id="searchBarNavbar" class="navbar-nav mx-auto searchBarNavbar show">
               <div class="input-group-nav">
                 <form autocomplete="off" action="prodotti">
                   <input name="product" autocomplete="off" type="text" class="idbar-nav"
