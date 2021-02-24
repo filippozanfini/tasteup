@@ -15,8 +15,6 @@ function cambiaPassword() {
     confirmButtonColor: "#000000",
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire("Ben fatto!", "Hai annullato questo ordine", "success");
-
       $.ajax({
         url: "cambiaPassword",
         method: "POST",
